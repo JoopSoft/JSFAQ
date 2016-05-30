@@ -1,0 +1,1012 @@
+﻿@import "Styles/variables.scss";
+@import "Styles/accordion-ui.min.css";
+
+.JSFaq {
+    * {
+        @include box-size(border-box !important);
+    }
+
+    .link-dev {
+        float: right;
+        font-size: 12px;
+        color: $white;
+        margin-top: 6px;
+    }
+
+    .dnnForm {
+        fieldset {
+            border: $none;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 10px;
+            float: left;
+            clear: both;
+            width: 100%;
+        }
+
+        .fieldset {
+            float: left;
+            padding: 15px 0;
+            margin: 0;
+            width: 100%;
+
+            &:nth-child(even) {
+                background: $dark-alpha-hover;
+            }
+        }
+
+        .form-control {
+            width: 45%;
+            height: 35px;
+            line-height: normal;
+
+            @include box-shadow($none);
+
+            &.teaser-txt {
+                height: 70px;
+            }
+
+            &.body-txt {
+                height: 150px;
+            }
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: $dark;
+            /*margin: 0 0 10px;*/
+        }
+
+        h3 {
+            /*font-size: 1rem;*/
+            font-size: 1.571em;
+        }
+
+        h4 {
+            /*font-size: 0.85rem;*/
+            font-size: 1.286em;
+        }
+
+        .dnnFormSectionHead {
+            border-bottom: $none;
+
+            span {
+                font-size: inherit;
+                color: $white;
+            }
+
+            .dnnFormMessage {
+                margin: 0 0 30px;
+                padding: 15px;
+                background-size: 30px;
+                font-weight: normal;
+                line-height: normal;
+                border: $none;
+                max-width: 100%;
+
+                @include border-radius(0);
+
+                &.dnnFormTitle {
+                    color: $white;
+                    background-color: $dark-alpha-xlg;
+
+                    &.dnnFormIcon {
+                        padding: 15px 15px 15px 55px;
+                        background-image: url(Images/Icons/h-icon.png);
+                        background-repeat: no-repeat;
+                        background-position: 15px center;
+                    }
+                }
+
+                &.dnnFormInfo {
+                    color: $white;
+                    background: $dark-alpha-md;
+                    /*display: $none;*/
+                }
+                //&.dnnFormSuccess {
+                //    color: $dark;
+                //    background: $dark-alpha;
+                //}
+                //&.dnnFormWarning {
+                //    color: $dark;
+                //    background: $dark-alpha;
+                //}
+            }
+
+            .JSFaqMenu {
+                display: inline-block;
+
+                .dnnFormTitle {
+                    float: left;
+                    background-color: $dark-alpha-lg;
+
+                    &.error {
+                        background-color: $warning;
+                    }
+
+                    &.success {
+                        background-color: $success;
+                    }
+                }
+
+                .dnnFormMessage {
+                    padding: 0 15px;
+                    min-width: 45px;
+                    width: 100%;
+                    height: 45px;
+                    line-height: 45px;
+                    font-size: 1.286em;
+
+                    &.no-controls {
+                        width: 100%;
+                    }
+
+                    &.one-control {
+                        width: calc(100% - 45px);
+                    }
+
+                    &.two-controls {
+                        width: calc(100% - 90px);
+                    }
+
+                    &.three-controls {
+                        width: calc(100% - 135px);
+                    }
+
+                    &.four-controls {
+                        width: calc(100% - 180px);
+                    }
+                }
+
+                a.btn {
+                    float: left;
+                    padding: 0;
+                    margin: 0;
+                    min-width: 45px;
+                    height: 45px;
+                    line-height: 45px;
+                    font-size: 1.286em;
+                    text-align: center;
+
+                    &.error {
+                        background-color: $warning;
+
+                        &:hover {
+                            background-color: $warning-xlg;
+                        }
+                    }
+
+                    &.success {
+                        background-color: $success;
+
+                        &:hover {
+                            background-color: $success-xlg;
+                        }
+                    }
+                }
+            }
+
+            .no-spacing {
+                margin: 0;
+            }
+        }
+
+        input[type=checkbox],
+        input[type=radio] {
+            visibility: hidden;
+            display: $none;
+        }
+        /*DNN RE-STYLING CHECK BOX CONTROL*/
+        /*DON'T REORDER ROW DEFINITIONS*/
+        .dnnCheckbox img {
+            display: inline-block;
+            width: 20px;
+            height: 18px;
+            min-width: 20px;
+            vertical-align: middle;
+        }
+
+        .dnnCheckbox img {
+            background: transparent url(Images/Icons/checkbox.png) no-repeat;
+        }
+
+        .dnnCheckbox img {
+            background-position: 0px 0px;
+        }
+
+        .dnnCheckbox-checked img {
+            background-position: -50px 0px;
+        }
+
+        .dnnCheckbox-disabled img {
+            opacity: .5;
+        }
+        /*RADIO BUTTONS GROUP*/
+        .dnnRadiobutton img {
+            width: 20px;
+            height: 18px;
+            min-width: 20px;
+            vertical-align: middle;
+        }
+
+        .dnnRadiobutton img {
+            background: transparent url(Images/Icons/radiobutton.png) no-repeat;
+        }
+
+        .dnnRadiobutton img {
+            background-position: 0px 0px;
+        }
+
+        .dnnRadiobutton-checked img {
+            background-position: -50px 0px;
+        }
+
+        .dnnRadiobutton-disabled img {
+            opacity: .5;
+        }
+
+        .dnnFormItem {
+            margin-top: 15px;
+            float: left;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            select > option {
+                color: $dark;
+            }
+
+            label span,
+            .dnnBoxLabel {
+                color: $dark-alpha-lg;
+                font-weight: bold;
+            }
+
+            > .dnnLabel,
+            .dnnLabel {
+                margin-top: 5px;
+
+                + span {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+
+            .btn {
+                line-height: normal;
+                border: $none;
+                padding: 10px 15px;
+
+                @include border-radius(0);
+                @include transition($all);
+
+                &.btn-primary {
+                    background-color: $dark-alpha-lg;
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: $dark-alpha-xlg;
+                        outline: $none !important;
+                    }
+                }
+
+                &.btn-default {
+                    color: $dark-alpha-lg;
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        color: $white;
+                        background-color: $dark-alpha-lg;
+                        outline: $none !important;
+                    }
+                }
+
+                &:hover {
+                    border: $none;
+                }
+
+                &:active {
+                    @include box-shadow($none);
+                }
+            }
+
+            &.controls {
+                margin: 0;
+                padding: 10px 0 0 0;
+                border-top: 1px solid $dark-alpha;
+            }
+
+            &.popup {
+                position: fixed;
+                top: 0;
+                left: 0;
+                margin: 0;
+                text-align: center;
+                background: $overlay;
+                width: 100%;
+                height: 100%;
+                z-index: 9998;
+
+                &.confirm-box {
+                    .popup-wrapper {
+                        top: calc((100% - 315px)/2);
+                    }
+                }
+
+                &.auto-close-box {
+                    .popup-wrapper {
+                        top: calc((100% - 274px)/2);
+                    }
+                }
+
+                &.overlay {
+                    .popup-wrapper {
+                        top: 40px;
+                        position: relative;
+
+                        .popup-icon {
+                            color: $dark-alpha-lg;
+                        }
+
+                        h1, h2, h3, h4, h5, h6 {
+                            color: $dark-alpha-lg;
+                        }
+
+                        input[type=text] {
+                            height: 100px;
+                        }
+                    }
+                }
+
+                .popup-wrapper {
+                    position: relative;
+                    width: 60%;
+                    left: 20%;
+                    padding: 15px;
+
+                    h1, h2, h3, h4, h5, h6 {
+                        border: $none;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    .popup-icon {
+                        display: block;
+
+                        .fa {
+                            font-size: 15em;
+                            text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+                        }
+                    }
+
+                    .popup-msg {
+                        display: block;
+                        margin: 10px 0 0 0;
+                        word-wrap: break-word;
+                        word-break: break-all;
+                    }
+
+                    .btn-group {
+                        margin-top: 15px;
+
+                        .btn {
+                            margin: 0;
+                        }
+                    }
+
+                    .btn {
+                        border: $none;
+                        margin: 15px 0 0 0;
+                    }
+
+                    .progress-bar {
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 0;
+                        height: 2px;
+
+                        @include transition($width);
+                        @include transition-delay(0);
+                    }
+
+                    .close-action {
+                        position: absolute;
+                        background-color: transparent;
+                        color: $dark-alpha-lg;
+                        border: $none;
+                        top: -70px;
+                        right: -70px;
+                        padding: 0;
+                        margin: 0;
+                        width: 70px;
+                        height: 70px;
+                        line-height: 70px;
+
+                        &:hover {
+                            background-color: $dark-alpha-lg;
+                            color: $white;
+                        }
+                    }
+                }
+
+                &.success {
+
+                    .popup-wrapper {
+                        .popup-icon {
+                            color: $success;
+                        }
+
+                        h1, h2, h3, h4, h5, h6 {
+                            color: $success;
+                        }
+
+                        .btn {
+                            &.close-action {
+                                &:hover {
+                                    background-color: $success;
+                                }
+                            }
+                        }
+
+                        .progress-bar {
+                            background: $success;
+                        }
+
+                        .close-action {
+                            color: $success;
+
+                            &:hover {
+                                color: $white;
+                                background-color: $success;
+                            }
+                        }
+                    }
+                }
+
+                &.warning {
+
+                    .popup-wrapper {
+                        .popup-icon {
+                            color: $warning;
+                        }
+
+                        h1, h2, h3, h4, h5, h6 {
+                            color: $warning;
+                        }
+
+                        .btn {
+                            &.close-action {
+                                &:hover {
+                                    background-color: $warning;
+                                }
+                            }
+                        }
+
+                        .progress-bar {
+                            background: $warning;
+                        }
+
+                        .close-action {
+                            color: $warning;
+
+                            &:hover {
+                                color: $white;
+                                background-color: $warning;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.group {
+
+                input[type="text"],
+                select,
+                textarea,
+                input[type="email"],
+                input[type="search"],
+                input[type="date"] {
+                    float: left;
+                    height: 35px;
+                    line-height: 35px;
+                    width: 50%;
+                    max-width: 450px;
+
+                    &.grouped {
+                        border-right: $none;
+                    }
+
+                    &.ungrouped {
+                        border: 1px solid $dark-alpha;
+
+                        &:focus {
+                            border: 1px solid $dark;
+                        }
+                    }
+                }
+
+                .news-image {
+                    float: left;
+                    width: auto;
+                    height: 35px;
+                }
+
+                .btn {
+                    float: left;
+                    padding: 0 10px;
+                    height: 35px;
+                    line-height: 35px;
+                    min-width: 35px;
+                    text-align: center;
+
+                    &.btn-icon {
+                        padding: 0;
+                    }
+                }
+            }
+
+            &.no-spacing {
+                padding: 0;
+                margin: 0;
+            }
+
+            .txt-error-validate {
+                font-style: italic;
+                position: absolute;
+                top: 5px;
+                /*left: calc(82.075% - 97px);*/
+                left: calc(32.075% + 355px - 18px);
+                color: $white;
+                background: $warning;
+                height: 25px;
+                line-height: 25px;
+                min-width: 110px;
+                text-align: center;
+            }
+        }
+
+        &.controls {
+            margin: 0;
+            padding: 10px 0 0 0;
+            border-top: 1px solid $dark-alpha;
+            float: left;
+        }
+
+        &.edit,
+        &.list,
+        &.manage,
+        &.settings {
+
+            .dnnFormItem button,
+            .dnnFormItem input[type="button"],
+            .dnnFormItem input[type="reset"],
+            .dnnSecondaryAction,
+            a.dnnSecondaryAction,
+            ul.dnnAdminTabNav li a,
+            .dnnLogin .LoginTabGroup span {
+                margin: 0;
+                padding: 0 10px;
+                height: 35px;
+                line-height: 35px;
+                min-width: 35px;
+                text-align: center;
+                color: $white;
+                background: $dark-alpha-lg;
+                font-family: inherit;
+                font-weight: normal;
+                border: $none;
+                text-decoration: none;
+                text-shadow: $none;
+
+
+                @include border-radius(0);
+                @include box-shadow($none);
+
+                &:hover {
+                    background: $dark-alpha-xlg;
+                }
+            }
+
+            a.dnnFormHelp {
+                color: $dark-alpha-lg;
+                background: $none;
+                top: 0;
+                width: auto;
+                height: auto;
+                font-weight: normal;
+            }
+        }
+
+        &.edit,
+        &.list,
+        &.manage,
+        &.settings {
+            font-size: 14px;
+            min-height: 475px;
+
+            input[type="text"],
+            select,
+            textarea,
+            input[type="email"],
+            input[type="search"],
+            input[type="date"] {
+                margin: 0;
+                border: 1px solid $dark-alpha;
+                color: $dark-alpha-md;
+                width: 50%;
+                max-width: 450px;
+                font-size: 1em;
+                padding: 0 8px;
+                height: 35px;
+                line-height: 35px;
+
+                @include border-radius(0);
+                @include box-shadow($none);
+                @include transition($all);
+
+                &:active,
+                &:focus {
+                    color: $dark;
+                    background: $white;
+                    border: 1px solid $dark;
+                    outline: $none;
+                    overflow: visible;
+
+                    @include box-shadow(0 0 6px 1px $dark-alpha-md);
+                }
+
+                &[disabled="disabled"] {
+                    color: $dark;
+                    width: calc(50% - 50px);
+                    display: inline-block;
+                    border: none;
+                    background: none;
+                    padding: 0;
+
+                    @include box-shadow($none);
+                }
+
+                &.txt-img-url {
+                    margin-left: 10px;
+                }
+            }
+
+            select {
+                width: auto;
+                min-width: 100px;
+            }
+
+            .rich-text-editor {
+                textarea {
+                    max-width: calc(100% - 16px);
+                    max-height: calc(100% - 10px);
+
+                    &:active,
+                    &:focus {
+                        @include box-shadow($none);
+                    }
+                }
+            }
+        }
+    }
+
+    .dropup {
+        .dropdown-menu {
+            border: 1px solid $dark-alpha-lg;
+            border-bottom: $none;
+            margin-bottom: 0;
+        }
+    }
+
+    .bs-actionsbox,
+    .bs-donebutton,
+    .bs-searchbox {
+        padding: 0;
+    }
+
+    .bs-searchbox + .bs-actionsbox {
+        padding: 0;
+    }
+
+    .dropdown-menu {
+        border: 1px solid $dark-alpha-lg;
+        border-top: $none;
+        box-shadow: $none;
+        /*background-color: $dark-alpha-md;*/
+        margin-top: 0;
+        padding: 0;
+        @include border-radius(0);
+
+        > li {
+            > a {
+                color: $dark-alpha-lg;
+                padding: 8px;
+                outline: $none;
+
+                &:hover {
+                    color: $dark;
+                }
+            }
+        }
+    }
+
+    .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark {
+        margin-top: 10px;
+        color: $dark-alpha-lg;
+    }
+
+    .tooltip {
+
+        &.in {
+            filter: alpha(opacity=100);
+            opacity: 1;
+        }
+
+        &.top .tooltip-arrow {
+            border-top-color: $tooltip;
+        }
+
+        &.top-left .tooltip-arrow {
+            border-top-color: $tooltip;
+        }
+
+        &.top-right .tooltip-arrow {
+            border-top-color: $tooltip;
+        }
+
+        &.right .tooltip-arrow {
+            border-right-color: $tooltip;
+        }
+
+        &.left .tooltip-arrow {
+            border-left-color: $tooltip;
+        }
+
+        &.bottom .tooltip-arrow {
+            border-bottom-color: $tooltip;
+        }
+
+        &.bottom-left .tooltip-arrow {
+            border-bottom-color: $tooltip;
+        }
+
+        &.bottom-right .tooltip-arrow {
+            border-bottom-color: $tooltip;
+        }
+
+        .tooltip-inner {
+            background-color: $tooltip;
+            @include border-radius(0);
+        }
+    }
+
+    .ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .hidden {
+        display: $none !important;
+        visibility: hidden !important;
+    }
+
+    .aspNetDisabled,
+    a.aspNetDisabled,
+    .dnnDisabled,
+    a.dnnDisabled,
+    [disabled=disabled] {
+        color: $dark-alpha;
+        cursor: default;
+    }
+
+    .pnl-admin {
+        .btn {
+            &.btn-primary {
+                background-color: $tooltip-md;
+
+                &:hover,
+                &:focus,
+                &:active,
+                &.active {
+                    background-color: $tooltip;
+                }
+            }
+        }
+
+        .content-holder {
+            float: left;
+            color: $white;
+            background-color: $tooltip-md;
+            padding: 10px 15px;
+        }
+    }
+
+    .scroll-action {
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        display: $none;
+
+        &.btn {
+            padding: 0;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-color: transparent;
+
+            @include border-radius(0);
+            @include transition($bgColor);
+
+            &.btn-primary {
+                background-color: $dark-alpha-lg;
+                border-color: transparent;
+
+                &:hover {
+                    background-color: $dark-alpha-xlg;
+                    border-color: transparent;
+                }
+            }
+
+            &:hover {
+                border-color: transparent;
+            }
+
+            &:active {
+                @include box-shadow($none);
+            }
+        }
+    }
+
+    .btn {
+        line-height: normal;
+        border: $none;
+        padding: 10px 15px;
+
+        @include border-radius(0);
+        @include transition($all);
+
+        &.btn-primary {
+            background-color: $dark-alpha-lg;
+            color: $white;
+
+            &:hover,
+            &:focus,
+            &:active,
+            &.active {
+                background-color: $dark-alpha-xlg;
+                text-decoration: none;
+            }
+        }
+
+        &.btn-default {
+            color: $dark-alpha-lg;
+            background: $dark-alpha-xsm;
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $white;
+                background-color: $dark-alpha-lg;
+            }
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: $none;
+            outline: $none;
+            @include box-shadow($none);
+        }
+
+        &[disabled=disabled],
+        &.aspNetDisabled,
+        &.dnnDisabled {
+            color: $light-alpha-md;
+
+            &:hover {
+                background-color: $dark-alpha-lg;
+            }
+        }
+
+        &.custom-acc-ctrl {
+            display: block;
+        }
+    }
+    /*BOOTSTRAP RE-STYLING */
+    .btn-group {
+        &.form-control {
+            width: 50%;
+            max-width: 450px;
+        }
+
+        &:focus {
+            outline: $none;
+            border: $none;
+        }
+
+        .btn + .btn,
+        .btn + .btn-group,
+        .btn-group + .btn,
+        .btn-group + .btn-group {
+            margin-left: 0;
+
+            &:focus {
+                outline: $none;
+                border: $none;
+            }
+        }
+    }
+
+    .group {
+        zoom: 1;
+    }
+
+    .no-spacing {
+        margin: 0;
+        padding: 0;
+    }
+
+    ::-webkit-input-placeholder {
+        color: $dark-alpha-xsm;
+        font-style: italic;
+    }
+
+    :-moz-placeholder {
+        color: $dark-alpha-xsm;
+        font-style: italic;
+    }
+
+    ::-moz-placeholder {
+        color: $dark-alpha-xsm;
+        font-style: italic;
+    }
+
+    :-ms-input-placeholder {
+        color: $dark-alpha-xsm;
+        font-style: italic;
+    }
+}
+
+//DNN STYLE FIXES
+.mark, mark {
+    padding: 0 !important;
+    background-color: transparent !important;
+}
+
+.dnnDropDownList {
+    .selected-item {
+        margin: 0 0 0 15px !important;
+
+        a {
+            height: auto !important;
+
+            &:link,
+            &:visited,
+            &:hover,
+            &:active {
+                height: auto !important;
+            }
+        }
+    }
+}
+
+.dnnPermissionsGrid {
+    > .dnnFormItem {
+        ul.token-input-list-facebook {
+            /*padding: 8px !important;*/
+        }
+
+        li.token-input-token-facebook {
+            margin: 3px !important;
+            padding: 3px 5px !important;
+        }
+
+        li.token-input-input-token-facebook {
+            margin: 4px 0 !important;
+            padding: 4px 0 !important;
+        }
+    }
+}

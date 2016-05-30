@@ -117,59 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lblShowCategory.Help" xml:space="preserve">
+    <value>Display/Hide category.</value>
+  </data>
+  <data name="lblShowCategory.Text" xml:space="preserve">
+    <value>Show Category</value>
+  </data>
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
   <data name="btnSave.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="ControlTitle_edit.Text" xml:space="preserve">
-    <value>Add/Edit</value>
-  </data>
-  <data name="lblAssignedUser.Help" xml:space="preserve">
-    <value>Choose a user to assign this object to.</value>
-  </data>
-  <data name="lblAssignedUser.Text" xml:space="preserve">
-    <value>Assigned User</value>
-  </data>
-  <data name="lblAnswer.Help" xml:space="preserve">
-    <value>Enter answer.</value>
-  </data>
-  <data name="lblAnswer.Text" xml:space="preserve">
-    <value>Answer</value>
-  </data>
-  <data name="lblQuestion.Help" xml:space="preserve">
-    <value>Enter question.</value>
-  </data>
-  <data name="lblQuestion.Text" xml:space="preserve">
-    <value>Question</value>
-  </data>
-  <data name="BasicSettings.Text" xml:space="preserve">
-    <value>JSFAQ Item Basic Settings</value>
-  </data>
-  <data name="ExpandAll.Text" xml:space="preserve">
-    <value>Expand All</value>
+    <value>Update</value>
   </data>
   <data name="lblCategory.Help" xml:space="preserve">
-    <value>Select from available categories.</value>
+    <value>Select category.</value>
   </data>
   <data name="lblCategory.Text" xml:space="preserve">
-    <value>Select Category</value>
-  </data>
-  <data name="lblHideFAQ.Help" xml:space="preserve">
-    <value>Choose wheter to show FAQ or not.</value>
-  </data>
-  <data name="lblHideFAQ.Text" xml:space="preserve">
-    <value>Hide FAQ</value>
-  </data>
-  <data name="lblPublishFromTo.Help" xml:space="preserve">
-    <value>Publish FAQ from/to selected date.</value>
-  </data>
-  <data name="lblPublishFromTo.Text" xml:space="preserve">
-    <value>Publish From/To</value>
-  </data>
-  <data name="Title.Text" xml:space="preserve">
-    <value>JSFAQModule - Add/Edit</value>
+    <value>Category</value>
   </data>
   <data name="lblCategoryDescription.Help" xml:space="preserve">
     <value>Enter category description.</value>
@@ -183,10 +147,7 @@
   <data name="lblCategoryName.Text" xml:space="preserve">
     <value>Category Name</value>
   </data>
-  <data name="lblCategoryOption.Help" xml:space="preserve">
-    <value>Choose category option.</value>
-  </data>
-  <data name="lblCategoryOption.Text" xml:space="preserve">
-    <value>Category Option</value>
+  <data name="Title.Text" xml:space="preserve">
+    <value>JSFAQModule - Manage Categories</value>
   </data>
 </root>

@@ -1,0 +1,136 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path />
+      <name>Edit.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>License.txt</name>
+    </file>
+    <file>
+      <path />
+      <name>ListCategories.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>ManageCategories.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>module.css</name>
+    </file>
+    <file>
+      <path />
+      <name>module.min.css</name>
+    </file>
+    <file>
+      <path />
+      <name>ReleaseNotes.txt</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>View.ascx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>Edit.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>ListCategories.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>ManageCategories.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>Settings.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>View.ascx.resx</name>
+    </file>
+    <file>
+      <path>Images/Icons/</path>
+      <name>checkbox.png</name>
+    </file>
+    <file>
+      <path>Images/Icons/</path>
+      <name>h-icon.png</name>
+    </file>
+    <file>
+      <path>Images/Icons/</path>
+      <name>icon.png</name>
+    </file>
+    <file>
+      <path>Images/Icons/</path>
+      <name>radiobutton.png</name>
+    </file>
+    <file>
+      <path>Js/</path>
+      <name>JSScript.js</name>
+    </file>
+    <file>
+      <path>Js/</path>
+      <name>main.js</name>
+    </file>
+    <file>
+      <path>Js/</path>
+      <name>main.min.js</name>
+    </file>
+    <file>
+      <path>Styles/</path>
+      <name>accordion-ui.css</name>
+    </file>
+    <file>
+      <path>Styles/</path>
+      <name>accordion-ui.min.css</name>
+    </file>
+    <file>
+      <path>Styles/</path>
+      <name>variables.css</name>
+    </file>
+    <file>
+      <path>Styles/</path>
+      <name>variables.min.css</name>
+    </file>
+    <file>
+      <path>Styles/images/</path>
+      <name>ui-icons_3B1E77_256x240.png</name>
+    </file>
+    <file>
+      <path>Styles/images/</path>
+      <name>ui-icons_444444_256x240.png</name>
+    </file>
+    <file>
+      <path>Styles/images/</path>
+      <name>ui-icons_777620_256x240.png</name>
+    </file>
+    <file>
+      <path>Styles/images/</path>
+      <name>ui-icons_777777_256x240.png</name>
+    </file>
+    <file>
+      <path>Styles/images/</path>
+      <name>ui-icons_cc0000_256x240.png</name>
+    </file>
+    <file>
+      <path>Styles/images/</path>
+      <name>ui-icons_ffffff_256x240.png</name>
+    </file>
+    <file>
+      <path>Styles/images/</path>
+      <name>ui-icons_fff_256x240.png</name>
+    </file>
+    <file>
+      <path>Temp Fixes/</path>
+      <name>JS-FAQ-Module_Fixes.txt</name>
+    </file>
+  </files>
+</dotnetnuke>

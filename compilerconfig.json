@@ -1,0 +1,18 @@
+﻿[
+  {
+    "outputFile": "Js/main.js",
+    "inputFile": "Js/JSScript.js"
+  },
+  {
+    "outputFile": "module.css",
+    "inputFile": "module.scss"
+  },
+  {
+    "outputFile": "Styles/variables.css",
+    "inputFile": "Styles/variables.scss"
+  },
+  {
+    "outputFile": "Styles/accordion-ui.css",
+    "inputFile": "Styles/accordion-ui.scss"
+  }
+]

@@ -80,6 +80,28 @@
                     <supportsPopUps>True</supportsPopUps>
                   </moduleControl>
                   <moduleControl>
+                    <controlKey>ManageCategories</controlKey>
+                    <controlSrc>DesktopModules/JSFAQ/ManageCategories.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle>Manage Categories</controlTitle>
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                    <supportsPopUps>True</supportsPopUps>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>ListCategories</controlKey>
+                    <controlSrc>DesktopModules/JSFAQ/ListCategories.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle>List Categories</controlTitle>
+                    <controlType>Edit</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                    <supportsPopUps>True</supportsPopUps>
+                  </moduleControl>                  
+                  <moduleControl>
                     <controlKey>Settings</controlKey>
                     <controlSrc>DesktopModules/JSFAQ/Settings.ascx</controlSrc>
                     <supportsPartialRendering>False</supportsPartialRendering>

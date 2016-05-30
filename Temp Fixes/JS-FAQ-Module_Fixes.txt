@@ -1,0 +1,122 @@
+﻿Moved to 2nd verse
+--------------------------------------------------------------
+Animate option in accordion
+
+	MULTIPLE TYPES SUPPORTED:
+
+	AnimationObject: Animation settings with EASING and DURATION properties.
+	Can also contain a down property with any of the above options.
+	"Down" animations occur when the panel being activated has a lower index than the currently active panel.
+
+-------------------------------------------------------
+FAQS JSON STRUCTURE
+-------------------------------------------------------
+
+{
+	"faqs": {
+		{
+			"categoryGroupId": 0,
+			"question": "Some content here",
+			"answer": "Some content here..",
+			"creationDate": "2016/05/05",
+			"modifiedDate": "2016/05/05",
+			"publishFrom": "2016/05/05",
+			"publishTo": "2016/05/05"
+		},
+		{
+			"categoryGroupId": 0,
+			"question": "Some content here",
+			"answer": "Some content here..",
+			"creationDate": "2016/05/05",
+			"modifiedDate": "2016/05/05",
+			"publishFrom": "2016/05/05",
+			"publishTo": "2016/05/05"
+		},
+		{
+			"categoryGroupId": null,
+			"question": "Some content here",
+			"answer": "Some content here..",
+			"creationDate": "2016/05/05",
+			"modifiedDate": "2016/05/05",
+			"publishFrom": "2016/05/05",
+			"publishTo": "2016/05/05"
+		}
+	}
+}
+
+categoryGroupId: {Int; Object:Null}
+
+-------------------------------------------------------
+CATEGORY JSON STRUCTURE
+-------------------------------------------------------
+
+{
+	"categories": {
+		{
+			"groupId": 0,
+			"name": "Category 1",
+			"desc": "Description category 1",
+			"dispay": true
+		},
+		{
+			"groupId": 1,
+			"name": "Category 2",
+			"desc": "Description category 2",
+			"dispay": true
+		},
+		{
+			"groupId": null,
+			"name": null,
+			"desc": null,
+			"dispay": false
+		}
+	}
+}
+groupId: { Int; Object:Null}
+---------------------------------------------------------------
+DEFAULT SETTINGS JSON STRUCTURE
+---------------------------------------------------------------
+{
+	"settings": {
+		{
+			"active": 0,
+			"animate": {},
+			"collapsible": false,
+			"disabled": false,
+			"event": "click",
+			"heightStyle": "auto",
+			"icons": { 
+				"header": "ui-icon-triangle-1-e", 
+				"activeHeader": "ui-icon-triangle-1-s" 
+			}	
+		}
+	}
+}
+	------------------------------------------
+	Primitives:
+	------------------------------------------
+		active			{Bool, Int}
+		animate			{Bool, Num, Str, Obj}
+		collapsible		{Bool}
+		disabled		{Bool}
+		event			{Str}
+		heightStyle		{Str}
+		icons			{Obj}
+	-------------------------------------------
+------------------------------------------------------------
+    ACCORDION UI
+	--------------------------------------------------------
+    Options				Methods			Events
+    --------------------------------------------------------
+    active				destroy			activate
+    animate				disable			beforeActivate
+    collapsible			enable			create
+    disabled			option	
+    event				refresh	
+    header				widget	
+    heightStyle		
+    icons	
+	--------------------------------------------------------
+------------------------------------------------------------
+
+*CODE CLEARING!!!

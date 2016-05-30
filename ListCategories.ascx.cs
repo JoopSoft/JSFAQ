@@ -29,7 +29,7 @@ namespace JS.Modules.JSFAQ
     /// 
     /// </summary>
     /// -----------------------------------------------------------------------------
-    public partial class Edit : JSFAQModuleBase
+    public partial class ListCategories : JSFAQModuleBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

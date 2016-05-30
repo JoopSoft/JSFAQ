@@ -133,6 +133,15 @@
     <value>Edit</value>
   </data>
   <data name="EditModule.Text" xml:space="preserve">
-    <value>Add Item</value>
+    <value>Add FAQ Entry</value>
+  </data>
+  <data name="ListCategories.Text" xml:space="preserve">
+    <value>List Categories</value>
+  </data>
+  <data name="lnkFirstButton.Text" xml:space="preserve">
+    <value>Add FAQ Entry</value>
+  </data>
+  <data name="ManageCategories.Text" xml:space="preserve">
+    <value>Manage Categories</value>
   </data>
 </root>

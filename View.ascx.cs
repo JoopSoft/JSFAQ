@@ -104,6 +104,14 @@ namespace JS.Modules.JSFAQ
                         {
                             GetNextActionID(), Localization.GetString("EditModule", LocalResourceFile), "", "", "",
                             EditUrl(), false, SecurityAccessLevel.Edit, true, false
+                        },
+                        {
+                            GetNextActionID(), Localization.GetString("ManageCategories", LocalResourceFile), "", "", "",
+                            EditUrl("ManageCategories"), false, SecurityAccessLevel.Edit, true, false
+                        },
+                        {
+                            GetNextActionID(), Localization.GetString("ListCategories", LocalResourceFile), "", "", "",
+                            EditUrl("ListCategories"), false, SecurityAccessLevel.Edit, true, false
                         }
                     };
                 return actions;

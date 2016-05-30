@@ -112,24 +112,111 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ControlTitle_settings.Text" xml:space="preserve">
     <value>JSFAQ Settings</value>
   </data>
-  <data name="lblSetting1.Help" xml:space="preserve">
-    <value>Put your value for Setting 1 here.</value>
+  <data name="lblCategoryType.Help" xml:space="preserve">
+    <value>Choose category type.</value>
   </data>
-  <data name="lblSetting1.Text" xml:space="preserve">
-    <value>Setting One</value>
+  <data name="lblCategoryType.Text" xml:space="preserve">
+    <value>Category Type</value>
   </data>
-  <data name="lblSetting2.Help" xml:space="preserve">
-    <value>Put your value for Setting 2 here.</value>
+  <data name="lblDefaultOpen.Help" xml:space="preserve">
+    <value>Which panel is currently open.</value>
   </data>
-  <data name="lblSetting2.Text" xml:space="preserve">
-    <value>Setting Two</value>
+  <data name="lblDefaultOpen.Text" xml:space="preserve">
+    <value>Currently Active</value>
+  </data>
+  <data name="lblEmptyCategory.Help" xml:space="preserve">
+    <value>Display/Hide empty category.</value>
+  </data>
+  <data name="lblEmptyCategory.Text" xml:space="preserve">
+    <value>Show Empty Category</value>
+  </data>
+  <data name="lblExpandCollapse.Help" xml:space="preserve">
+    <value>Display/Hide expand/collapse button.</value>
+  </data>
+  <data name="lblExpandCollapse.Text" xml:space="preserve">
+    <value>Show Expand/Collapse</value>
+  </data>
+  <data name="lblIsSorted.Help" xml:space="preserve">
+    <value>Use sorting or not.</value>
+  </data>
+  <data name="lblIsSorted.Text" xml:space="preserve">
+    <value>Use Sorting</value>
+  </data>
+  <data name="lblQuestCategory.Help" xml:space="preserve">
+    <value>Display/Hide question category.</value>
+  </data>
+  <data name="lblQuestCategory.Text" xml:space="preserve">
+    <value>Show Question Category</value>
+  </data>
+  <data name="lblShowDates.Help" xml:space="preserve">
+    <value>Display/Hide dates.</value>
+  </data>
+  <data name="lblShowDates.Text" xml:space="preserve">
+    <value>Show Dates</value>
+  </data>
+  <data name="lblSortBy.Help" xml:space="preserve">
+    <value>Choose sorting by.</value>
+  </data>
+  <data name="lblSortBy.Text" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="lblSortType.Help" xml:space="preserve">
+    <value>Choose sorting type.</value>
+  </data>
+  <data name="lblSortType.Text" xml:space="preserve">
+    <value>Sort Type</value>
+  </data>
+  <data name="Title.Text" xml:space="preserve">
+    <value>JSFAQModule - Settings</value>
+  </data>
+  <data name="lblAnimationType.Help" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblAnimationType.Text" xml:space="preserve">
+    <value>Animate</value>
+  </data>
+  <data name="lblCollapsible.Help" xml:space="preserve">
+    <value>Whether all the sections can be closed at once. Allows collapsing the active section.</value>
+  </data>
+  <data name="lblCollapsible.Text" xml:space="preserve">
+    <value>Collapsible</value>
+  </data>
+  <data name="lblDefaultOpenType.Help" xml:space="preserve">
+    <value>Collapsing all sections.</value>
+  </data>
+  <data name="lblDefaultOpenType.Text" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="lblDisabled.Help" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblDisabled.Text" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="lblEvent.Help" xml:space="preserve">
+    <value>The event that accordion headers will react to in order to activate the associated panel.</value>
+  </data>
+  <data name="lblEvent.Text" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="lblHeightStyle.Help" xml:space="preserve">
+    <value>Controls the height of the accordion and each panel. Possible values: &lt;ul&gt;&lt;li&gt;&lt;b&gt;Auto&lt;/b&gt; - All panels will be set to the height of the tallest panel.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Fill&lt;/b&gt; - Expand to the available height based on the accordion's parent height.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Content&lt;/b&gt; - Each panel will be only as tall as its content.&lt;/li&gt;&lt;/ul&gt;</value>
+  </data>
+  <data name="lblHeightStyle.Text" xml:space="preserve">
+    <value>Height Style</value>
+  </data>
+  <data name="lblIconsType.Help" xml:space="preserve">
+    <value>Icons to use for headers. Set to &lt;b&gt;false&lt;/b&gt; to have no icons displayed.</value>
+  </data>
+  <data name="lblIconsType.Text" xml:space="preserve">
+    <value>Icons</value>
   </data>
 </root>

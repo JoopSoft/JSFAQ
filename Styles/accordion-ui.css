@@ -1,0 +1,736 @@
+﻿@keyframes roll {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+
+/*! jQuery UI - v1.11.4 - 2016-05-27
+* http://jqueryui.com
+* Includes: core.css, draggable.css, resizable.css, selectable.css, sortable.css, accordion.css, theme.css
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Arial%2CHelvetica%2Csans-serif&fsDefault=1em&fwDefault=normal&cornerRadius=0px&bgColorHeader=%23e9e9e9&bgTextureHeader=flat&borderColorHeader=%23dddddd&fcHeader=%23333333&iconColorHeader=%23444444&bgColorContent=%23fff&bgTextureContent=flat&borderColorContent=%23fff&fcContent=%233B1E77&iconColorContent=%233B1E77&bgColorDefault=%23f6f6f6&bgTextureDefault=flat&borderColorDefault=%23f6f6f6&fcDefault=%233B1E77&iconColorDefault=%23777777&bgColorHover=%233B1E77&bgTextureHover=flat&borderColorHover=%233B1E77&fcHover=%23fff&iconColorHover=%23fff&bgColorActive=%233B1E77&bgTextureActive=flat&borderColorActive=%233B1E77&fcActive=%23ffffff&iconColorActive=%23ffffff&bgColorHighlight=%23fffa90&bgTextureHighlight=flat&borderColorHighlight=%23dad55e&fcHighlight=%23777620&iconColorHighlight=%23777620&bgColorError=%23fddfdf&bgTextureError=flat&borderColorError=%23f1a899&fcError=%235f3f3f&iconColorError=%23cc0000&bgColorOverlay=%23aaaaaa&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=%23666666&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=5px&offsetTopShadow=0px&offsetLeftShadow=0px&cornerRadiusShadow=8px&bgImgOpacityHeader=&bgImgOpacityContent=&bgImgOpacityDefault=&bgImgOpacityHover=&bgImgOpacityActive=&bgImgOpacityHighlight=&bgImgOpacityError=
+* Copyright jQuery Foundation and other contributors; Licensed MIT */
+.JSFaq {
+  /* Layout helpers
+----------------------------------*/
+  /* Interaction Cues
+----------------------------------*/
+  /* Icons
+----------------------------------*/
+  /* states and images */
+  /* Misc visuals
+----------------------------------*/
+  /* Overlays */
+  /* Component containers
+----------------------------------*/
+  /* Interaction states
+----------------------------------*/
+  /* Interaction Cues
+----------------------------------*/
+  /* Icons
+----------------------------------*/
+  /* states and images */
+  /* positioning */
+  /* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
+  /* Misc visuals
+----------------------------------*/
+  /* Corner radius */
+  /* Overlays */ }
+  .JSFaq .ui-helper-hidden {
+    display: none; }
+  .JSFaq .ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; }
+  .JSFaq .ui-helper-reset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    line-height: 1.3;
+    text-decoration: none;
+    font-size: 100%;
+    list-style: none; }
+  .JSFaq .ui-helper-clearfix:before,
+  .JSFaq .ui-helper-clearfix:after {
+    content: "";
+    display: table;
+    border-collapse: collapse; }
+  .JSFaq .ui-helper-clearfix:after {
+    clear: both; }
+  .JSFaq .ui-helper-clearfix {
+    min-height: 0;
+    /* support: IE7 */ }
+  .JSFaq .ui-helper-zfix {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    filter: Alpha(Opacity=0);
+    /* support: IE8 */ }
+  .JSFaq .ui-front {
+    z-index: 100; }
+  .JSFaq .ui-state-disabled {
+    cursor: default !important; }
+  .JSFaq .ui-icon {
+    display: block;
+    text-indent: -99999px;
+    overflow: hidden;
+    background-repeat: no-repeat; }
+  .JSFaq .ui-widget-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .JSFaq .ui-draggable-handle {
+    -ms-touch-action: none;
+    touch-action: none; }
+  .JSFaq .ui-resizable {
+    position: relative; }
+  .JSFaq .ui-resizable-handle {
+    position: absolute;
+    font-size: 0.1px;
+    display: block;
+    -ms-touch-action: none;
+    touch-action: none; }
+  .JSFaq .ui-resizable-disabled .ui-resizable-handle,
+  .JSFaq .ui-resizable-autohide .ui-resizable-handle {
+    display: none; }
+  .JSFaq .ui-resizable-n {
+    cursor: n-resize;
+    height: 7px;
+    width: 100%;
+    top: -5px;
+    left: 0; }
+  .JSFaq .ui-resizable-s {
+    cursor: s-resize;
+    height: 7px;
+    width: 100%;
+    bottom: -5px;
+    left: 0; }
+  .JSFaq .ui-resizable-e {
+    cursor: e-resize;
+    width: 7px;
+    right: -5px;
+    top: 0;
+    height: 100%; }
+  .JSFaq .ui-resizable-w {
+    cursor: w-resize;
+    width: 7px;
+    left: -5px;
+    top: 0;
+    height: 100%; }
+  .JSFaq .ui-resizable-se {
+    cursor: se-resize;
+    width: 12px;
+    height: 12px;
+    right: 1px;
+    bottom: 1px; }
+  .JSFaq .ui-resizable-sw {
+    cursor: sw-resize;
+    width: 9px;
+    height: 9px;
+    left: -5px;
+    bottom: -5px; }
+  .JSFaq .ui-resizable-nw {
+    cursor: nw-resize;
+    width: 9px;
+    height: 9px;
+    left: -5px;
+    top: -5px; }
+  .JSFaq .ui-resizable-ne {
+    cursor: ne-resize;
+    width: 9px;
+    height: 9px;
+    right: -5px;
+    top: -5px; }
+  .JSFaq .ui-selectable {
+    -ms-touch-action: none;
+    touch-action: none; }
+  .JSFaq .ui-selectable-helper {
+    position: absolute;
+    z-index: 100;
+    border: 1px dotted black; }
+  .JSFaq .ui-sortable-handle {
+    -ms-touch-action: none;
+    touch-action: none; }
+  .JSFaq .list .ui-accordion .ui-accordion-header {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin: 2px 0 0 0;
+    padding: 0;
+    /*width: calc(100% - 180px);*/
+    height: 45px;
+    line-height: 45px;
+    min-height: 0;
+    /* support: IE7 */
+    font-size: 100%;
+    -webkit-transition: background-color 300ms ease-out;
+    -moz-transition: background-color 300ms ease-out;
+    -o-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out; }
+    .JSFaq .list .ui-accordion .ui-accordion-header:focus {
+      outline: none;
+      border: none; }
+  .JSFaq .list .ui-accordion .ui-accordion-icons {
+    padding-left: 3em; }
+  .JSFaq .list .ui-accordion .ui-accordion-icons .ui-accordion-icons {
+    padding-left: 3em; }
+  .JSFaq .ui-accordion .ui-accordion-header {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    margin: 2px 0 0 0;
+    line-height: 45px;
+    padding: 0;
+    height: 45px;
+    min-height: 0;
+    /* support: IE7 */
+    font-size: 100%;
+    -webkit-transition: background-color 300ms ease-out;
+    -moz-transition: background-color 300ms ease-out;
+    -o-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0; }
+    .JSFaq .ui-accordion .ui-accordion-header:focus {
+      outline: none;
+      border: none; }
+  .JSFaq .ui-accordion .ui-accordion-icons {
+    padding-left: 3em; }
+  .JSFaq .ui-accordion .ui-accordion-icons .ui-accordion-icons {
+    padding-left: 3em; }
+  .JSFaq .ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+    position: absolute;
+    left: 1em;
+    top: 50%;
+    margin-top: -8px; }
+  .JSFaq .ui-accordion .ui-accordion-content {
+    padding: 1em 2.2em;
+    border-top: 0;
+    overflow: auto; }
+  .JSFaq .ui-widget {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em; }
+  .JSFaq .ui-widget .ui-widget {
+    font-size: 1em; }
+  .JSFaq .ui-widget input,
+  .JSFaq .ui-widget select,
+  .JSFaq .ui-widget textarea,
+  .JSFaq .ui-widget button {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 1em; }
+  .JSFaq .ui-widget-content {
+    border: 1px solid #fff;
+    background: #fff;
+    color: rgba(59, 30, 119, 0.7); }
+  .JSFaq .ui-widget-content a {
+    color: rgba(59, 30, 119, 0.7); }
+  .JSFaq .ui-widget-header {
+    border: 1px solid #dddddd;
+    background: #e9e9e9;
+    color: #333;
+    font-weight: bold; }
+  .JSFaq .ui-widget-header a {
+    color: #333; }
+  .JSFaq .ui-state-default,
+  .JSFaq .ui-widget-content .ui-state-default,
+  .JSFaq .ui-widget-header .ui-state-default {
+    background: rgba(59, 30, 119, 0.15);
+    font-weight: normal;
+    color: rgba(59, 30, 119, 0.7); }
+  .JSFaq .ui-state-default a,
+  .JSFaq .ui-state-default a:link,
+  .JSFaq .ui-state-default a:visited {
+    color: rgba(59, 30, 119, 0.7);
+    text-decoration: none; }
+  .JSFaq .ui-state-hover,
+  .JSFaq .ui-widget-content .ui-state-hover,
+  .JSFaq .ui-widget-header .ui-state-hover,
+  .JSFaq .ui-state-focus,
+  .JSFaq .ui-widget-content .ui-state-focus,
+  .JSFaq .ui-widget-header .ui-state-focus {
+    background: rgba(59, 30, 119, 0.7);
+    font-weight: normal;
+    color: #fff !important; }
+  .JSFaq .ui-state-hover a,
+  .JSFaq .ui-state-hover a:hover,
+  .JSFaq .ui-state-hover a:link,
+  .JSFaq .ui-state-hover a:visited,
+  .JSFaq .ui-state-focus a,
+  .JSFaq .ui-state-focus a:hover,
+  .JSFaq .ui-state-focus a:link,
+  .JSFaq .ui-state-focus a:visited {
+    color: #fff !important;
+    text-decoration: none; }
+  .JSFaq .ui-state-active,
+  .JSFaq .ui-widget-content .ui-state-active,
+  .JSFaq .ui-widget-header .ui-state-active {
+    background: rgba(59, 30, 119, 0.7);
+    font-weight: normal;
+    color: #fff !important; }
+  .JSFaq .ui-state-active a,
+  .JSFaq .ui-state-active a:link,
+  .JSFaq .ui-state-active a:visited {
+    color: #fff;
+    text-decoration: none; }
+  .JSFaq .ui-state-highlight,
+  .JSFaq .ui-widget-content .ui-state-highlight,
+  .JSFaq .ui-widget-header .ui-state-highlight {
+    border: 1px solid #dad55e;
+    background: #fffa90;
+    color: #777620;
+    min-height: 45px; }
+  .JSFaq .ui-state-highlight a,
+  .JSFaq .ui-widget-content .ui-state-highlight a,
+  .JSFaq .ui-widget-header .ui-state-highlight a {
+    color: #777620; }
+  .JSFaq .ui-state-error,
+  .JSFaq .ui-widget-content .ui-state-error,
+  .JSFaq .ui-widget-header .ui-state-error {
+    border: 1px solid #f1a899;
+    background: #fddfdf;
+    color: #5f3f3f; }
+  .JSFaq .ui-state-error a,
+  .JSFaq .ui-widget-content .ui-state-error a,
+  .JSFaq .ui-widget-header .ui-state-error a {
+    color: #5f3f3f; }
+  .JSFaq .ui-state-error-text,
+  .JSFaq .ui-widget-content .ui-state-error-text,
+  .JSFaq .ui-widget-header .ui-state-error-text {
+    color: #5f3f3f; }
+  .JSFaq .ui-priority-primary,
+  .JSFaq .ui-widget-content .ui-priority-primary,
+  .JSFaq .ui-widget-header .ui-priority-primary {
+    font-weight: bold; }
+  .JSFaq .ui-priority-secondary,
+  .JSFaq .ui-widget-content .ui-priority-secondary,
+  .JSFaq .ui-widget-header .ui-priority-secondary {
+    opacity: .7;
+    filter: Alpha(Opacity=70);
+    /* support: IE8 */
+    font-weight: normal; }
+  .JSFaq .ui-state-disabled,
+  .JSFaq .ui-widget-content .ui-state-disabled,
+  .JSFaq .ui-widget-header .ui-state-disabled {
+    opacity: .35;
+    filter: Alpha(Opacity=35);
+    /* support: IE8 */
+    background-image: none; }
+  .JSFaq .ui-state-disabled .ui-icon {
+    filter: Alpha(Opacity=35);
+    /* support: IE8 - See #6059 */ }
+  .JSFaq .ui-icon {
+    width: 16px;
+    height: 16px; }
+  .JSFaq .ui-icon,
+  .JSFaq .ui-widget-content .ui-icon {
+    background-image: url("images/ui-icons_3B1E77_256x240.png"); }
+  .JSFaq .ui-widget-header .ui-icon {
+    background-image: url("images/ui-icons_444444_256x240.png"); }
+  .JSFaq .ui-state-default .ui-icon {
+    background-image: url("images/ui-icons_777777_256x240.png"); }
+  .JSFaq .ui-state-hover .ui-icon,
+  .JSFaq .ui-state-focus .ui-icon {
+    background-image: url("images/ui-icons_fff_256x240.png"); }
+  .JSFaq .ui-state-active .ui-icon {
+    background-image: url("images/ui-icons_ffffff_256x240.png"); }
+  .JSFaq .ui-state-highlight .ui-icon {
+    background-image: url("images/ui-icons_777620_256x240.png"); }
+  .JSFaq .ui-state-error .ui-icon,
+  .JSFaq .ui-state-error-text .ui-icon {
+    background-image: url("images/ui-icons_cc0000_256x240.png"); }
+  .JSFaq .ui-icon-blank {
+    background-position: 16px 16px; }
+  .JSFaq .ui-icon-carat-1-n {
+    background-position: 0 0; }
+  .JSFaq .ui-icon-carat-1-ne {
+    background-position: -16px 0; }
+  .JSFaq .ui-icon-carat-1-e {
+    background-position: -32px 0; }
+  .JSFaq .ui-icon-carat-1-se {
+    background-position: -48px 0; }
+  .JSFaq .ui-icon-carat-1-s {
+    background-position: -64px 0; }
+  .JSFaq .ui-icon-carat-1-sw {
+    background-position: -80px 0; }
+  .JSFaq .ui-icon-carat-1-w {
+    background-position: -96px 0; }
+  .JSFaq .ui-icon-carat-1-nw {
+    background-position: -112px 0; }
+  .JSFaq .ui-icon-carat-2-n-s {
+    background-position: -128px 0; }
+  .JSFaq .ui-icon-carat-2-e-w {
+    background-position: -144px 0; }
+  .JSFaq .ui-icon-triangle-1-n {
+    background-position: 0 -16px; }
+  .JSFaq .ui-icon-triangle-1-ne {
+    background-position: -16px -16px; }
+  .JSFaq .ui-icon-triangle-1-e {
+    background-position: -32px -16px; }
+  .JSFaq .ui-icon-triangle-1-se {
+    background-position: -48px -16px; }
+  .JSFaq .ui-icon-triangle-1-s {
+    background-position: -64px -16px; }
+  .JSFaq .ui-icon-triangle-1-sw {
+    background-position: -80px -16px; }
+  .JSFaq .ui-icon-triangle-1-w {
+    background-position: -96px -16px; }
+  .JSFaq .ui-icon-triangle-1-nw {
+    background-position: -112px -16px; }
+  .JSFaq .ui-icon-triangle-2-n-s {
+    background-position: -128px -16px; }
+  .JSFaq .ui-icon-triangle-2-e-w {
+    background-position: -144px -16px; }
+  .JSFaq .ui-icon-arrow-1-n {
+    background-position: 0 -32px; }
+  .JSFaq .ui-icon-arrow-1-ne {
+    background-position: -16px -32px; }
+  .JSFaq .ui-icon-arrow-1-e {
+    background-position: -32px -32px; }
+  .JSFaq .ui-icon-arrow-1-se {
+    background-position: -48px -32px; }
+  .JSFaq .ui-icon-arrow-1-s {
+    background-position: -64px -32px; }
+  .JSFaq .ui-icon-arrow-1-sw {
+    background-position: -80px -32px; }
+  .JSFaq .ui-icon-arrow-1-w {
+    background-position: -96px -32px; }
+  .JSFaq .ui-icon-arrow-1-nw {
+    background-position: -112px -32px; }
+  .JSFaq .ui-icon-arrow-2-n-s {
+    background-position: -128px -32px; }
+  .JSFaq .ui-icon-arrow-2-ne-sw {
+    background-position: -144px -32px; }
+  .JSFaq .ui-icon-arrow-2-e-w {
+    background-position: -160px -32px; }
+  .JSFaq .ui-icon-arrow-2-se-nw {
+    background-position: -176px -32px; }
+  .JSFaq .ui-icon-arrowstop-1-n {
+    background-position: -192px -32px; }
+  .JSFaq .ui-icon-arrowstop-1-e {
+    background-position: -208px -32px; }
+  .JSFaq .ui-icon-arrowstop-1-s {
+    background-position: -224px -32px; }
+  .JSFaq .ui-icon-arrowstop-1-w {
+    background-position: -240px -32px; }
+  .JSFaq .ui-icon-arrowthick-1-n {
+    background-position: 0 -48px; }
+  .JSFaq .ui-icon-arrowthick-1-ne {
+    background-position: -16px -48px; }
+  .JSFaq .ui-icon-arrowthick-1-e {
+    background-position: -32px -48px; }
+  .JSFaq .ui-icon-arrowthick-1-se {
+    background-position: -48px -48px; }
+  .JSFaq .ui-icon-arrowthick-1-s {
+    background-position: -64px -48px; }
+  .JSFaq .ui-icon-arrowthick-1-sw {
+    background-position: -80px -48px; }
+  .JSFaq .ui-icon-arrowthick-1-w {
+    background-position: -96px -48px; }
+  .JSFaq .ui-icon-arrowthick-1-nw {
+    background-position: -112px -48px; }
+  .JSFaq .ui-icon-arrowthick-2-n-s {
+    background-position: -128px -48px; }
+  .JSFaq .ui-icon-arrowthick-2-ne-sw {
+    background-position: -144px -48px; }
+  .JSFaq .ui-icon-arrowthick-2-e-w {
+    background-position: -160px -48px; }
+  .JSFaq .ui-icon-arrowthick-2-se-nw {
+    background-position: -176px -48px; }
+  .JSFaq .ui-icon-arrowthickstop-1-n {
+    background-position: -192px -48px; }
+  .JSFaq .ui-icon-arrowthickstop-1-e {
+    background-position: -208px -48px; }
+  .JSFaq .ui-icon-arrowthickstop-1-s {
+    background-position: -224px -48px; }
+  .JSFaq .ui-icon-arrowthickstop-1-w {
+    background-position: -240px -48px; }
+  .JSFaq .ui-icon-arrowreturnthick-1-w {
+    background-position: 0 -64px; }
+  .JSFaq .ui-icon-arrowreturnthick-1-n {
+    background-position: -16px -64px; }
+  .JSFaq .ui-icon-arrowreturnthick-1-e {
+    background-position: -32px -64px; }
+  .JSFaq .ui-icon-arrowreturnthick-1-s {
+    background-position: -48px -64px; }
+  .JSFaq .ui-icon-arrowreturn-1-w {
+    background-position: -64px -64px; }
+  .JSFaq .ui-icon-arrowreturn-1-n {
+    background-position: -80px -64px; }
+  .JSFaq .ui-icon-arrowreturn-1-e {
+    background-position: -96px -64px; }
+  .JSFaq .ui-icon-arrowreturn-1-s {
+    background-position: -112px -64px; }
+  .JSFaq .ui-icon-arrowrefresh-1-w {
+    background-position: -128px -64px; }
+  .JSFaq .ui-icon-arrowrefresh-1-n {
+    background-position: -144px -64px; }
+  .JSFaq .ui-icon-arrowrefresh-1-e {
+    background-position: -160px -64px; }
+  .JSFaq .ui-icon-arrowrefresh-1-s {
+    background-position: -176px -64px; }
+  .JSFaq .ui-icon-arrow-4 {
+    background-position: 0 -80px; }
+  .JSFaq .ui-icon-arrow-4-diag {
+    background-position: -16px -80px; }
+  .JSFaq .ui-icon-extlink {
+    background-position: -32px -80px; }
+  .JSFaq .ui-icon-newwin {
+    background-position: -48px -80px; }
+  .JSFaq .ui-icon-refresh {
+    background-position: -64px -80px; }
+  .JSFaq .ui-icon-shuffle {
+    background-position: -80px -80px; }
+  .JSFaq .ui-icon-transfer-e-w {
+    background-position: -96px -80px; }
+  .JSFaq .ui-icon-transferthick-e-w {
+    background-position: -112px -80px; }
+  .JSFaq .ui-icon-folder-collapsed {
+    background-position: 0 -96px; }
+  .JSFaq .ui-icon-folder-open {
+    background-position: -16px -96px; }
+  .JSFaq .ui-icon-document {
+    background-position: -32px -96px; }
+  .JSFaq .ui-icon-document-b {
+    background-position: -48px -96px; }
+  .JSFaq .ui-icon-note {
+    background-position: -64px -96px; }
+  .JSFaq .ui-icon-mail-closed {
+    background-position: -80px -96px; }
+  .JSFaq .ui-icon-mail-open {
+    background-position: -96px -96px; }
+  .JSFaq .ui-icon-suitcase {
+    background-position: -112px -96px; }
+  .JSFaq .ui-icon-comment {
+    background-position: -128px -96px; }
+  .JSFaq .ui-icon-person {
+    background-position: -144px -96px; }
+  .JSFaq .ui-icon-print {
+    background-position: -160px -96px; }
+  .JSFaq .ui-icon-trash {
+    background-position: -176px -96px; }
+  .JSFaq .ui-icon-locked {
+    background-position: -192px -96px; }
+  .JSFaq .ui-icon-unlocked {
+    background-position: -208px -96px; }
+  .JSFaq .ui-icon-bookmark {
+    background-position: -224px -96px; }
+  .JSFaq .ui-icon-tag {
+    background-position: -240px -96px; }
+  .JSFaq .ui-icon-home {
+    background-position: 0 -112px; }
+  .JSFaq .ui-icon-flag {
+    background-position: -16px -112px; }
+  .JSFaq .ui-icon-calendar {
+    background-position: -32px -112px; }
+  .JSFaq .ui-icon-cart {
+    background-position: -48px -112px; }
+  .JSFaq .ui-icon-pencil {
+    background-position: -64px -112px; }
+  .JSFaq .ui-icon-clock {
+    background-position: -80px -112px; }
+  .JSFaq .ui-icon-disk {
+    background-position: -96px -112px; }
+  .JSFaq .ui-icon-calculator {
+    background-position: -112px -112px; }
+  .JSFaq .ui-icon-zoomin {
+    background-position: -128px -112px; }
+  .JSFaq .ui-icon-zoomout {
+    background-position: -144px -112px; }
+  .JSFaq .ui-icon-search {
+    background-position: -160px -112px; }
+  .JSFaq .ui-icon-wrench {
+    background-position: -176px -112px; }
+  .JSFaq .ui-icon-gear {
+    background-position: -192px -112px; }
+  .JSFaq .ui-icon-heart {
+    background-position: -208px -112px; }
+  .JSFaq .ui-icon-star {
+    background-position: -224px -112px; }
+  .JSFaq .ui-icon-link {
+    background-position: -240px -112px; }
+  .JSFaq .ui-icon-cancel {
+    background-position: 0 -128px; }
+  .JSFaq .ui-icon-plus {
+    background-position: -16px -128px; }
+  .JSFaq .ui-icon-plusthick {
+    background-position: -32px -128px; }
+  .JSFaq .ui-icon-minus {
+    background-position: -48px -128px; }
+  .JSFaq .ui-icon-minusthick {
+    background-position: -64px -128px; }
+  .JSFaq .ui-icon-close {
+    background-position: -80px -128px; }
+  .JSFaq .ui-icon-closethick {
+    background-position: -96px -128px; }
+  .JSFaq .ui-icon-key {
+    background-position: -112px -128px; }
+  .JSFaq .ui-icon-lightbulb {
+    background-position: -128px -128px; }
+  .JSFaq .ui-icon-scissors {
+    background-position: -144px -128px; }
+  .JSFaq .ui-icon-clipboard {
+    background-position: -160px -128px; }
+  .JSFaq .ui-icon-copy {
+    background-position: -176px -128px; }
+  .JSFaq .ui-icon-contact {
+    background-position: -192px -128px; }
+  .JSFaq .ui-icon-image {
+    background-position: -208px -128px; }
+  .JSFaq .ui-icon-video {
+    background-position: -224px -128px; }
+  .JSFaq .ui-icon-script {
+    background-position: -240px -128px; }
+  .JSFaq .ui-icon-alert {
+    background-position: 0 -144px; }
+  .JSFaq .ui-icon-info {
+    background-position: -16px -144px; }
+  .JSFaq .ui-icon-notice {
+    background-position: -32px -144px; }
+  .JSFaq .ui-icon-help {
+    background-position: -48px -144px; }
+  .JSFaq .ui-icon-check {
+    background-position: -64px -144px; }
+  .JSFaq .ui-icon-bullet {
+    background-position: -80px -144px; }
+  .JSFaq .ui-icon-radio-on {
+    background-position: -96px -144px; }
+  .JSFaq .ui-icon-radio-off {
+    background-position: -112px -144px; }
+  .JSFaq .ui-icon-pin-w {
+    background-position: -128px -144px; }
+  .JSFaq .ui-icon-pin-s {
+    background-position: -144px -144px; }
+  .JSFaq .ui-icon-play {
+    background-position: 0 -160px; }
+  .JSFaq .ui-icon-pause {
+    background-position: -16px -160px; }
+  .JSFaq .ui-icon-seek-next {
+    background-position: -32px -160px; }
+  .JSFaq .ui-icon-seek-prev {
+    background-position: -48px -160px; }
+  .JSFaq .ui-icon-seek-end {
+    background-position: -64px -160px; }
+  .JSFaq .ui-icon-seek-start {
+    background-position: -80px -160px; }
+  .JSFaq .ui-icon-seek-first {
+    background-position: -80px -160px; }
+  .JSFaq .ui-icon-stop {
+    background-position: -96px -160px; }
+  .JSFaq .ui-icon-eject {
+    background-position: -112px -160px; }
+  .JSFaq .ui-icon-volume-off {
+    background-position: -128px -160px; }
+  .JSFaq .ui-icon-volume-on {
+    background-position: -144px -160px; }
+  .JSFaq .ui-icon-power {
+    background-position: 0 -176px; }
+  .JSFaq .ui-icon-signal-diag {
+    background-position: -16px -176px; }
+  .JSFaq .ui-icon-signal {
+    background-position: -32px -176px; }
+  .JSFaq .ui-icon-battery-0 {
+    background-position: -48px -176px; }
+  .JSFaq .ui-icon-battery-1 {
+    background-position: -64px -176px; }
+  .JSFaq .ui-icon-battery-2 {
+    background-position: -80px -176px; }
+  .JSFaq .ui-icon-battery-3 {
+    background-position: -96px -176px; }
+  .JSFaq .ui-icon-circle-plus {
+    background-position: 0 -192px; }
+  .JSFaq .ui-icon-circle-minus {
+    background-position: -16px -192px; }
+  .JSFaq .ui-icon-circle-close {
+    background-position: -32px -192px; }
+  .JSFaq .ui-icon-circle-triangle-e {
+    background-position: -48px -192px; }
+  .JSFaq .ui-icon-circle-triangle-s {
+    background-position: -64px -192px; }
+  .JSFaq .ui-icon-circle-triangle-w {
+    background-position: -80px -192px; }
+  .JSFaq .ui-icon-circle-triangle-n {
+    background-position: -96px -192px; }
+  .JSFaq .ui-icon-circle-arrow-e {
+    background-position: -112px -192px; }
+  .JSFaq .ui-icon-circle-arrow-s {
+    background-position: -128px -192px; }
+  .JSFaq .ui-icon-circle-arrow-w {
+    background-position: -144px -192px; }
+  .JSFaq .ui-icon-circle-arrow-n {
+    background-position: -160px -192px; }
+  .JSFaq .ui-icon-circle-zoomin {
+    background-position: -176px -192px; }
+  .JSFaq .ui-icon-circle-zoomout {
+    background-position: -192px -192px; }
+  .JSFaq .ui-icon-circle-check {
+    background-position: -208px -192px; }
+  .JSFaq .ui-icon-circlesmall-plus {
+    background-position: 0 -208px; }
+  .JSFaq .ui-icon-circlesmall-minus {
+    background-position: -16px -208px; }
+  .JSFaq .ui-icon-circlesmall-close {
+    background-position: -32px -208px; }
+  .JSFaq .ui-icon-squaresmall-plus {
+    background-position: -48px -208px; }
+  .JSFaq .ui-icon-squaresmall-minus {
+    background-position: -64px -208px; }
+  .JSFaq .ui-icon-squaresmall-close {
+    background-position: -80px -208px; }
+  .JSFaq .ui-icon-grip-dotted-vertical {
+    background-position: 0 -224px; }
+  .JSFaq .ui-icon-grip-dotted-horizontal {
+    background-position: -16px -224px; }
+  .JSFaq .ui-icon-grip-solid-vertical {
+    background-position: -32px -224px; }
+  .JSFaq .ui-icon-grip-solid-horizontal {
+    background-position: -48px -224px; }
+  .JSFaq .ui-icon-gripsmall-diagonal-se {
+    background-position: -64px -224px; }
+  .JSFaq .ui-icon-grip-diagonal-se {
+    background-position: -80px -224px; }
+  .JSFaq .ui-corner-all,
+  .JSFaq .ui-corner-top,
+  .JSFaq .ui-corner-left,
+  .JSFaq .ui-corner-tl {
+    border-top-left-radius: 0px; }
+  .JSFaq .ui-corner-all,
+  .JSFaq .ui-corner-top,
+  .JSFaq .ui-corner-right,
+  .JSFaq .ui-corner-tr {
+    border-top-right-radius: 0px; }
+  .JSFaq .ui-corner-all,
+  .JSFaq .ui-corner-bottom,
+  .JSFaq .ui-corner-left,
+  .JSFaq .ui-corner-bl {
+    border-bottom-left-radius: 0px; }
+  .JSFaq .ui-corner-all,
+  .JSFaq .ui-corner-bottom,
+  .JSFaq .ui-corner-right,
+  .JSFaq .ui-corner-br {
+    border-bottom-right-radius: 0px; }
+  .JSFaq .ui-widget-overlay {
+    background: #aaaaaa;
+    opacity: .3;
+    filter: Alpha(Opacity=30);
+    /* support: IE8 */ }
+  .JSFaq .ui-widget-shadow {
+    margin: 0px 0 0 0px;
+    padding: 5px;
+    background: #666666;
+    opacity: .3;
+    filter: Alpha(Opacity=30);
+    /* support: IE8 */
+    border-radius: 8px; }
+
