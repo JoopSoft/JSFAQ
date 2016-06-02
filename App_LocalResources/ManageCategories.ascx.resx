@@ -126,9 +126,6 @@
   <data name="btnCancel.Text" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Update</value>
-  </data>
   <data name="lblCategory.Help" xml:space="preserve">
     <value>Select category.</value>
   </data>

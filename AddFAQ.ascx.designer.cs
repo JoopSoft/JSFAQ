@@ -10,7 +10,7 @@
 namespace JS.Modules.JSFAQ {
     
     
-    public partial class ManageCategories {
+    public partial class AddFAQ {
         
         /// <summary>
         /// fontAwesomeCss control.
@@ -67,15 +67,6 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.Label lblSubTitle;
         
         /// <summary>
-        /// lnkNewFAQEntry control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkNewFAQEntry;
-        
-        /// <summary>
         /// lnkEditCategoriesList control.
         /// </summary>
         /// <remarks>
@@ -85,22 +76,31 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.HyperLink lnkEditCategoriesList;
         
         /// <summary>
-        /// lblCategory control.
+        /// lnkManageCategories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblCategory;
+        protected global::System.Web.UI.WebControls.HyperLink lnkManageCategories;
         
         /// <summary>
-        /// ddCategory control.
+        /// lblCategoryOption control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddCategory;
+        protected global::DotNetNuke.UI.UserControls.LabelControl lblCategoryOption;
+        
+        /// <summary>
+        /// rblCategoryOption control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList rblCategoryOption;
         
         /// <summary>
         /// lblCategoryName control.
@@ -139,22 +139,94 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.TextBox txtCategoryDescription;
         
         /// <summary>
-        /// lblShowCategory control.
+        /// lblCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblShowCategory;
+        protected global::DotNetNuke.UI.UserControls.LabelControl lblCategory;
         
         /// <summary>
-        /// cbShowCategory control.
+        /// ddCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbShowCategory;
+        protected global::System.Web.UI.WebControls.DropDownList ddCategory;
+        
+        /// <summary>
+        /// unusedLabel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DotNetNuke.UI.UserControls.LabelControl unusedLabel2;
+        
+        /// <summary>
+        /// txtEmptyCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmptyCategory;
+        
+        /// <summary>
+        /// lblQuestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DotNetNuke.UI.UserControls.LabelControl lblQuestion;
+        
+        /// <summary>
+        /// txtQuestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtQuestion;
+        
+        /// <summary>
+        /// lblAnswer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DotNetNuke.UI.UserControls.LabelControl lblAnswer;
+        
+        /// <summary>
+        /// txtAnswer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAnswer;
+        
+        /// <summary>
+        /// lblHideFAQ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DotNetNuke.UI.UserControls.LabelControl lblHideFAQ;
+        
+        /// <summary>
+        /// cbHideFAQ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox cbHideFAQ;
         
         /// <summary>
         /// btnScrollTop control.

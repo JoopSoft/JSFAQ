@@ -14,62 +14,61 @@ using DotNetNuke.Data;
 
 namespace JS.Modules.JSFAQ.Components
 {
-    class ItemController
+    class FAQController
     {
-        public void CreateItem(Item t)
+        public void CreateFAQ(FAQ f)
         {
             using (IDataContext ctx = DataContext.Instance())
             {
-                var rep = ctx.GetRepository<Item>();
-                rep.Insert(t);
+                var rep = ctx.GetRepository<FAQ>();
+                rep.Insert(f);
             }
         }
 
-        public void DeleteItem(int itemId, int moduleId)
+        public void DeleteFAQ(int faqId, int moduleId)
         {
-            var t = GetItem(itemId, moduleId);
-            DeleteItem(t);
+            var f = GetFAQ(faqId, moduleId);
+            DeleteItem(f);
         }
 
-        public void DeleteItem(Item t)
-        {
-            using (IDataContext ctx = DataContext.Instance())
-            {
-                var rep = ctx.GetRepository<Item>();
-                rep.Delete(t);
-            }
-        }
-
-        public IEnumerable<Item> GetItems(int moduleId)
-        {
-            IEnumerable<Item> t;
-            using (IDataContext ctx = DataContext.Instance())
-            {
-                var rep = ctx.GetRepository<Item>();
-                t = rep.Get(moduleId);
-            }
-            return t;
-        }
-
-        public Item GetItem(int itemId, int moduleId)
-        {
-            Item t;
-            using (IDataContext ctx = DataContext.Instance())
-            {
-                var rep = ctx.GetRepository<Item>();
-                t = rep.GetById(itemId, moduleId);
-            }
-            return t;
-        }
-
-        public void UpdateItem(Item t)
+        public void DeleteItem(FAQ f)
         {
             using (IDataContext ctx = DataContext.Instance())
             {
-                var rep = ctx.GetRepository<Item>();
-                rep.Update(t);
+                var rep = ctx.GetRepository<FAQ>();
+                rep.Delete(f);
             }
         }
 
+        public IEnumerable<FAQ> GetFAQs(int moduleId)
+        {
+            IEnumerable<FAQ> f;
+            using (IDataContext ctx = DataContext.Instance())
+            {
+                var rep = ctx.GetRepository<FAQ>();
+                f = rep.Get(moduleId);
+            }
+            return f;
+        }
+
+        public FAQ GetFAQ(int faqId, int moduleId)
+        {
+            FAQ f;
+            using (IDataContext ctx = DataContext.Instance())
+            {
+                var rep = ctx.GetRepository<FAQ>();
+                f = rep.GetById(faqId, moduleId);
+            }
+            return f;
+        }
+
+        public void UpdateFAQ(FAQ f)
+        {
+            using (IDataContext ctx = DataContext.Instance())
+            {
+                var rep = ctx.GetRepository<FAQ>();
+                rep.Update(f);
+            }
+        }
     }
 }

@@ -85,24 +85,6 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.CheckBox cbExpandCollapse;
         
         /// <summary>
-        /// lblQuestCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblQuestCategory;
-        
-        /// <summary>
-        /// cbQuestCategory control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbQuestCategory;
-        
-        /// <summary>
         /// lblEmptyCategory control.
         /// </summary>
         /// <remarks>
@@ -119,24 +101,6 @@ namespace JS.Modules.JSFAQ {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbEmptyCategory;
-        
-        /// <summary>
-        /// lblShowDates control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblShowDates;
-        
-        /// <summary>
-        /// cbShowDates control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbShowDates;
         
         /// <summary>
         /// lblDefaultOpenType control.

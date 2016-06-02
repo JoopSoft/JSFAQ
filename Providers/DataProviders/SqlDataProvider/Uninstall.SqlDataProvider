@@ -1,3 +1,7 @@
-﻿IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}JSFAQ_Items]') AND type in (N'U'))
-DROP TABLE {databaseOwner}[{objectQualifier}JSFAQ_Items]
+﻿IF EXISTS (SELECT * FROM sys.objects WHERE [object_id] = OBJECT_ID(N'{databaseOwner}[{objectQualifier}JSFAQ_Categories]') AND type in (N'U'))
+	DROP TABLE {databaseOwner}[{objectQualifier}JSFAQ_Categories]
+GO
+
+IF EXISTS (SELECT * FROM sys.objects WHERE [object_id] = OBJECT_ID(N'{databaseOwner}[{objectQualifier}JSFAQ_FAQs]') AND type in (N'U'))
+	DROP TABLE {databaseOwner}[{objectQualifier}JSFAQ_FAQs]
 GO

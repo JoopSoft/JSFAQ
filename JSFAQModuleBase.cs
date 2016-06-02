@@ -17,11 +17,22 @@ namespace JS.Modules.JSFAQ
 {
     public class JSFAQModuleBase : PortalModuleBase
     {
-        public int ItemId
+        public int CategoryId
         {
             get
             {
-                var qs = Request.QueryString["tid"];
+                var qs = Request.QueryString["cid"];
+                if (qs != null)
+                    return Convert.ToInt32(qs);
+                return -1;
+            }
+
+        }
+        public int FaqId
+        {
+            get
+            {
+                var qs = Request.QueryString["fid"];
                 if (qs != null)
                     return Convert.ToInt32(qs);
                 return -1;

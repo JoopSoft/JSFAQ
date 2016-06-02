@@ -19,6 +19,7 @@ using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Modules.Actions;
 using DotNetNuke.Services.Localization;
 using DotNetNuke.UI.Utilities;
+using System.Collections.Generic;
 
 namespace JS.Modules.JSFAQ
 {
@@ -41,58 +42,74 @@ namespace JS.Modules.JSFAQ
         {
             try
             {
-                var tc = new ItemController();
-                rptItemList.DataSource = tc.GetItems(ModuleId);
-                rptItemList.DataBind();
+                lnkFirstButton.NavigateUrl = lnkAdd.NavigateUrl = EditUrl("AddFAQ");
+                lnkEdit.NavigateUrl = EditUrl("ListCategories");
+                lnkManage.NavigateUrl = EditUrl("ManageCategories");
+                lnkSettings.NavigateUrl = "javascript:dnnModal.show('http://dnndev.me/JS-FAQ/ctl/Module/ModuleId/" + ModuleId + "?ReturnURL=/JS-FAQ&amp;popUp=true',/*showReturn*/false,550,950,true,'')";
+                bool faqPresent = false;
+                bool categoryPresent = false;
+                var cc = new CategoryController();
+                var fc = new FAQController();
+                var af = fc.GetFAQs(ModuleId);
+                var ac = cc.GetCategories(ModuleId); 
+                foreach (var f in af)
+                {
+                    if (f.FaqId > 0)
+                    {
+                        faqPresent = true;
+                    }
+                }
+                foreach (var c in ac)
+                {
+                    if (c.CategoryId > 0)
+                    {
+                        categoryPresent = true;
+                        break;
+                    }
+                }
+                if (IsEditable)
+                {
+                pnlFirstButton.Visible = !faqPresent;
+                lnkEdit.Visible = categoryPresent;
+                }
+                else
+                {
+                    pnlFirstButton.Visible = pnlAdmin.Visible = false;
+                }
+                rptCategory.DataSource = cc.GetCategories(ModuleId);
+                rptCategory.DataBind();
+                foreach (RepeaterItem ri in rptCategory.Items)
+                {
+                    var rptFaqEntries = ri.FindControl("rptFaqEntries") as Repeater;
+                    var categoryName = ri.FindControl("CategoryName") as Label;
+                    List<FAQ> faqSource = new List<FAQ>();
+                    foreach (FAQ f in af)
+                    {
+                        if (f.FaqCategory == categoryName.Text && f.ShowFaq)
+                        {
+                            faqSource.Add(f);
+                        }
+                    }
+                    rptFaqEntries.DataSource = faqSource;
+                    rptFaqEntries.DataBind();
+                }
+                List<FAQ> notCategorizedSource = new List<FAQ>();
+                rptNotCategorized.Visible = false;
+                foreach (var f in af)
+                {
+                    if (f.FaqCategory == "NotCategorized" && f.ShowFaq)
+                    {
+                        notCategorizedSource.Add(f);
+                        rptNotCategorized.Visible = true;
+                    }
+                }
+                rptNotCategorized.DataSource = notCategorizedSource;
+                rptNotCategorized.DataBind();
             }
             catch (Exception exc) //Module failed to load
             {
                 Exceptions.ProcessModuleLoadException(this, exc);
             }
-        }
-
-        protected void rptItemListOnItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.Item)
-            {
-                var lnkEdit = e.Item.FindControl("lnkEdit") as HyperLink;
-                var lnkDelete = e.Item.FindControl("lnkDelete") as LinkButton;
-
-                var pnlAdminControls = e.Item.FindControl("pnlAdmin") as Panel;
-
-                var t = (Item)e.Item.DataItem;
-
-                if (IsEditable && lnkDelete != null && lnkEdit != null && pnlAdminControls != null)
-                {
-                    pnlAdminControls.Visible = true;
-                    lnkDelete.CommandArgument = t.ItemId.ToString();
-                    lnkDelete.Enabled = lnkDelete.Visible = lnkEdit.Enabled = lnkEdit.Visible = true;
-
-                    lnkEdit.NavigateUrl = EditUrl(string.Empty, string.Empty, "Edit", "tid=" + t.ItemId);
-
-                    ClientAPI.AddButtonConfirm(lnkDelete, Localization.GetString("ConfirmDelete", LocalResourceFile));
-                }
-                else
-                {
-                    pnlAdminControls.Visible = false;
-                }
-            }
-        }
-
-
-        public void rptItemListOnItemCommand(object source, RepeaterCommandEventArgs e)
-        {
-            if (e.CommandName == "Edit")
-            {
-                Response.Redirect(EditUrl(string.Empty, string.Empty, "Edit", "tid=" + e.CommandArgument));
-            }
-
-            if (e.CommandName == "Delete")
-            {
-                var tc = new ItemController();
-                tc.DeleteItem(Convert.ToInt32(e.CommandArgument), ModuleId);
-            }
-            Response.Redirect(DotNetNuke.Common.Globals.NavigateURL());
         }
 
         public ModuleActionCollection ModuleActions
@@ -102,8 +119,8 @@ namespace JS.Modules.JSFAQ
                 var actions = new ModuleActionCollection
                     {
                         {
-                            GetNextActionID(), Localization.GetString("EditModule", LocalResourceFile), "", "", "",
-                            EditUrl(), false, SecurityAccessLevel.Edit, true, false
+                            GetNextActionID(), Localization.GetString("AddFAQ", LocalResourceFile), "", "", "",
+                            EditUrl("AddFAQ"), false, SecurityAccessLevel.Edit, true, false
                         },
                         {
                             GetNextActionID(), Localization.GetString("ManageCategories", LocalResourceFile), "", "", "",

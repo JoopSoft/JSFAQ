@@ -49,8 +49,6 @@
             <foldername>JSFAQ</foldername>
             <businessControllerClass>JS.Modules.JSFAQ.Components.FeatureController, JSFAQ</businessControllerClass>
             <supportedFeatures>
-              <supportedFeature>IPortable</supportedFeature>
-              <supportedFeature>ISearchable</supportedFeature>
               <supportedFeature>IUpgradeable</supportedFeature>
             </supportedFeatures>
             <moduleDefinitions>
@@ -69,10 +67,10 @@
                     <viewOrder>0</viewOrder>
                   </moduleControl>
                   <moduleControl>
-                    <controlKey>Edit</controlKey>
-                    <controlSrc>DesktopModules/JSFAQ/Edit.ascx</controlSrc>
+                    <controlKey>AddFAQ</controlKey>
+                    <controlSrc>DesktopModules/JSFAQ/AddFAQ.ascx</controlSrc>
                     <supportsPartialRendering>False</supportsPartialRendering>
-                    <controlTitle>Edit Content</controlTitle>
+                    <controlTitle>Add FAQ</controlTitle>
                     <controlType>Edit</controlType>
                     <iconFile />
                     <helpUrl />

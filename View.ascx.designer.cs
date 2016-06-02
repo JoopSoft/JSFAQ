@@ -22,15 +22,6 @@ namespace JS.Modules.JSFAQ {
         protected global::DotNetNuke.Web.Client.ClientResourceManagement.DnnCssInclude fontAwesomeCss;
         
         /// <summary>
-        /// rptItemList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptItemList;
-        
-        /// <summary>
         /// pnlFirstButton control.
         /// </summary>
         /// <remarks>
@@ -94,6 +85,15 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.HyperLink lnkManage;
         
         /// <summary>
+        /// lnkSettings control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkSettings;
+        
+        /// <summary>
         /// rptCategory control.
         /// </summary>
         /// <remarks>
@@ -103,13 +103,13 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.Repeater rptCategory;
         
         /// <summary>
-        /// lnkExpandCollapse control.
+        /// rptNotCategorized control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkExpandCollapse;
+        protected global::System.Web.UI.WebControls.Repeater rptNotCategorized;
         
         /// <summary>
         /// DnnJsInclude1 control.

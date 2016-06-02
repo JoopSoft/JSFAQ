@@ -33,37 +33,18 @@ namespace JS.Modules.JSFAQ
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    //Implement your edit logic for your module
-            //    if (!Page.IsPostBack)
-            //    {
-            //        //get a list of users to assign the user to the Object
-            //        ddlAssignedUser.DataSource = UserController.GetUsers(PortalId);
-            //        ddlAssignedUser.DataTextField = "Username";
-            //        ddlAssignedUser.DataValueField = "UserId";
-            //        ddlAssignedUser.DataBind();
-            //
-            //        //check if we have an ID passed in via a querystring parameter, if so, load that item to edit.
-            //        //ItemId is defined in the ItemModuleBase.cs file
-            //        if (ItemId > 0)
-            //        {
-            //            var tc = new ItemController();
-            //
-            //            var t = tc.GetItem(ItemId, ModuleId);
-            //            if (t != null)
-            //            {
-            //                txtName.Text = t.ItemName;
-            //                txtDescription.Text = t.ItemDescription;
-            //                ddlAssignedUser.Items.FindByValue(t.AssignedUserId.ToString()).Selected = true;
-            //            }
-            //        }
-            //    }
-            //}
-            //catch (Exception exc) //Module failed to load
-            //{
-            //    Exceptions.ProcessModuleLoadException(this, exc);
-            //}
+            try
+            {
+                if (!Page.IsPostBack)
+                {
+                    lnkManageCategories.NavigateUrl = EditUrl("ManageCategories");
+                    lnkNewFAQEntry.NavigateUrl = EditUrl("AddFAQ");
+                }
+            }
+            catch (Exception exc) //Module failed to load
+            {
+                Exceptions.ProcessModuleLoadException(this, exc);
+            }
         }        
     }
 }

@@ -22,7 +22,7 @@
                 </asp:Panel>
                 <asp:HyperLink ID="lnkNewFAQEntry" runat="server" CssClass="btn btn-primary link-add no-txt"
                     data-toggle="tooltip" ToolTip="Add FAQ Entry" />
-                <asp:LinkButton ID="btnEditCategoriesList" runat="server" CssClass="btn btn-primary link-edit-square no-txt"
+                <asp:HyperLink ID="lnkEditCategoriesList" runat="server" CssClass="btn btn-primary link-edit-square no-txt"
                     data-toggle="tooltip" ToolTip="Edit Category Lists" />
             </div>
         </div>
@@ -30,9 +30,8 @@
             <div class="fieldset">
                 <div class="dnnFormItem">
                     <dnn:label ID="lblCategory" runat="server" />
-                    <asp:DropDownList ID="ddCategory" runat="server" CssClass="selectpicker form-control single-select" >
+                    <asp:DropDownList ID="ddCategory" runat="server" CssClass="selectpicker form-control single-select" AutoPostBack ="true" OnSelectedIndexChanged="ddCategory_SelectedIndexChanged" >
                         <asp:ListItem Value="new" Text="Create New" />
-                        <asp:ListItem Value="category1" Text="Category 1" />
                     </asp:DropDownList>
                 </div>
             </div>
@@ -50,11 +49,6 @@
                         TextMode="MultiLine" Rows="3" Columns="20" Text="Saved content here.." 
                         Placeholder="Description" />
                 </div>
-                <div class="dnnFormItem">
-                    <dnn:label ID="unusedLabel" runat="server" />
-                    <asp:LinkButton ID="btnCreateCategory" runat="server" CssClass="btn btn-primary link-add"
-                        Text="Create Category" />
-                </div>
             </div>
             <div class="fieldset">
                 <div class="dnnFormItem">
@@ -70,9 +64,9 @@
     <div class="dnnForm controls">
         <div class="dnnFormItem">
             <asp:LinkButton ID="btnSave" runat="server" CssClass="btnSubmit btn btn-primary link-save"
-                ResourceKey="btnSave" />
+                OnClick="btnSave_Click" />
             <asp:LinkButton ID="btnCancel" runat="server" CssClass="btn btn-default link-cancel"
-                ResourceKey="btnCancel" />
+                ResourceKey="btnCancel" OnClick="btnCancel_Click" />
         </div>
     </div>
 </div>

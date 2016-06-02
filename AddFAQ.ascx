@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Edit.ascx.cs" Inherits="JS.Modules.JSFAQ.Edit" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AddFAQ.ascx.cs" Inherits="JS.Modules.JSFAQ.AddFAQ" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.UI.WebControls" Assembly="DotNetNuke" %>
 <%@ Register TagPrefix="dnn" TagName="label" Src="~/controls/LabelControl.ascx" %>
@@ -22,7 +22,7 @@
                 </asp:Panel>
                 <%--<asp:HyperLink ID="lnkNewCategory" runat="server" CssClass="btn btn-primary link-exch no-txt"
                     data-toggle="tooltip" ToolTip="Create New Category" />--%>
-                <asp:LinkButton ID="btnEditCategoriesList" runat="server" CssClass="btn btn-primary link-edit-square no-txt"
+                <asp:HyperLink ID="lnkEditCategoriesList" runat="server" CssClass="btn btn-primary link-edit-square no-txt"
                     data-toggle="tooltip" ToolTip="Edit Category Lists" />
                 <asp:HyperLink ID="lnkManageCategories" runat="server" CssClass="btn btn-primary link-settings no-txt"
                     data-toggle="tooltip" ToolTip="Manage Categories" />
@@ -35,8 +35,8 @@
                     <asp:RadioButtonList ID="rblCategoryOption" runat="server" CssClass="hidder-radio-option"
                         data-grouped-class=".categoryOption" >
                         <asp:ListItem data-target=".createOption" Value="new" Text="Create New"></asp:ListItem>
-                        <asp:ListItem data-target=".selectOption" Value="list" Text="Select from Available List" Selected="True"></asp:ListItem>
-                        <asp:ListItem data-target=".emptyOption" Value="null" Text="Empty"></asp:ListItem>
+                        <asp:ListItem data-target=".selectOption" Value="list" Text="Select from Available List"></asp:ListItem>
+                        <asp:ListItem data-target=".emptyOption" Value="empty" Text="Empty"></asp:ListItem>
                     </asp:RadioButtonList>
                 </div>
             </div>
@@ -52,18 +52,9 @@
                         TextMode="MultiLine" Rows="3" Columns="20"
                         Placeholder="Description"  />
                 </div>
-                <div class="categoryOption createOption dnnFormItem">
-                    <dnn:label ID="unusedLabel" runat="server" />
-                    <asp:LinkButton ID="btnCreateCategory" runat="server" CssClass="btn btn-primary link-add"
-                        Text="Create Category" />
-                </div>
-
                 <div class="categoryOption selectOption dnnFormItem no-spacing">
                     <dnn:label ID="lblCategory" runat="server" />
                     <asp:DropDownList ID="ddCategory" runat="server" CssClass="selectpicker form-control single-select">
-                        <asp:ListItem Value="category1" Text="Category 1" />
-                        <asp:ListItem Value="category2" Text="Category 2" />
-                        <asp:ListItem Value="category3" Text="Category 3" />
                     </asp:DropDownList>
                 </div>
                 <div class="categoryOption emptyOption dnnFormItem no-spacing">
@@ -94,12 +85,6 @@
                     <asp:CheckBox ID="cbHideFAQ" runat="server" />
                 </div>
             </div>
-            <div class="fieldset">
-                <div class="dnnFormItem">
-                    <dnn:label ID="lblPublishFromTo" runat="server" />
-                    <asp:TextBox ID="txtPublishFromTo" runat="server" CssClass="datePicker form-control" />
-                </div>
-            </div>
             <asp:LinkButton ID="btnScrollTop" runat="server" CssClass="scroll-action btn btn-primary link-up no-txt"
                 ToolTip="Top" />
         </fieldset>
@@ -107,9 +92,9 @@
     <div class="dnnForm controls">
         <div class="dnnFormItem">
             <asp:LinkButton ID="btnSave" runat="server" CssClass="btnSubmit btn btn-primary link-save"
-                ResourceKey="btnSave" />
+                ResourceKey="btnSave" OnClick="btnSave_Click" />
             <asp:LinkButton ID="btnCancel" runat="server" CssClass="btn btn-default link-cancel"
-                ResourceKey="btnCancel" />
+                ResourceKey="btnCancel" OnClick="btnCancel_Click" />
         </div>
     </div>
 

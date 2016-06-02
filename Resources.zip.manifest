@@ -2,7 +2,7 @@
   <files>
     <file>
       <path />
-      <name>Edit.ascx</name>
+      <name>AddFAQ.ascx</name>
     </file>
     <file>
       <path />
@@ -130,7 +130,7 @@
     </file>
     <file>
       <path>Temp Fixes/</path>
-      <name>JS-FAQ-Module_Fixes.txt</name>
+      <name>JS-FAQ-Module_JSON_Structures.txt</name>
     </file>
   </files>
 </dotnetnuke>

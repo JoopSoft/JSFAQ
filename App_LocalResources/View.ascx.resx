@@ -132,7 +132,7 @@
   <data name="EditItem.Text" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="EditModule.Text" xml:space="preserve">
+  <data name="AddFAQ.Text" xml:space="preserve">
     <value>Add FAQ Entry</value>
   </data>
   <data name="ListCategories.Text" xml:space="preserve">

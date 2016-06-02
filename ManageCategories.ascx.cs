@@ -17,53 +17,115 @@ using DotNetNuke.Services.Exceptions;
 
 namespace JS.Modules.JSFAQ
 {
-    /// -----------------------------------------------------------------------------
-    /// <summary>   
-    /// The Edit class is used to manage content
-    /// 
-    /// Typically your edit control would be used to create new content, or edit existing content within your module.
-    /// The ControlKey for this control is "Edit", and is defined in the manifest (.dnn) file.
-    /// 
-    /// Because the control inherits from JSFAQModuleBase you have access to any custom properties
-    /// defined there, as well as properties from DNN such as PortalId, ModuleId, TabId, UserId and many more.
-    /// 
-    /// </summary>
-    /// -----------------------------------------------------------------------------
     public partial class ManageCategories : JSFAQModuleBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    //Implement your edit logic for your module
-            //    if (!Page.IsPostBack)
-            //    {
-            //        //get a list of users to assign the user to the Object
-            //        ddlAssignedUser.DataSource = UserController.GetUsers(PortalId);
-            //        ddlAssignedUser.DataTextField = "Username";
-            //        ddlAssignedUser.DataValueField = "UserId";
-            //        ddlAssignedUser.DataBind();
-            //
-            //        //check if we have an ID passed in via a querystring parameter, if so, load that item to edit.
-            //        //ItemId is defined in the ItemModuleBase.cs file
-            //        if (ItemId > 0)
-            //        {
-            //            var tc = new ItemController();
-            //
-            //            var t = tc.GetItem(ItemId, ModuleId);
-            //            if (t != null)
-            //            {
-            //                txtName.Text = t.ItemName;
-            //                txtDescription.Text = t.ItemDescription;
-            //                ddlAssignedUser.Items.FindByValue(t.AssignedUserId.ToString()).Selected = true;
-            //            }
-            //        }
-            //    }
-            //}
-            //catch (Exception exc) //Module failed to load
-            //{
-            //    Exceptions.ProcessModuleLoadException(this, exc);
-            //}
-        }        
+            try
+            {
+                if (!Page.IsPostBack)
+                {
+                    lnkNewFAQEntry.NavigateUrl = EditUrl("AddFAQ");
+                    lnkEditCategoriesList.NavigateUrl = EditUrl("ListCategories");
+                    btnSave_Name();
+                    bool categoryPresent = false;
+                    var cc = new CategoryController();
+                    var ac = cc.GetCategories(ModuleId);
+                    foreach (var c in ac)
+                    {
+                        if (c.CategoryId > 0)
+                        {
+                            categoryPresent = true;
+                            break;
+                        }
+                    }
+                    lnkEditCategoriesList.Visible = categoryPresent;
+                    if (categoryPresent)
+                    {
+                        headerMenu.CssClass = "dnnFormMessage two-controls dnnFormTitle no-spacing";
+                    }
+                    else
+                    {
+                        headerMenu.CssClass = "dnnFormMessage one-control dnnFormTitle no-spacing";
+                    }
+                    if (CategoryId > 0)
+                    {
+                        var c = cc.GetCategory(CategoryId, ModuleId);
+                        if (c != null)
+                        {
+                            ddCategory.SelectedValue = c.CategoryName;
+                            txtCategoryName.Text = c.CategoryName;
+                            txtCategoryDescription.Text = c.CategoryDescription;
+                            cbShowCategory.Checked = c.ShowCategory;
+                        }
+                    }
+                    else
+                    {
+                        ddCategory.SelectedValue = "new";
+                    }
+                }
+            }
+            catch (Exception exc) //Module failed to load
+            {
+                Exceptions.ProcessModuleLoadException(this, exc);
+            }
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            var cc = new CategoryController();
+            var c = new Category();
+            if (ddCategory.SelectedValue != "new")
+            {
+                int tempId = CategoryId;
+                var ac = cc.GetCategories(ModuleId);
+                foreach (var cat in ac)
+                {
+                    if (cat.CategoryName == ddCategory.SelectedValue)
+                    {
+                        tempId = cat.CategoryId;
+                    }
+                }
+                c = cc.GetCategory(tempId, ModuleId);
+                c.CategoryName = txtCategoryName.Text.Trim();
+                c.CategoryDescription = txtCategoryDescription.Text.Trim();
+                c.ShowCategory = cbShowCategory.Checked;
+                c.ModuleId = ModuleId;
+                cc.UpdateCategory(c);
+            }
+            else
+            {
+                c = new Category()
+                {
+                    CategoryName = txtCategoryName.Text.Trim(),
+                    CategoryDescription = txtCategoryDescription.Text.Trim(),
+                    ShowCategory = cbShowCategory.Checked,
+                    ModuleId = ModuleId
+                };
+                cc.CreateCategory(c);
+            }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(DotNetNuke.Common.Globals.NavigateURL());
+        }
+
+        protected void ddCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave_Name();
+        }
+
+        protected void btnSave_Name()
+        {
+            if (ddCategory.SelectedValue == "new")
+            {
+                btnSave.Text = "Create";
+            }
+            else
+            {
+                btnSave.Text = "Update";
+            }
+        }
     }
 }

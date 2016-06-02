@@ -3,3 +3,8 @@ D:\websites\dnndev.me\bin\JSFAQ.pdb
 D:\websites\dnndev.me\DesktopModules\JSFAQ\obj\Release\JSFAQ.csprojResolveAssemblyReference.cache
 D:\websites\dnndev.me\DesktopModules\JSFAQ\obj\Release\JSFAQ.dll
 D:\websites\dnndev.me\DesktopModules\JSFAQ\obj\Release\JSFAQ.pdb
+D:\websites\dnndev.me\Website\bin\JSFAQ.dll
+D:\websites\dnndev.me\Website\bin\JSFAQ.pdb
+D:\websites\dnndev.me\Website\DesktopModules\JSFAQ\obj\Release\JSFAQ.csprojResolveAssemblyReference.cache
+D:\websites\dnndev.me\Website\DesktopModules\JSFAQ\obj\Release\JSFAQ.dll
+D:\websites\dnndev.me\Website\DesktopModules\JSFAQ\obj\Release\JSFAQ.pdb

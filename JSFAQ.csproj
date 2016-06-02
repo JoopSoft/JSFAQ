@@ -68,9 +68,11 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\FAQ.cs" />
+    <Compile Include="Components\FAQController.cs" />
     <Compile Include="Components\FeatureController.cs" />
-    <Compile Include="Components\ItemController.cs" />
-    <Compile Include="Components\Item.cs" />
+    <Compile Include="Components\CategoryController.cs" />
+    <Compile Include="Components\Category.cs" />
     <Compile Include="ListCategories.ascx.cs">
       <DependentUpon>ListCategories.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -91,12 +93,12 @@
     <Compile Include="JSFAQModuleSettingsBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Edit.ascx.cs">
-      <DependentUpon>Edit.ascx</DependentUpon>
+    <Compile Include="AddFAQ.ascx.cs">
+      <DependentUpon>AddFAQ.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Edit.ascx.designer.cs">
-      <DependentUpon>Edit.ascx</DependentUpon>
+    <Compile Include="AddFAQ.ascx.designer.cs">
+      <DependentUpon>AddFAQ.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.ascx.cs">
@@ -117,7 +119,7 @@
   <ItemGroup>
     <Content Include="ListCategories.ascx" />
     <Content Include="ManageCategories.ascx" />
-    <Content Include="Edit.ascx" />
+    <Content Include="AddFAQ.ascx" />
     <Content Include="Images\Icons\checkbox.png" />
     <Content Include="Images\Icons\h-icon.png" />
     <Content Include="Images\Icons\icon.png" />
@@ -168,7 +170,7 @@
     <Content Include="App_LocalResources\View.ascx.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\Edit.ascx.resx" />
+    <Content Include="App_LocalResources\AddFAQ.ascx.resx" />
     <Content Include="App_LocalResources\Settings.ascx.resx" />
   </ItemGroup>
   <ItemGroup>

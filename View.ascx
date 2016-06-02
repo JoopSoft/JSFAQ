@@ -6,30 +6,6 @@
 
 <div class="JSFaq">
 
-    <asp:Repeater ID="rptItemList" runat="server" OnItemDataBound="rptItemListOnItemDataBound" OnItemCommand="rptItemListOnItemCommand">
-        <HeaderTemplate>
-            <ul class="tm_tl">
-        </HeaderTemplate>
-
-        <ItemTemplate>
-            <li class="tm_t">
-                <h3>
-                    <asp:Label ID="lblitemName" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"ItemName").ToString() %>' />
-                </h3>
-                <asp:Label ID="lblItemDescription" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"ItemDescription").ToString() %>' CssClass="tm_td" />
-
-                <asp:Panel ID="pnlAdmin" runat="server" Visible="false">
-                    <asp:HyperLink ID="lnkEdit" runat="server" ResourceKey="EditItem.Text" Visible="false" Enabled="false" />
-                    <asp:LinkButton ID="lnkDelete" runat="server" ResourceKey="DeleteItem.Text" Visible="false" Enabled="false" CommandName="Delete" />
-                </asp:Panel>
-            </li>
-        </ItemTemplate>
-        <FooterTemplate>
-            </ul>
-        </FooterTemplate>
-    </asp:Repeater>
-
-
     <%--FIRST CONTROLS--%>
     <asp:Panel ID="pnlFirstButton" runat="server" CssClass="btn-group">
         <asp:HyperLink ID="lnkFirstButton" runat="server" CssClass="btn btn-primary link-add"
@@ -46,51 +22,41 @@
                 ResourceKey="lnkEdit" ToolTip="Edit Category Lists" />
             <asp:HyperLink ID="lnkManage" runat="server" CssClass="btn btn-primary link-settings no-txt"
                 ResourceKey="lnkManage" ToolTip="Manage Categories" />
+            <asp:HyperLink ID="lnkSettings" runat="server" CssClass="btn btn-primary link-settings no-txt"
+                ResourceKey="lnkManage" ToolTip="Settings" />
 
         </div>
     </asp:Panel>
 
     <asp:Repeater ID="rptCategory" runat="server">
-        <HeaderTemplate></HeaderTemplate>
         <ItemTemplate>
+            <h3><asp:Label ID="CategoryName" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"CategoryName").ToString() %>' /></h3>
             <asp:Repeater ID="rptFaqEntries" runat="server">
-                <ItemTemplate></ItemTemplate>
+                <ItemTemplate>
+            <div class="accordion">
+                    <h3><asp:Label ID="FaqQuestion" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"FaqQuestion").ToString() %>' /></h3>
+                    <div><asp:Label ID="FaqAnswer" runat="server"  Text='<%#DataBinder.Eval(Container.DataItem,"FaqAnswer").ToString() %>' /></div>
+            </div>
+                </ItemTemplate>
+                <FooterTemplate>
+                    <a href="" class="btn btn-primary custom-acc-ctrl" >Expand All</a>
+                </FooterTemplate>
             </asp:Repeater>
         </ItemTemplate>
     </asp:Repeater>
 
-    <h3>Category 1</h3>
-    <div class="accordion">
-
-        <h3>Section 1</h3>
-        <div>
-            <p>Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</p>
-        </div>
-
-        <h3>Section 2</h3>
-        <div>
-            <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
-        </div>
-
-        <h3>Section 3</h3>
-        <div>
-            <p>Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis. Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui. </p>
-            <ul>
-                <li>List item one</li>
-                <li>List item two</li>
-                <li>List item three</li>
-            </ul>
-        </div>
-
-        <h3>Section 4</h3>
-        <div>
-            <p>Cras dictum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia mauris vel est. </p>
-            <p>Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
-        </div>
-
-    </div>
-
-    <asp:HyperLink ID="lnkExpandCollapse" runat="server" CssClass="btn btn-primary custom-acc-ctrl" />
+    <asp:Repeater ID="rptNotCategorized" runat="server">
+        <ItemTemplate>
+            <hr />
+            <div class="accordion">
+                    <h3><asp:Label ID="FaqQuestion" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"FaqQuestion").ToString() %>' /></h3>
+                    <div><asp:Label ID="FaqAnswer" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"FaqAnswer").ToString() %>' /></div>
+            </div>
+                </ItemTemplate>
+                <FooterTemplate>
+                    <a href="" class="btn btn-primary custom-acc-ctrl" >Expand All</a>
+                </FooterTemplate>
+    </asp:Repeater>
 
 </div>
 
@@ -141,8 +107,8 @@
 
         var headers = $('.accordion .accordion-header');
         var contentAreas = $('.accordion .ui-accordion-content ').hide();
-        var expandLink = $('#<%= lnkExpandCollapse.ClientID %>');
-
+        var expandLink = $('.custom-acc-ctrl');
+<%--        var expandLink = $('#<%= lnkExpandCollapse.ClientID %>');--%>
         headers.click(function() {
             var panel = $(this).next();
             var isOpen = panel.is(':visible');
@@ -188,7 +154,7 @@
         });
 
     // Expand/Collapse all
-    //    $('#<%= lnkExpandCollapse.ClientID %>')
+    //    $('#<= lnkExpandCollapse.ClientID %>')
     //        .html($lnkExpand + ' Expand all')
     //        .click(function() {
     //            $('.JSFaq .accordion .ui-accordion-header:not(.ui-state-active)').next().slideToggle();

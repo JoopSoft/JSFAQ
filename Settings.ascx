@@ -33,24 +33,10 @@
             </div>
             <div class="fieldset">
                 <div class="dnnFormItem">
-                    <dnn:Label ID="lblQuestCategory" runat="server" />
-                    <asp:CheckBox ID="cbQuestCategory" runat="server" />
-                </div>
-            </div>
-            <div class="fieldset">
-                <div class="dnnFormItem">
                     <dnn:Label ID="lblEmptyCategory" runat="server" />
                     <asp:CheckBox ID="cbEmptyCategory" runat="server" />
                 </div>
             </div>
-            <div class="fieldset">
-                <div class="dnnFormItem">
-                    <dnn:Label ID="lblShowDates" runat="server" />
-                    <asp:CheckBox ID="cbShowDates" runat="server" />
-                </div>
-            </div>
-
-
             <div class="fieldset">
                 <div class="dnnFormItem">
                     <dnn:Label ID="lblDefaultOpenType" runat="server" />
