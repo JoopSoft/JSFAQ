@@ -40,6 +40,15 @@ namespace JS.Modules.JSFAQ {
         protected global::DotNetNuke.Web.Client.ClientResourceManagement.DnnCssInclude bootstrapSelectCss;
         
         /// <summary>
+        /// moduleCss control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DotNetNuke.Web.Client.ClientResourceManagement.DnnCssInclude moduleCss;
+        
+        /// <summary>
         /// joopSoft control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,51 @@ namespace JS.Modules.JSFAQ {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink joopSoft;
+        
+        /// <summary>
+        /// headerMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel headerMenu;
+        
+        /// <summary>
+        /// lblSubTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSubTitle;
+        
+        /// <summary>
+        /// lnkNewFAQEntry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkNewFAQEntry;
+        
+        /// <summary>
+        /// lnkEditCategoriesList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkEditCategoriesList;
+        
+        /// <summary>
+        /// lnkManageCategories control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkManageCategories;
         
         /// <summary>
         /// lblCategoryType control.

@@ -21,6 +21,7 @@
             $lnkDelete = '<i class="fa fa-trash-o"></i>',
             $lnkBack = '<i class="fa fa-angle-left"></i>',
             $lnkUp = '<i class="fa fa-angle-up"></i>',
+            $lnkDown = '<i class="fa fa-angle-down"></i>',
             $lnkHome = '<i class="fa fa-home"></i>',
             $lnkAll = '<i class="fa fa-external-link"></i>',
             $lnkUpload = '<i class="fa fa-upload"></i>',
@@ -35,6 +36,8 @@
             $lnkClose = '<i class="fa fa-close"></i>',
             $lnkWarning = '<i class="fa fa-warning"></i>',
             $lnkSettings = '<i class="fa fa-cog"></i>',
+            $lnkCheck = '<i class="fa fa-check"></i>',
+            $lnkManage = '<i class="fa fa-wrench"></i>',
 
             $lnkSelUp = '<i class="fa fa-arrow-circle-up"></i>',
             $lnkSelDown = '<i class="fa fa-arrow-circle-down"></i>',
@@ -54,6 +57,7 @@
             $('.JSFaq .link-delete').prepend($lnkDelete + ' ');
             $('.JSFaq .link-back').prepend($lnkBack + ' ');
             $('.JSFaq .link-up').prepend($lnkUp + ' ');
+            $('.JSFaq .link-down').prepend($lnkDown + ' ');
 
             $('.JSFaq .link-select-up').append(' ' + $lnkSelUp);
             $('.JSFaq .link-select-down').append(' ' + $lnkSelDown);
@@ -71,6 +75,8 @@
             $('.JSFaq .link-close').prepend($lnkClose + ' ');
             $('.JSFaq .link-warning').prepend($lnkWarning + ' ');
             $('.JSFaq .link-settings').prepend($lnkSettings + ' ');
+            $('.JSFaq .link-check').prepend($lnkCheck + ' ');
+            $('.JSFaq .link-manage').prepend($lnkManage + ' ');
             $('.JSFaq .link-success').prepend($lnkSuccess + ' ');
             $('.JSFaq .link-list').prepend($lnkList + ' ');
             $('.JSFaq .link-exch').prepend($lnkExch + ' ');
@@ -84,6 +90,7 @@
             $('.JSFaq .link-delete.no-txt').html($lnkDelete);
             $('.JSFaq .link-back.no-txt').html($lnkBack);
             $('.JSFaq .link-up.no-txt').html($lnkUp);
+            $('.JSFaq .link-down.no-txt').html($lnkDown);
 
             $('.JSFaq .link-select-up.no-txt').html($lnkSelUp);
             $('.JSFaq .link-select-down.no-txt').html($lnkSelDown);
@@ -102,6 +109,8 @@
             $('.JSFaq .link-close.no-txt').html($lnkClose);
             $('.JSFaq .link-warning.no-txt').html($lnkWarning);
             $('.JSFaq .link-settings.no-txt').html($lnkSettings);
+            $('.JSFaq .link-check.no-txt').html($lnkCheck);
+            $('.JSFaq .link-manage.no-txt').html($lnkManage);
             $('.JSFaq .link-success.no-txt').html($lnkSuccess);
             $('.JSFaq .link-list.no-txt').html($lnkList);
             $('.JSFaq .link-exch.no-txt').html($lnkExch);

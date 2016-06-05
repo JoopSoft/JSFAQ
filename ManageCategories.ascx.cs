@@ -42,11 +42,11 @@ namespace JS.Modules.JSFAQ
                     lnkEditCategoriesList.Visible = categoryPresent;
                     if (categoryPresent)
                     {
-                        headerMenu.CssClass = "dnnFormMessage two-controls dnnFormTitle no-spacing";
+                        headerMenu.CssClass = "dnnFormMessage three-controls dnnFormTitle no-spacing";
                     }
                     else
                     {
-                        headerMenu.CssClass = "dnnFormMessage one-control dnnFormTitle no-spacing";
+                        headerMenu.CssClass = "dnnFormMessage two-controls dnnFormTitle no-spacing";
                     }
                     if (CategoryId > 0)
                     {

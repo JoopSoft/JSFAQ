@@ -20,7 +20,7 @@
                 ResourceKey="lnkAdd" ToolTip="Add FAQ Entry" />
             <asp:HyperLink ID="lnkEdit" runat="server" CssClass="btn btn-primary link-list no-txt"
                 ResourceKey="lnkEdit" ToolTip="Edit Category Lists" />
-            <asp:HyperLink ID="lnkManage" runat="server" CssClass="btn btn-primary link-settings no-txt"
+            <asp:HyperLink ID="lnkManage" runat="server" CssClass="btn btn-primary link-manage no-txt"
                 ResourceKey="lnkManage" ToolTip="Manage Categories" />
             <asp:HyperLink ID="lnkSettings" runat="server" CssClass="btn btn-primary link-settings no-txt"
                 ResourceKey="lnkManage" ToolTip="Settings" />
@@ -28,35 +28,79 @@
         </div>
     </asp:Panel>
 
-    <asp:Repeater ID="rptCategory" runat="server">
-        <ItemTemplate>
-            <h3><asp:Label ID="CategoryName" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"CategoryName").ToString() %>' /></h3>
-            <asp:Repeater ID="rptFaqEntries" runat="server">
-                <ItemTemplate>
-            <div class="accordion">
-                    <h3><asp:Label ID="FaqQuestion" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"FaqQuestion").ToString() %>' /></h3>
-                    <div><asp:Label ID="FaqAnswer" runat="server"  Text='<%#DataBinder.Eval(Container.DataItem,"FaqAnswer").ToString() %>' /></div>
-            </div>
-                </ItemTemplate>
-                <FooterTemplate>
-                    <a href="" class="btn btn-primary custom-acc-ctrl" >Expand All</a>
-                </FooterTemplate>
-            </asp:Repeater>
-        </ItemTemplate>
-    </asp:Repeater>
+    <div class="wrapper">
+        <asp:Repeater ID="rptCategory" runat="server">
+            <ItemTemplate>
+                <h3>
+                    <asp:Label ID="CategoryName" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"CategoryName").ToString() %>' />
+                </h3>
+                <asp:Repeater ID="rptFaqEntries" runat="server">
+                    <HeaderTemplate>
+                        <div class="accordion">
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <asp:Panel ID="pnlFaqItem" runat="server" CssClass="faq-item four-controls">
+                            <h3>
+                                <asp:Label ID="FaqQuestion" runat="server" CssClass=""
+                                    Text='<%#DataBinder.Eval(Container.DataItem,"FaqQuestion").ToString() %>' />
+                            </h3>
+                            <div>
+                                <asp:Label ID="FaqAnswer" runat="server" CssClass=""
+                                    Text='<%#DataBinder.Eval(Container.DataItem,"FaqAnswer").ToString() %>' />
+                            </div>
+                        </asp:Panel>
+                        <asp:Panel ID="pnlControlButtonsAdmin" runat="server" CssClass="pnl-controls">
+                            <asp:HyperLink ID="lnkSortingUp" runat="server" CssClass="btn btn-primary control-btn link-up no-txt"
+                                data-toggle="tooltip" ToolTip="Move Up" />
+                            <asp:HyperLink ID="lnkSortingDown" runat="server" CssClass="btn btn-primary control-btn link-down no-txt"
+                                data-toggle="tooltip" ToolTip="Move Down" />
+                            <asp:HyperLink ID="lnkEdit" runat="server" CssClass="btn btn-primary control-btn link-edit no-txt"
+                                data-toggle="tooltip" ToolTip="Edit" />
+                            <asp:HyperLink ID="lnkDelete" runat="server" CssClass="btn btn-primary control-btn link-delete error no-txt"
+                                data-toggle="tooltip" ToolTip="Delete" />
+                        </asp:Panel>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </div>
+                        <a href="#" class="btn btn-primary custom-acc-ctrl">Expand All</a>
+                    </FooterTemplate>
+                </asp:Repeater>
+            </ItemTemplate>
+        </asp:Repeater>
 
-    <asp:Repeater ID="rptNotCategorized" runat="server">
-        <ItemTemplate>
-            <hr />
-            <div class="accordion">
-                    <h3><asp:Label ID="FaqQuestion" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"FaqQuestion").ToString() %>' /></h3>
-                    <div><asp:Label ID="FaqAnswer" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"FaqAnswer").ToString() %>' /></div>
-            </div>
-                </ItemTemplate>
-                <FooterTemplate>
-                    <a href="" class="btn btn-primary custom-acc-ctrl" >Expand All</a>
-                </FooterTemplate>
-    </asp:Repeater>
+        <asp:Repeater ID="rptNotCategorized" runat="server">
+            <HeaderTemplate>
+                <div class="accordion">
+            </HeaderTemplate>
+            <ItemTemplate>
+                <asp:Panel ID="pnlFaqItem" runat="server" CssClass="faq-item four-controls">
+                    <h3>
+                        <asp:Label ID="FaqQuestion" runat="server" CssClass=""
+                            Text='<%#DataBinder.Eval(Container.DataItem,"FaqQuestion").ToString() %>' />
+                    </h3>
+                    <div>
+                        <asp:Label ID="FaqAnswer" runat="server" CssClass=""
+                            Text='<%#DataBinder.Eval(Container.DataItem,"FaqAnswer").ToString() %>' />
+                    </div>
+                </asp:Panel>
+                <asp:Panel ID="pnlControlButtonsAdmin" runat="server" CssClass="pnl-controls">
+                    <asp:HyperLink ID="lnkSortingUp" runat="server" CssClass="btn btn-primary control-btn link-up no-txt"
+                        data-toggle="tooltip" ToolTip="Move Up" />
+                    <asp:HyperLink ID="lnkSortingDown" runat="server" CssClass="btn btn-primary control-btn link-down no-txt"
+                        data-toggle="tooltip" ToolTip="Move Down" />
+                    <asp:HyperLink ID="lnkEdit" runat="server" CssClass="btn btn-primary control-btn link-edit no-txt"
+                        data-toggle="tooltip" ToolTip="Edit" />
+                    <asp:HyperLink ID="lnkDelete" runat="server" CssClass="btn btn-primary control-btn link-delete error no-txt"
+                        data-toggle="tooltip" ToolTip="Delete" />
+                </asp:Panel>
+            </ItemTemplate>
+            <FooterTemplate>
+                </div>
+                <a href="#" class="btn btn-primary custom-acc-ctrl">Expand All</a>
+            </FooterTemplate>
+        </asp:Repeater>
+    </div>
+
 
 </div>
 
@@ -64,13 +108,13 @@
 <dnn:DnnJsInclude ID="DnnJsInclude1" runat="server" FilePath="//code.jquery.com/ui/1.11.4/jquery-ui.js" />
 
 <script type="text/javascript">
+    (function ($, Sys) {
+        
+        $('.JSFaq #<%= lblContentHolder.ClientID %>')
+            .html('<b class="link-check"> Activated</b> | JSFaq Module: ' + <%= ModuleId %>);
 
-    var $lnkCollapse = '<i class="fa fa-minus-circle"></i>',
-        $lnkExpand = '<i class="fa fa-plus-circle"></i>';
-
-    $('.JSFaq #<%= lblContentHolder.ClientID %>')
-    .html('JSFaq Module: ' + <%= ModuleId %>);
-
+        var $lnkCollapse = '<i class="fa fa-compress"></i>',
+            $lnkExpand = '<i class="fa fa-expand"></i>';
 
         var icons = {
             header: 'ui-icon-plus',
@@ -84,7 +128,7 @@
               collapsible: true, // false, true
               disabled: false, // false, true
               event: 'click', // 'click', 'mouseover'
-              //header: '> div > h3',
+              header: '> .faq-item > h3',
               heightStyle: 'content', // 'auto', 'fill', 'content'
               icons: icons
           })
@@ -99,9 +143,9 @@
         //          // Refresh accordion to handle new order
         //          $(this).accordion("refresh");
         //      }
-    //  })
+        //  })
         .disableSelection()
-    ;
+        ;
 
 
 
@@ -123,14 +167,14 @@
         });
 
         // hook up the expand/collapse all
-    expandLink
-        .html($lnkExpand + ' Expand all')
-        .click(function(){
-            var isAllOpen = $(this).data('isAllOpen');
+        expandLink
+            .html($lnkExpand + ' Expand all')
+            .click(function(){
+                var isAllOpen = $(this).data('isAllOpen');
     
-            contentAreas[isAllOpen? 'hide': 'show']()
-                .trigger(isAllOpen? 'hide': 'show');
-        });
+                contentAreas[isAllOpen? 'hide': 'show']()
+                    .trigger(isAllOpen? 'hide': 'show');
+            });
         // when panels open or close, check to see if they're all open
         contentAreas.on({
             // whenever we open a panel, check to see if they're all open
@@ -153,20 +197,21 @@
             }
         });
 
-    // Expand/Collapse all
-    //    $('#<= lnkExpandCollapse.ClientID %>')
-    //        .html($lnkExpand + ' Expand all')
-    //        .click(function() {
-    //            $('.JSFaq .accordion .ui-accordion-header:not(.ui-state-active)').next().slideToggle();
-    //            $('.JSFaq .accordion .ui-accordion-header:not(.ui-state-active)').next().toggleClass('ui-icon-plus ui-icon-minus');
-    //            $(this).html($(this).html() === ($lnkExpand + ' Expand all') ? ($lnkCollapse + ' Collapse all') : ($lnkExpand + ' Expand all'));
-    //            $(this).toggleClass('collapse');
-    //
-    //
-    //            return false;
-    //            //$('.JSFaq .accordion').accordion("refresh");
-    //        });
+        // Expand/Collapse all
+        //    $('#<= lnkExpandCollapse.ClientID %>')
+        //        .html($lnkExpand + ' Expand all')
+        //        .click(function() {
+        //            $('.JSFaq .accordion .ui-accordion-header:not(.ui-state-active)').next().slideToggle();
+        //            $('.JSFaq .accordion .ui-accordion-header:not(.ui-state-active)').next().toggleClass('ui-icon-plus ui-icon-minus');
+        //            $(this).html($(this).html() === ($lnkExpand + ' Expand all') ? ($lnkCollapse + ' Collapse all') : ($lnkExpand + ' Expand all'));
+        //            $(this).toggleClass('collapse');
+        //
+        //
+        //            return false;
+        //            //$('.JSFaq .accordion').accordion("refresh");
+        //        });
 
+    })(jQuery, window.Sys);
 </script>
 
 <dnn:DnnJsInclude ID="mainJs" runat="server" FilePath="~/DesktopModules/JSFAQ/Js/main.min.js" Priority="22" />

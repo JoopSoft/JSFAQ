@@ -114,6 +114,7 @@
 
             .JSFaqMenu {
                 display: inline-block;
+                margin: 0;
 
                 .dnnFormTitle {
                     float: left;
@@ -256,8 +257,7 @@
                 color: $dark;
             }
 
-            label span,
-            .dnnBoxLabel {
+            label span {
                 color: $dark-alpha-lg;
                 font-weight: bold;
             }
@@ -793,6 +793,11 @@
         visibility: hidden !important;
     }
 
+    .dnnBoxLabel {
+        color: $dark-alpha-lg;
+        font-weight: bold;
+    }
+
     .aspNetDisabled,
     a.aspNetDisabled,
     .dnnDisabled,
@@ -800,7 +805,60 @@
     [disabled=disabled] {
         color: $dark-alpha;
         cursor: default;
+
+        .dnnRadiobutton,
+        .dnnBoxLabel {
+            cursor: default;
+        }
+
+        .dnnBoxLabel {
+            color: $dark-alpha;
+        }
     }
+
+    .wrapper {
+        float: left;
+        width: 100%;
+
+        h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .accordion {
+
+            .faq-item {
+                float: left;
+                width: 100%;
+
+                &.no-controls {
+                    width: 100%;
+                }
+
+                &.one-control {
+                    width: calc(100% - 45px);
+                }
+
+                &.two-controls {
+                    width: calc(100% - 90px);
+                }
+
+                &.three-controls {
+                    width: calc(100% - 135px);
+                }
+
+                &.four-controls {
+                    width: calc(100% - 180px);
+                }
+            }
+
+            .pnl-controls {
+                float: left;
+                margin: 2px 0 0 0;
+            }
+        }
+    }
+
 
     .pnl-admin {
         .btn {
@@ -829,6 +887,7 @@
         bottom: 0;
         right: 15px;
         display: $none;
+        z-index: 9999;
 
         &.btn {
             padding: 0;
@@ -911,8 +970,33 @@
             }
         }
 
+        &.error {
+            background-color: $warning;
+
+            &:hover {
+                background-color: $warning-xlg;
+            }
+        }
+
+        &.control-btn {
+            float: left;
+            padding: 0;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            color: $dark-alpha-lg;
+            background: $dark-alpha-xsm;
+
+            &:hover {
+                color: $white;
+            }
+        }
+
         &.custom-acc-ctrl {
+            float: left;
             display: block;
+            width: 100%;
+            margin: 2px 0 30px 0;
         }
     }
     /*BOOTSTRAP RE-STYLING */
@@ -949,25 +1033,25 @@
         padding: 0;
     }
 
-    ::-webkit-input-placeholder {
-        color: $dark-alpha-xsm;
-        font-style: italic;
-    }
+}
+::-webkit-input-placeholder {
+    color: $dark-alpha;
+    font-style: italic;
+}
 
-    :-moz-placeholder {
-        color: $dark-alpha-xsm;
-        font-style: italic;
-    }
+:-moz-placeholder {
+    color: $dark-alpha;
+    font-style: italic;
+}
 
-    ::-moz-placeholder {
-        color: $dark-alpha-xsm;
-        font-style: italic;
-    }
+::-moz-placeholder {
+    color: $dark-alpha;
+    font-style: italic;
+}
 
-    :-ms-input-placeholder {
-        color: $dark-alpha-xsm;
-        font-style: italic;
-    }
+:-ms-input-placeholder {
+    color: $dark-alpha;
+    font-style: italic;
 }
 
 //DNN STYLE FIXES

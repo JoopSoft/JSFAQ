@@ -6,6 +6,7 @@
 <dnn:DnnCssInclude ID="fontAwesomeCss" runat="server" FilePath="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
 <dnn:DnnCssInclude ID="bootstrapCss" runat="server" FilePath="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
 <dnn:DnnCssInclude ID="bootstrapSelectCss" runat="server" FilePath="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" />
+<dnn:DnnCssInclude ID="moduleCss" runat="server" FilePath="~/DesktopModules/JSFAQ/module.min.css" />
 
 <div class="JSFaq">
     <div class="dnnForm list">
@@ -14,16 +15,16 @@
                 <%=LocalizeString("Title")%>
                 <asp:HyperLink ID="joopSoft" runat="server" />
             </h3>
-        </div>
-        <div class="dnnFormSectionHead">
             <div class="dnnFormItem JSFaqMenu">
-                <asp:Panel ID="headerMenu" runat="server" CssClass="dnnFormMessage two-controls dnnFormTitle no-spacing">
+                <asp:Panel ID="headerMenu" runat="server" CssClass="dnnFormMessage three-controls dnnFormTitle no-spacing">
                     <asp:Label ID="lblSubTitle" runat="server" Text="List Currently Categories" />
                 </asp:Panel>
                 <asp:HyperLink ID="lnkNewFAQEntry" runat="server" CssClass="btn btn-primary link-add no-txt"
                     data-toggle="tooltip" ToolTip="Add FAQ Entry" />
-                <asp:HyperLink ID="lnkManageCategories" runat="server" CssClass="btn btn-primary link-settings no-txt"
+                <asp:HyperLink ID="lnkManageCategories" runat="server" CssClass="btn btn-primary link-manage no-txt"
                     data-toggle="tooltip" ToolTip="Manage Categories" />
+                <asp:HyperLink ID="lnkSettings" runat="server" CssClass="btn btn-primary link-settings no-txt"
+                    data-toggle="tooltip" ToolTip="Settings" />
             </div>
         </div>
         <fieldset>

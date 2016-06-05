@@ -169,7 +169,7 @@
     <value>Publish From/To</value>
   </data>
   <data name="Title.Text" xml:space="preserve">
-    <value>JSFAQModule - Add/Edit</value>
+    <value>JSFAQModule</value>
   </data>
   <data name="lblCategoryDescription.Help" xml:space="preserve">
     <value>Enter category description.</value>

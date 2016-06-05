@@ -87,7 +87,8 @@
           background: rgba(59, 30, 119, 0.5);
           /*display: $none;*/ }
       .JSFaq .dnnForm .dnnFormSectionHead .JSFaqMenu {
-        display: inline-block; }
+        display: inline-block;
+        margin: 0; }
         .JSFaq .dnnForm .dnnFormSectionHead .JSFaqMenu .dnnFormTitle {
           float: left;
           background-color: rgba(59, 30, 119, 0.7); }
@@ -169,8 +170,7 @@
         margin-top: 0; }
       .JSFaq .dnnForm .dnnFormItem select > option {
         color: #3b1e77; }
-      .JSFaq .dnnForm .dnnFormItem label span,
-      .JSFaq .dnnForm .dnnFormItem .dnnBoxLabel {
+      .JSFaq .dnnForm .dnnFormItem label span {
         color: rgba(59, 30, 119, 0.7);
         font-weight: bold; }
       .JSFaq .dnnForm .dnnFormItem > .dnnLabel,
@@ -682,6 +682,9 @@
   .JSFaq .hidden {
     display: none !important;
     visibility: hidden !important; }
+  .JSFaq .dnnBoxLabel {
+    color: rgba(59, 30, 119, 0.7);
+    font-weight: bold; }
   .JSFaq .aspNetDisabled,
   .JSFaq a.aspNetDisabled,
   .JSFaq .dnnDisabled,
@@ -689,6 +692,45 @@
   .JSFaq [disabled=disabled] {
     color: rgba(59, 30, 119, 0.25);
     cursor: default; }
+    .JSFaq .aspNetDisabled .dnnRadiobutton,
+    .JSFaq .aspNetDisabled .dnnBoxLabel,
+    .JSFaq a.aspNetDisabled .dnnRadiobutton,
+    .JSFaq a.aspNetDisabled .dnnBoxLabel,
+    .JSFaq .dnnDisabled .dnnRadiobutton,
+    .JSFaq .dnnDisabled .dnnBoxLabel,
+    .JSFaq a.dnnDisabled .dnnRadiobutton,
+    .JSFaq a.dnnDisabled .dnnBoxLabel,
+    .JSFaq [disabled=disabled] .dnnRadiobutton,
+    .JSFaq [disabled=disabled] .dnnBoxLabel {
+      cursor: default; }
+    .JSFaq .aspNetDisabled .dnnBoxLabel,
+    .JSFaq a.aspNetDisabled .dnnBoxLabel,
+    .JSFaq .dnnDisabled .dnnBoxLabel,
+    .JSFaq a.dnnDisabled .dnnBoxLabel,
+    .JSFaq [disabled=disabled] .dnnBoxLabel {
+      color: rgba(59, 30, 119, 0.25); }
+  .JSFaq .wrapper {
+    float: left;
+    width: 100%; }
+    .JSFaq .wrapper h3 {
+      font-size: 1rem;
+      margin-bottom: 5px; }
+    .JSFaq .wrapper .accordion .faq-item {
+      float: left;
+      width: 100%; }
+      .JSFaq .wrapper .accordion .faq-item.no-controls {
+        width: 100%; }
+      .JSFaq .wrapper .accordion .faq-item.one-control {
+        width: calc(100% - 45px); }
+      .JSFaq .wrapper .accordion .faq-item.two-controls {
+        width: calc(100% - 90px); }
+      .JSFaq .wrapper .accordion .faq-item.three-controls {
+        width: calc(100% - 135px); }
+      .JSFaq .wrapper .accordion .faq-item.four-controls {
+        width: calc(100% - 180px); }
+    .JSFaq .wrapper .accordion .pnl-controls {
+      float: left;
+      margin: 2px 0 0 0; }
   .JSFaq .pnl-admin .btn.btn-primary {
     background-color: rgba(0, 0, 0, 0.5); }
     .JSFaq .pnl-admin .btn.btn-primary:hover, .JSFaq .pnl-admin .btn.btn-primary:focus, .JSFaq .pnl-admin .btn.btn-primary:active, .JSFaq .pnl-admin .btn.btn-primary.active {
@@ -702,7 +744,8 @@
     position: fixed;
     bottom: 0;
     right: 15px;
-    display: none; }
+    display: none;
+    z-index: 9999; }
     .JSFaq .scroll-action.btn {
       padding: 0;
       width: 50px;
@@ -765,8 +808,25 @@
       color: rgba(255, 255, 255, 0.5); }
       .JSFaq .btn[disabled=disabled]:hover, .JSFaq .btn.aspNetDisabled:hover, .JSFaq .btn.dnnDisabled:hover {
         background-color: rgba(59, 30, 119, 0.7); }
+    .JSFaq .btn.error {
+      background-color: #d9534f; }
+      .JSFaq .btn.error:hover {
+        background-color: rgba(217, 83, 79, 0.8); }
+    .JSFaq .btn.control-btn {
+      float: left;
+      padding: 0;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      color: rgba(59, 30, 119, 0.7);
+      background: rgba(59, 30, 119, 0.15); }
+      .JSFaq .btn.control-btn:hover {
+        color: #fff; }
     .JSFaq .btn.custom-acc-ctrl {
-      display: block; }
+      float: left;
+      display: block;
+      width: 100%;
+      margin: 2px 0 30px 0; }
   .JSFaq .btn-group.form-control {
     width: 50%;
     max-width: 450px; }
@@ -789,18 +849,22 @@
   .JSFaq .no-spacing {
     margin: 0;
     padding: 0; }
-  .JSFaq ::-webkit-input-placeholder {
-    color: rgba(59, 30, 119, 0.15);
-    font-style: italic; }
-  .JSFaq :-moz-placeholder {
-    color: rgba(59, 30, 119, 0.15);
-    font-style: italic; }
-  .JSFaq ::-moz-placeholder {
-    color: rgba(59, 30, 119, 0.15);
-    font-style: italic; }
-  .JSFaq :-ms-input-placeholder {
-    color: rgba(59, 30, 119, 0.15);
-    font-style: italic; }
+
+::-webkit-input-placeholder {
+  color: rgba(59, 30, 119, 0.25);
+  font-style: italic; }
+
+:-moz-placeholder {
+  color: rgba(59, 30, 119, 0.25);
+  font-style: italic; }
+
+::-moz-placeholder {
+  color: rgba(59, 30, 119, 0.25);
+  font-style: italic; }
+
+:-ms-input-placeholder {
+  color: rgba(59, 30, 119, 0.25);
+  font-style: italic; }
 
 .mark, mark {
   padding: 0 !important;
