@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Settings.ascx.cs" Inherits="JS.Modules.JSFAQ.Settings" %>
-<%@ Register TagName="label" TagPrefix="dnn" Src="~/controls/LabelControl.ascx" %>
 <%@ Register TagPrefix="dnn" Namespace="DotNetNuke.Web.Client.ClientResourceManagement" Assembly="DotNetNuke.Web.Client" %>
+<%@ Register TagName="label" TagPrefix="dnn" Src="~/controls/LabelControl.ascx" %>
 
 <dnn:DnnCssInclude ID="fontAwesomeCss" runat="server" FilePath="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
 <dnn:DnnCssInclude ID="bootstrapCss" runat="server" FilePath="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
@@ -32,7 +32,7 @@
                     <dnn:Label ID="lblCategoryType" runat="server" />
                     <asp:DropDownList ID="ddCategoryType" runat="server" CssClass="selectpicker form-control single-select" >
                         <asp:ListItem Value="list" Text="List" />
-                        <asp:ListItem Value="tree" Text="Tree view" />
+                        <asp:ListItem Value="nav-menu" Text="Navigation Menu" />
                         <asp:ListItem Value="dropdown" Text="Dropdown list" />                        
                     </asp:DropDownList>
                 </div>

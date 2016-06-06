@@ -818,8 +818,7 @@
 
     .wrapper {
         float: left;
-        width: 100%;
-
+        /*width: 100%;*/
         h3 {
             font-size: 1rem;
             margin-bottom: 5px;
@@ -858,6 +857,59 @@
             }
         }
     }
+    /* Custom Styles */
+    ul {
+
+        &.nav-tabs {
+            width: 100%;
+            margin-top: 20px;
+
+            @include border-radius(0);
+            border: 1px solid $dark-alpha;
+            margin: 0;
+
+            li {
+                margin: 0;
+                border-top: 1px solid #ddd;
+
+                &:first-child {
+                    border-top: none;
+
+                    a {
+                        border-radius: 4px 4px 0 0;
+                    }
+                }
+
+                &:last-child a {
+                    border-radius: 0 0 4px 4px;
+                }
+
+                a {
+                    margin: 0;
+                    padding: 8px 16px;
+                    border-radius: 0;
+                }
+
+                &.active a,
+                &.active a:hover {
+                    color: #fff;
+                    background: #0088cc;
+                    border: 1px solid #0088cc;
+                }
+            }
+
+            &.affix {
+                top: 30px; /* Set the top position of pinned element */
+            }
+        }
+    }
+
+
+
+
+
+
+
 
 
     .pnl-admin {
@@ -1032,7 +1084,6 @@
         margin: 0;
         padding: 0;
     }
-
 }
 ::-webkit-input-placeholder {
     color: $dark-alpha;

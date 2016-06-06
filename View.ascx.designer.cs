@@ -22,6 +22,15 @@ namespace JS.Modules.JSFAQ {
         protected global::DotNetNuke.Web.Client.ClientResourceManagement.DnnCssInclude fontAwesomeCss;
         
         /// <summary>
+        /// bootstrapSelectCss control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DotNetNuke.Web.Client.ClientResourceManagement.DnnCssInclude bootstrapSelectCss;
+        
+        /// <summary>
         /// pnlFirstButton control.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,33 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.HyperLink lnkSettings;
         
         /// <summary>
+        /// pnlCategoryType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlCategoryType;
+        
+        /// <summary>
+        /// blNavMenu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.BulletedList blNavMenu;
+        
+        /// <summary>
+        /// ddCategoryItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddCategoryItems;
+        
+        /// <summary>
         /// rptCategory control.
         /// </summary>
         /// <remarks>
@@ -112,13 +148,31 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.Repeater rptNotCategorized;
         
         /// <summary>
-        /// DnnJsInclude1 control.
+        /// jqueryUIJs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.Web.Client.ClientResourceManagement.DnnJsInclude DnnJsInclude1;
+        protected global::DotNetNuke.Web.Client.ClientResourceManagement.DnnJsInclude jqueryUIJs;
+        
+        /// <summary>
+        /// bootstrapJs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DotNetNuke.Web.Client.ClientResourceManagement.DnnJsInclude bootstrapJs;
+        
+        /// <summary>
+        /// bootstrapSelectJs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DotNetNuke.Web.Client.ClientResourceManagement.DnnJsInclude bootstrapSelectJs;
         
         /// <summary>
         /// mainJs control.

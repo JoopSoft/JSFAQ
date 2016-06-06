@@ -3,6 +3,9 @@
 <%@ Register TagPrefix="dnn" TagName="label" Src="~/controls/LabelControl.ascx" %>
 
 <dnn:DnnCssInclude ID="fontAwesomeCss" runat="server" FilePath="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
+<%--<dnn:DnnCssInclude ID="bootstrapCss" runat="server" FilePath="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />--%>
+<dnn:DnnCssInclude ID="bootstrapSelectCss" runat="server" FilePath="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" />
+<%--<dnn:DnnCssInclude ID="moduleCss" runat="server" FilePath="~/DesktopModules/JSFAQ/module.min.css" />--%>
 
 <div class="JSFaq">
 
@@ -28,7 +31,28 @@
         </div>
     </asp:Panel>
 
-    <div class="wrapper">
+    <asp:Panel ID="pnlCategoryType" runat="server" CssClass="col-xs-12 col-sm-3">
+
+        <asp:BulletedList ID="blNavMenu" runat="server" CssClass="nav nav-tabs nav-stacked"
+             BulletStyle="Disc" BorderStyle="None" DisplayMode="HyperLink">
+            <asp:ListItem class="active" Value="#section-1" Text="Section One" />
+            <asp:ListItem Value="#section-2" Text="Section Two" />
+            <asp:ListItem Value="#section-3" Text="Section Three" />
+            <asp:ListItem Value="#section-4" Text="Section Four" />
+            <asp:ListItem Value="#section-5" Text="Section Five" />
+        </asp:BulletedList>
+
+    </asp:Panel>
+
+    <div class="wrapper col-xs-12 col-sm-9">
+        <div class="row" style="text-align: right; padding: 15px 0;">
+            <asp:DropDownList ID="ddCategoryItems" runat="server" CssClass="">
+                <asp:ListItem Value="category-1" Text="Category Item 1" />
+                <asp:ListItem Value="category-2" Text="Category Item 2" />
+                <asp:ListItem Value="category-3" Text="Category Item 3" />
+            </asp:DropDownList>
+        </div>
+        
         <asp:Repeater ID="rptCategory" runat="server">
             <ItemTemplate>
                 <h3>
@@ -103,9 +127,6 @@
 
 
 </div>
-
-
-<dnn:DnnJsInclude ID="DnnJsInclude1" runat="server" FilePath="//code.jquery.com/ui/1.11.4/jquery-ui.js" />
 
 <script type="text/javascript">
     (function ($, Sys) {
@@ -211,7 +232,26 @@
         //            //$('.JSFaq .accordion').accordion("refresh");
         //        });
 
+
+        $('body')
+            .attr('data-spy', 'scroll' )
+            .attr('data-target' ,'#<%= pnlCategoryType.ClientID %>');
+        
+
+            $("#<%= blNavMenu.ClientID %>").affix({
+                offset: { 
+                    top: 195 
+                }
+            });
+            //$("#blNavMenu").on('affixed.bs.affix', function(){
+            //    alert("The left navigation menu has been affixed. Now it doesn't scroll with the page.");
+            //});
+
+
     })(jQuery, window.Sys);
 </script>
 
+<dnn:DnnJsInclude ID="jqueryUIJs" runat="server" FilePath="//code.jquery.com/ui/1.11.4/jquery-ui.js" />
+<dnn:DnnJsInclude ID="bootstrapJs" runat="server" FilePath="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" Priority="19" />
+<dnn:DnnJsInclude ID="bootstrapSelectJs" runat="server" FilePath="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js" Priority="20" />
 <dnn:DnnJsInclude ID="mainJs" runat="server" FilePath="~/DesktopModules/JSFAQ/Js/main.min.js" Priority="22" />
