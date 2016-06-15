@@ -28,10 +28,10 @@ namespace JS.Modules.JSFAQ.Components
         public void DeleteFAQ(int faqId, int moduleId)
         {
             var f = GetFAQ(faqId, moduleId);
-            DeleteItem(f);
+            DeleteFAQ(f);
         }
 
-        public void DeleteItem(FAQ f)
+        public void DeleteFAQ(FAQ f)
         {
             using (IDataContext ctx = DataContext.Instance())
             {

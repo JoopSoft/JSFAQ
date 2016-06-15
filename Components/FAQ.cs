@@ -20,7 +20,7 @@ namespace JS.Modules.JSFAQ.Components
 {
     [TableName("JSFAQ_FAQs")]
     //setup the primary key for table
-    [PrimaryKey("FAQId", AutoIncrement = true)]
+    [PrimaryKey("FaqId", AutoIncrement = true)]
     //configure caching using PetaPoco
     [Cacheable("FAQs", CacheItemPriority.Default, 20)]
     //scope the objects to the ModuleId of a module on a page (or copy of a module on a page)

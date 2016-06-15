@@ -14,6 +14,7 @@ using System;
 using DotNetNuke.Entities.Users;
 using JS.Modules.JSFAQ.Components;
 using DotNetNuke.Services.Exceptions;
+using DotNetNuke.Entities.Tabs;
 
 namespace JS.Modules.JSFAQ
 {
@@ -25,10 +26,11 @@ namespace JS.Modules.JSFAQ
             {
                 if (!Page.IsPostBack)
                 {
-                    lnkNewFAQEntry.NavigateUrl = EditUrl("AddFAQ");
-                    lnkEditCategoriesList.NavigateUrl = EditUrl("ListCategories");
+                    lnkAdd.NavigateUrl = EditUrl("AddFAQ");
+                    string PageName = TabController.CurrentPage.TabPath.Remove(0, 1);
+                    lnkSettings.NavigateUrl = "javascript:dnnModal.show('http://" + Request.Url.Host + PageName + "/ctl/Module/ModuleId/" + ModuleId + "?ReturnURL=" + PageName + "&amp;popUp=true#msSpecificSettings',/*showReturn*/false,550,950,true,'')";
                     btnSave_Name();
-                    bool categoryPresent = false;
+                    bool categoryPresent = false; 
                     var cc = new CategoryController();
                     var ac = cc.GetCategories(ModuleId);
                     foreach (var c in ac)
@@ -36,17 +38,16 @@ namespace JS.Modules.JSFAQ
                         if (c.CategoryId > 0)
                         {
                             categoryPresent = true;
-                            break;
+                            ddCategory.Items.Add(c.CategoryName);
                         }
                     }
-                    lnkEditCategoriesList.Visible = categoryPresent;
                     if (categoryPresent)
                     {
-                        headerMenu.CssClass = "dnnFormMessage three-controls dnnFormTitle no-spacing";
+                        headerMenu.CssClass = "dnnFormMessage two-controls dnnFormTitle no-spacing";
                     }
                     else
                     {
-                        headerMenu.CssClass = "dnnFormMessage two-controls dnnFormTitle no-spacing";
+                        headerMenu.CssClass = "dnnFormMessage one-control dnnFormTitle no-spacing";
                     }
                     if (CategoryId > 0)
                     {
@@ -114,6 +115,18 @@ namespace JS.Modules.JSFAQ
         protected void ddCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnSave_Name();
+            var cc = new CategoryController();
+            var ac = cc.GetCategories(ModuleId);
+            foreach (var c in ac)
+            {
+                if (c.CategoryName == ddCategory.SelectedValue)
+                {
+                    txtCategoryName.Text = c.CategoryName;
+                    txtCategoryDescription.Text = c.CategoryDescription;
+                    cbShowCategory.Checked = c.ShowCategory;
+                    break;
+                }
+            }
         }
 
         protected void btnSave_Name()

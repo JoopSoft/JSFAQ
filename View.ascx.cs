@@ -11,7 +11,6 @@
 */
 
 using System;
-using System.Web.UI.WebControls;
 using JS.Modules.JSFAQ.Components;
 using DotNetNuke.Security;
 using DotNetNuke.Services.Exceptions;
@@ -20,6 +19,8 @@ using DotNetNuke.Entities.Modules.Actions;
 using DotNetNuke.Services.Localization;
 using DotNetNuke.UI.Utilities;
 using System.Collections.Generic;
+using DotNetNuke.Entities.Tabs;
+using System.Web.UI.WebControls;
 
 namespace JS.Modules.JSFAQ
 {
@@ -40,18 +41,50 @@ namespace JS.Modules.JSFAQ
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            LoadPage();
+        }
+
+        protected void btnClose_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(DotNetNuke.Common.Globals.NavigateURL());
+            pnlPopUp.Visible = false;
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            var fc = new FAQController();
+            fc.DeleteFAQ(Convert.ToInt32(lblDeleteFaqId.Text.Trim()), ModuleId);
+            pnlPopUp.Visible = false;
+            LoadPage();
+        }
+
+        protected void rptFaqEntries_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "Delete")
+            {
+                pnlPopUp.Visible = true;
+                pnlPopUp.CssClass = "popup confirm-box warning";
+                lblPopUpMsg.Text = "Delete this FAQ Entry?";
+                lblPopUpIcon.CssClass = "popup-icon link-delete no-txt";
+                lblDeleteFaqId.Text = e.CommandArgument.ToString();
+            }
+        }
+
+        protected void LoadPage()
+        {
             try
             {
                 lnkFirstButton.NavigateUrl = lnkAdd.NavigateUrl = EditUrl("AddFAQ");
-                lnkEdit.NavigateUrl = EditUrl("ListCategories");
                 lnkManage.NavigateUrl = EditUrl("ManageCategories");
-                lnkSettings.NavigateUrl = "javascript:dnnModal.show('http://dnndev.me/JS-FAQ/ctl/Module/ModuleId/" + ModuleId + "?ReturnURL=/JS-FAQ&amp;popUp=true',/*showReturn*/false,550,950,true,'')";
+                string PageName = TabController.CurrentPage.TabPath.Remove(0, 1);
+                lnkSettings.NavigateUrl = "javascript:dnnModal.show('http://" + Request.Url.Host + PageName + "/ctl/Module/ModuleId/" + ModuleId + "?ReturnURL=" + PageName + "&amp;popUp=true#msSpecificSettings',/*showReturn*/false,550,950,true,'')";
                 bool faqPresent = false;
                 bool categoryPresent = false;
+                bool emptyCategory = true;
                 var cc = new CategoryController();
                 var fc = new FAQController();
                 var af = fc.GetFAQs(ModuleId);
-                var ac = cc.GetCategories(ModuleId); 
+                var ac = cc.GetCategories(ModuleId);
                 foreach (var f in af)
                 {
                     if (f.FaqId > 0)
@@ -59,24 +92,34 @@ namespace JS.Modules.JSFAQ
                         faqPresent = true;
                     }
                 }
+                List<Category> categorySource = new List<Category>();
                 foreach (var c in ac)
                 {
+                    foreach (var f in af)
+                    {
+                        if (c.CategoryName == f.FaqCategory)
+                        {
+                            emptyCategory = false;
+                        }
+                    }
+                    if (c.ShowCategory && !emptyCategory)
+                    {
+                        categorySource.Add(c);
+                    }
                     if (c.CategoryId > 0)
                     {
                         categoryPresent = true;
-                        break;
                     }
                 }
                 if (IsEditable)
                 {
-                pnlFirstButton.Visible = !faqPresent;
-                lnkEdit.Visible = categoryPresent;
+                    pnlFirstButton.Visible = !faqPresent;
                 }
                 else
                 {
                     pnlFirstButton.Visible = pnlAdmin.Visible = false;
                 }
-                rptCategory.DataSource = cc.GetCategories(ModuleId);
+                rptCategory.DataSource = categorySource;
                 rptCategory.DataBind();
                 foreach (RepeaterItem ri in rptCategory.Items)
                 {
@@ -89,9 +132,27 @@ namespace JS.Modules.JSFAQ
                         {
                             faqSource.Add(f);
                         }
+
                     }
                     rptFaqEntries.DataSource = faqSource;
                     rptFaqEntries.DataBind();
+                    foreach (RepeaterItem fi in rptFaqEntries.Items)
+                    {
+                        var lnkEdit = fi.FindControl("lnkEdit") as HyperLink;
+                        var faqId = fi.FindControl("faqId") as Label;
+                        var pnlAdmin = fi.FindControl("pnlControlButtonsAdmin") as Panel;
+                        var pnlFaqItem = fi.FindControl("pnlFaqItem") as Panel;
+                        pnlAdmin.Visible = IsEditable;
+                        if (IsEditable)
+                        {
+                            pnlFaqItem.CssClass = "faq-item four-controls";
+                        }
+                        else
+                        {
+                            pnlFaqItem.CssClass = "faq-item no-controls";
+                        }
+                        lnkEdit.NavigateUrl = EditUrl(string.Empty, string.Empty, "AddFAQ", "fid=" + Convert.ToInt32(faqId.Text));
+                    }
                 }
                 List<FAQ> notCategorizedSource = new List<FAQ>();
                 rptNotCategorized.Visible = false;
@@ -105,11 +166,30 @@ namespace JS.Modules.JSFAQ
                 }
                 rptNotCategorized.DataSource = notCategorizedSource;
                 rptNotCategorized.DataBind();
+                foreach (RepeaterItem nci in rptNotCategorized.Items)
+                {
+                    var lnkEdit = nci.FindControl("lnkEdit") as HyperLink;
+                    var faqId = nci.FindControl("faqId") as Label;
+                    var pnlAdmin = nci.FindControl("pnlControlButtonsAdmin") as Panel;
+                    var pnlFaqItem = nci.FindControl("pnlFaqItem") as Panel;
+                    pnlAdmin.Visible = IsEditable;
+                    if (IsEditable)
+                    {
+                        pnlFaqItem.CssClass = "faq-item four-controls";
+                    }
+                    else
+                    {
+                        pnlFaqItem.CssClass = "faq-item no-controls";
+                    }
+                    lnkEdit.NavigateUrl = EditUrl(string.Empty, string.Empty, "AddFAQ", "fid=" + Convert.ToInt32(faqId.Text));
+                }
+
             }
             catch (Exception exc) //Module failed to load
             {
                 Exceptions.ProcessModuleLoadException(this, exc);
             }
+
         }
 
         public ModuleActionCollection ModuleActions
@@ -125,10 +205,6 @@ namespace JS.Modules.JSFAQ
                         {
                             GetNextActionID(), Localization.GetString("ManageCategories", LocalResourceFile), "", "", "",
                             EditUrl("ManageCategories"), false, SecurityAccessLevel.Edit, true, false
-                        },
-                        {
-                            GetNextActionID(), Localization.GetString("ListCategories", LocalResourceFile), "", "", "",
-                            EditUrl("ListCategories"), false, SecurityAccessLevel.Edit, true, false
                         }
                     };
                 return actions;

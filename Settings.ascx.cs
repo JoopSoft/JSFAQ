@@ -51,6 +51,8 @@ namespace JS.Modules.JSFAQ
             {
                 if (Page.IsPostBack == false)
                 {
+                    lnkAdd.NavigateUrl = EditUrl("AddFAQ");
+                    lnkManage.NavigateUrl = EditUrl("ManageCategories");
                 }
             }
             catch (Exception exc) //Module failed to load

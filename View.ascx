@@ -21,8 +21,6 @@
             <asp:Label ID="lblContentHolder" runat="server" CssClass="content-holder" />
             <asp:HyperLink ID="lnkAdd" runat="server" CssClass="btn btn-primary link-add no-txt"
                 ResourceKey="lnkAdd" ToolTip="Add FAQ Entry" />
-            <asp:HyperLink ID="lnkEdit" runat="server" CssClass="btn btn-primary link-list no-txt"
-                ResourceKey="lnkEdit" ToolTip="Edit Category Lists" />
             <asp:HyperLink ID="lnkManage" runat="server" CssClass="btn btn-primary link-manage no-txt"
                 ResourceKey="lnkManage" ToolTip="Manage Categories" />
             <asp:HyperLink ID="lnkSettings" runat="server" CssClass="btn btn-primary link-settings no-txt"
@@ -58,18 +56,20 @@
                 <h3>
                     <asp:Label ID="CategoryName" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"CategoryName").ToString() %>' />
                 </h3>
-                <asp:Repeater ID="rptFaqEntries" runat="server">
+                <asp:Repeater ID="rptFaqEntries" runat="server" OnItemCommand="rptFaqEntries_ItemCommand">
                     <HeaderTemplate>
                         <div class="accordion">
                     </HeaderTemplate>
                     <ItemTemplate>
                         <asp:Panel ID="pnlFaqItem" runat="server" CssClass="faq-item four-controls">
+                            <asp:Label ID="faqId" runat="server" Visible ="false" 
+                                Text='<%#DataBinder.Eval(Container.DataItem,"FaqId").ToString() %>' />
                             <h3>
-                                <asp:Label ID="FaqQuestion" runat="server" CssClass=""
+                                <asp:Label ID="faqQuestion" runat="server" CssClass=""
                                     Text='<%#DataBinder.Eval(Container.DataItem,"FaqQuestion").ToString() %>' />
                             </h3>
                             <div>
-                                <asp:Label ID="FaqAnswer" runat="server" CssClass=""
+                                <asp:Label ID="faqAnswer" runat="server" CssClass=""
                                     Text='<%#DataBinder.Eval(Container.DataItem,"FaqAnswer").ToString() %>' />
                             </div>
                         </asp:Panel>
@@ -80,8 +80,8 @@
                                 data-toggle="tooltip" ToolTip="Move Down" />
                             <asp:HyperLink ID="lnkEdit" runat="server" CssClass="btn btn-primary control-btn link-edit no-txt"
                                 data-toggle="tooltip" ToolTip="Edit" />
-                            <asp:HyperLink ID="lnkDelete" runat="server" CssClass="btn btn-primary control-btn link-delete error no-txt"
-                                data-toggle="tooltip" ToolTip="Delete" />
+                            <asp:LinkButton ID="btnDeleteFaq" runat="server" CssClass="btn btn-primary control-btn link-delete error no-txt"
+                                data-toggle="tooltip" ToolTip="Delete" CommandName="Delete" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"FaqId").ToString() %>' />
                         </asp:Panel>
                     </ItemTemplate>
                     <FooterTemplate>
@@ -92,12 +92,14 @@
             </ItemTemplate>
         </asp:Repeater>
 
-        <asp:Repeater ID="rptNotCategorized" runat="server">
+        <asp:Repeater ID="rptNotCategorized" runat="server" OnItemCommand="rptFaqEntries_ItemCommand">
             <HeaderTemplate>
                 <div class="accordion">
             </HeaderTemplate>
             <ItemTemplate>
                 <asp:Panel ID="pnlFaqItem" runat="server" CssClass="faq-item four-controls">
+                    <asp:Label ID="faqId" runat="server" Visible="false"
+                        Text='<%#DataBinder.Eval(Container.DataItem,"FaqId").ToString() %>' />
                     <h3>
                         <asp:Label ID="FaqQuestion" runat="server" CssClass=""
                             Text='<%#DataBinder.Eval(Container.DataItem,"FaqQuestion").ToString() %>' />
@@ -114,8 +116,8 @@
                         data-toggle="tooltip" ToolTip="Move Down" />
                     <asp:HyperLink ID="lnkEdit" runat="server" CssClass="btn btn-primary control-btn link-edit no-txt"
                         data-toggle="tooltip" ToolTip="Edit" />
-                    <asp:HyperLink ID="lnkDelete" runat="server" CssClass="btn btn-primary control-btn link-delete error no-txt"
-                        data-toggle="tooltip" ToolTip="Delete" />
+                    <asp:LinkButton ID="btnDeleteFaq" runat="server" CssClass="btn btn-primary control-btn link-delete error no-txt"
+                        data-toggle="tooltip" ToolTip="Delete" CommandName="Delete" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"FaqId").ToString() %>' />
                 </asp:Panel>
             </ItemTemplate>
             <FooterTemplate>
@@ -124,6 +126,21 @@
             </FooterTemplate>
         </asp:Repeater>
     </div>
+            <%--POPUP--%>
+        <asp:Panel ID="pnlPopUp" runat="server" Visible="false" CssClass="popup">
+            <div class="popup-wrapper">
+                <asp:Label ID="lblPopUpIcon" runat="server" />
+                <h3>
+                    <asp:Label ID="lblPopUpMsg" runat="server" CssClass="popup-msg" />
+                </h3>
+                <asp:Label ID="lblDeleteFaqId" runat="server" Visible="false" />
+                <asp:LinkButton ID="btnDelete" runat="server" CssClass="btn btn-danger link-delete"
+                    OnClick="btnDelete_Click" ResourceKey="lnkDelete"
+                    data-toggle="tooltip" ToolTip="Delete Image" />
+                <asp:LinkButton ID="btnClose" runat="server" CssClass="close-action btn btn-danger link-close no-txt" OnClick="btnClose_Click"
+                    data-toggle="tooltip" ToolTip="Close" />
+            </div>
+        </asp:Panel>
 
 
 </div>

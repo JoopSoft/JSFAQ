@@ -76,15 +76,6 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.Label lblSubTitle;
         
         /// <summary>
-        /// lnkEditCategoriesList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkEditCategoriesList;
-        
-        /// <summary>
         /// lnkManageCategories control.
         /// </summary>
         /// <remarks>
@@ -263,6 +254,15 @@ namespace JS.Modules.JSFAQ {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnSave;
+        
+        /// <summary>
+        /// btnSaveClose control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnSaveClose;
         
         /// <summary>
         /// btnCancel control.

@@ -135,9 +135,6 @@
   <data name="AddFAQ.Text" xml:space="preserve">
     <value>Add FAQ Entry</value>
   </data>
-  <data name="ListCategories.Text" xml:space="preserve">
-    <value>List Categories</value>
-  </data>
   <data name="lnkFirstButton.Text" xml:space="preserve">
     <value>Add FAQ Entry</value>
   </data>

@@ -15,14 +15,12 @@
                 <asp:HyperLink ID="joopSoft" runat="server" />
             </h3>
             <div class="dnnFormItem JSFaqMenu">
-                <asp:Panel ID="headerMenu" runat="server" CssClass="dnnFormMessage three-controls dnnFormTitle no-spacing">
+                <asp:Panel ID="headerMenu" runat="server" CssClass="dnnFormMessage two-controls dnnFormTitle no-spacing">
                     <asp:Label ID="lblSubTitle" runat="server" Text="Settings" />
                 </asp:Panel>
-                <asp:HyperLink ID="lnkNewFAQEntry" runat="server" CssClass="btn btn-primary link-add no-txt"
+                <asp:HyperLink ID="lnkAdd" runat="server" CssClass="btn btn-primary link-add no-txt"
                     data-toggle="tooltip" ToolTip="Add FAQ Entry" />
-                <asp:HyperLink ID="lnkEditCategoriesList" runat="server" CssClass="btn btn-primary link-edit-square no-txt"
-                    data-toggle="tooltip" ToolTip="Edit Category Lists" />
-                <asp:HyperLink ID="lnkManageCategories" runat="server" CssClass="btn btn-primary link-manage no-txt"
+                <asp:HyperLink ID="lnkManage" runat="server" CssClass="btn btn-primary link-manage no-txt"
                     data-toggle="tooltip" ToolTip="Manage Categories" />
             </div>
         </div>

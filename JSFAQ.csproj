@@ -73,13 +73,6 @@
     <Compile Include="Components\FeatureController.cs" />
     <Compile Include="Components\CategoryController.cs" />
     <Compile Include="Components\Category.cs" />
-    <Compile Include="ListCategories.ascx.cs">
-      <DependentUpon>ListCategories.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ListCategories.ascx.designer.cs">
-      <DependentUpon>ListCategories.ascx</DependentUpon>
-    </Compile>
     <Compile Include="ManageCategories.ascx.cs">
       <DependentUpon>ManageCategories.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -117,7 +110,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ListCategories.ascx" />
     <Content Include="ManageCategories.ascx" />
     <Content Include="AddFAQ.ascx" />
     <Content Include="Images\Icons\checkbox.png" />

@@ -16,11 +16,9 @@
                 <asp:HyperLink ID="joopSoft" runat="server" />
             </h3>
             <div class="dnnFormItem JSFaqMenu">
-                <asp:Panel ID="headerMenu" runat="server" CssClass="dnnFormMessage three-controls dnnFormTitle no-spacing">
+                <asp:Panel ID="headerMenu" runat="server" CssClass="dnnFormMessage two-controls dnnFormTitle no-spacing">
                     <asp:Label ID="lblSubTitle" runat="server" Text="Add/Edit FAQ Entry" />
                 </asp:Panel>
-                <asp:HyperLink ID="lnkEditCategoriesList" runat="server" CssClass="btn btn-primary link-edit-square no-txt"
-                    data-toggle="tooltip" ToolTip="Edit Category Lists" />
                 <asp:HyperLink ID="lnkManageCategories" runat="server" CssClass="btn btn-primary link-manage no-txt"
                     data-toggle="tooltip" ToolTip="Manage Categories" />
                 <asp:HyperLink ID="lnkSettings" runat="server" CssClass="btn btn-primary link-settings no-txt"
@@ -91,7 +89,9 @@
     <div class="dnnForm controls">
         <div class="dnnFormItem">
             <asp:LinkButton ID="btnSave" runat="server" CssClass="btnSubmit btn btn-primary link-save"
-                ResourceKey="btnSave" OnClick="btnSave_Click" />
+                OnClick="btnSave_Click" />
+            <asp:LinkButton ID="btnSaveClose" runat="server" CssClass="btnSubmit btn btn-primary link-save"
+                OnClick="btnSaveClose_Click" />
             <asp:LinkButton ID="btnCancel" runat="server" CssClass="btn btn-default link-cancel"
                 ResourceKey="btnCancel" OnClick="btnCancel_Click" />
         </div>
