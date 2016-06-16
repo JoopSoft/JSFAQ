@@ -57,7 +57,7 @@
                 <div class="categoryOption emptyOption dnnFormItem no-spacing">
                     <dnn:label ID="unusedLabel2" runat="server" />
                     <asp:TextBox ID="txtEmptyCategory" runat="server" CssClass="form-control"
-                        Text="The Category is undefined" Enabled="false" />
+                        Text="Uncategorized Category" Enabled="false" />
                 </div>
             </div>
             <div class="fieldset">
@@ -87,11 +87,13 @@
         </fieldset>
     </div>
     <div class="dnnForm controls">
-        <div class="dnnFormItem">
-            <asp:LinkButton ID="btnSave" runat="server" CssClass="btnSubmit btn btn-primary link-save"
-                OnClick="btnSave_Click" />
-            <asp:LinkButton ID="btnSaveClose" runat="server" CssClass="btnSubmit btn btn-primary link-save"
-                OnClick="btnSaveClose_Click" />
+        <div class="dnnFormItem">             
+            <div class="btn-group" role="group" aria-label="Control buttons">
+                <asp:Label ID="lblGroupStatusHolder" runat="server" />
+                <asp:LinkButton ID="btnSave" runat="server" OnClick="btnSave_Click" />
+                <asp:LinkButton ID="btnSaveClose" runat="server" OnClick="btnSaveClose_Click" />
+            </div>
+
             <asp:LinkButton ID="btnCancel" runat="server" CssClass="btn btn-default link-cancel"
                 ResourceKey="btnCancel" OnClick="btnCancel_Click" />
         </div>

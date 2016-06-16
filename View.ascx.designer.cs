@@ -58,6 +58,24 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.Panel pnlAdmin;
         
         /// <summary>
+        /// txtLicenseKey control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtLicenseKey;
+        
+        /// <summary>
+        /// lnkCheckLicenseKey control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkCheckLicenseKey;
+        
+        /// <summary>
         /// lblContentHolder control.
         /// </summary>
         /// <remarks>
@@ -83,6 +101,15 @@ namespace JS.Modules.JSFAQ {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink lnkManage;
+        
+        /// <summary>
+        /// lnkHiddenFaq control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkHiddenFaq;
         
         /// <summary>
         /// lnkSettings control.

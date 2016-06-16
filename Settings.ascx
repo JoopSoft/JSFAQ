@@ -27,8 +27,8 @@
         <fieldset>
             <div class="fieldset">
                 <div class="dnnFormItem group">
-                    <dnn:Label ID="lblCategoryType" runat="server" />
-                    <asp:DropDownList ID="ddCategoryType" runat="server" CssClass="selectpicker form-control single-select" >
+                    <dnn:Label ID="lblCategoryLayout" runat="server" />
+                    <asp:DropDownList ID="ddCategoryLayout" runat="server" CssClass="selectpicker form-control single-select" >
                         <asp:ListItem Value="list" Text="List" />
                         <asp:ListItem Value="nav-menu" Text="Navigation Menu" />
                         <asp:ListItem Value="dropdown" Text="Dropdown list" />                        
@@ -49,31 +49,22 @@
             </div>
             <div class="fieldset">
                 <div class="dnnFormItem">
-                    <dnn:Label ID="lblDefaultOpenType" runat="server" />
-                    <asp:CheckBox ID="cbDefaultOpenType" runat="server" CssClass="hidder" data-target=".pnlDefaultOpen" />
+                    <dnn:Label ID="lblAnimateOption" runat="server" />
+                    <asp:RadioButtonList ID="rblAnimateOption" runat="server" CssClass="hidder-radio-option" 
+                        data-grouped-class=".animateOption">
+                        <asp:ListItem Value="disabled" Text="Disable Animation" Selected="True" />
+                        <asp:ListItem data-target=".customDurationOption" Value="customDuration" Text="Custom Duration" />
+                        <asp:ListItem data-target=".customEasingOption" Value="customEasing" Text="Custom Easing" />
+                        <asp:ListItem data-target=".customBoth" Value="customBoth" Text="Custom Duration & Easing" />
+                    </asp:RadioButtonList>
                 </div>
-                <div class="pnlDefaultOpen dnnFormItem">
-                    <dnn:Label ID="lblDefaultOpen" runat="server" />
-                    <asp:TextBox ID="txtDefaultOpen" runat="server" CssClass="form-control"
-                         Text="0" />
+                <div class="animateOption customDurationOption customBoth dnnFormItem">
+                    <dnn:Label ID="lblCustomDuration" runat="server" />
+                    <asp:TextBox ID="txtCustomDuration" runat="server" CssClass="form-control" />
                 </div>
-                <div class="dnnFormItem">
-                    <dnn:Label ID="lblCollapsible" runat="server" />
-                    <asp:CheckBox ID="cbCollapsible" runat="server" />
-                </div>
-            </div>
-            <div class="fieldset">
-                <div class="dnnFormItem">
-                    <dnn:Label ID="lblAnimationType" runat="server" />
-                    <asp:CheckBox ID="cbAnimationBoolType" runat="server" CssClass="" />
-                </div>
-                <div class="dnnFormItem">
-                    <dnn:Label ID="Label2" runat="server" />
-                    <asp:TextBox ID="txtAnimationNumberType" runat="server" CssClass="form-control" />
-                </div>
-                <div class="dnnFormItem">
-                    <dnn:Label ID="Label1" runat="server" />
-                    <asp:DropDownList ID="ddAnimationStringType" runat="server" CssClass="selectpicker form-control single-select">
+                <div class="animateOption customEasingOption customBoth dnnFormItem">
+                    <dnn:Label ID="lblCustomEasing" runat="server" />
+                    <asp:DropDownList ID="ddCustomEasing" runat="server" CssClass="selectpicker form-control single-select">
                         <asp:ListItem Value="linear" Text="Linear" />
                         <asp:ListItem Value="swing" Text="Swing" />
                         <asp:ListItem Value="easeInQuad" Text="Ease In Quad" />
@@ -107,12 +98,6 @@
                         <asp:ListItem Value="easeOutBounce" Text="Ease Out Bounce" />
                         <asp:ListItem Value="easeInOutBounce" Text="Ease In Out Bounce" />
                     </asp:DropDownList>
-                </div>
-            </div>
-            <div class="fieldset">
-                <div class="dnnFormItem">
-                    <dnn:Label ID="lblDisabled" runat="server" />
-                    <asp:CheckBox ID="cbDisabled" runat="server" CssClass="" />
                 </div>
             </div>
             <div class="fieldset">

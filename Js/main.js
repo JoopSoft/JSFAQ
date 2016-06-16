@@ -42,6 +42,12 @@
             $lnkSettings = '<i class="fa fa-cog"></i>',
             $lnkCheck = '<i class="fa fa-check"></i>',
             $lnkManage = '<i class="fa fa-wrench"></i>',
+            $lnkShow = '<i class="fa fa-eye"></i>',
+            $lnkHide = '<i class="fa fa-eye-slash"></i>',
+            $lnkMove = '<i class="fa fa-arrows"></i>',
+            $lnkMove = '<i class="fa fa-arrows"></i>',
+            $lnkLock = '<i class="fa fa-lock"></i>',
+            $lnkUnlock = '<i class="fa fa-unlock"></i>',
             $lnkSelUp = '<i class="fa fa-arrow-circle-up"></i>',
             $lnkSelDown = '<i class="fa fa-arrow-circle-down"></i>',
             $lnkSelRight = '<i class="fa fa-arrow-circle-right"></i>',
@@ -79,6 +85,11 @@
             $('.JSFaq .link-settings').prepend($lnkSettings + ' ');
             $('.JSFaq .link-check').prepend($lnkCheck + ' ');
             $('.JSFaq .link-manage').prepend($lnkManage + ' ');
+            $('.JSFaq .link-show').prepend($lnkShow + ' ');
+            $('.JSFaq .link-hide').prepend($lnkHide + ' ');
+            $('.JSFaq .link-move').prepend($lnkMove + ' ');
+            $('.JSFaq .link-lock').prepend($lnkLock + ' ');
+            $('.JSFaq .link-unlock').prepend($lnkUnlock + ' ');
             $('.JSFaq .link-success').prepend($lnkSuccess + ' ');
             $('.JSFaq .link-list').prepend($lnkList + ' ');
             $('.JSFaq .link-exch').prepend($lnkExch + ' ');
@@ -113,6 +124,11 @@
             $('.JSFaq .link-settings.no-txt').html($lnkSettings);
             $('.JSFaq .link-check.no-txt').html($lnkCheck);
             $('.JSFaq .link-manage.no-txt').html($lnkManage);
+            $('.JSFaq .link-show.no-txt').html($lnkShow);
+            $('.JSFaq .link-hide.no-txt').html($lnkHide);
+            $('.JSFaq .link-move.no-txt').html($lnkMove);
+            $('.JSFaq .link-lock.no-txt').html($lnkLock);
+            $('.JSFaq .link-unlock.no-txt').html($lnkUnlock);
             $('.JSFaq .link-success.no-txt').html($lnkSuccess);
             $('.JSFaq .link-list.no-txt').html($lnkList);
             $('.JSFaq .link-exch.no-txt').html($lnkExch);
@@ -305,6 +321,12 @@
             if ($(this).val() === $(this).data('equal')) $($(this).data('target')).show();else $($(this).data('target')).hide();
         }).bind('change', function () {
             if ($(this).val() === $(this).data('equal')) $($(this).data('target')).show();else $($(this).data('target')).hide();
+        });
+
+        $('.JSFaq .uncheck-equal').each(function () {
+            if ($(this).val() !== $(this).data('equal')) $($(this).data('target')).show();else $($(this).data('target')).hide();
+        }).bind('change', function () {
+            if ($(this).val() !== $(this).data('equal')) $($(this).data('target')).show();else $($(this).data('target')).hide();
         });
 
         $('.JSFaq .hidder-radio input:radio').each(function () {

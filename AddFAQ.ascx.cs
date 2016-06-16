@@ -54,9 +54,10 @@ namespace JS.Modules.JSFAQ
                     if (FaqId > 0)
                     {
                         btnSave.Text = "Update";
-                        btnSave.CssClass = "btnSubmit btn btn-primary link-save";
+                        btnSave.CssClass = "btnSubmit btn btn-primary";
                         btnSaveClose.Text = "Update and Close";
-                        btnSaveClose.CssClass = "btnSubmit btn btn-primary link-save";
+                        btnSaveClose.CssClass = "btnSubmit btn btn-primary";
+                        lblGroupStatusHolder.CssClass = "group-stat-holder link-save";
                         var f = fc.GetFAQ(FaqId, ModuleId);
                         if (f != null)
                         {
@@ -98,9 +99,10 @@ namespace JS.Modules.JSFAQ
                     else
                     {
                         btnSave.Text = "Add";
-                        btnSave.CssClass = "btnSubmit btn btn-primary link-add";
+                        btnSave.CssClass = "btnSubmit btn btn-primary";
                         btnSaveClose.Text = "Add and Close";
-                        btnSaveClose.CssClass = "btnSubmit btn btn-primary link-add";
+                        btnSaveClose.CssClass = "btnSubmit btn btn-primary";
+                        lblGroupStatusHolder.CssClass = "group-stat-holder link-add";
                         if (categoryPresent)
                         {
                             rblCategoryOption.SelectedValue = "list";

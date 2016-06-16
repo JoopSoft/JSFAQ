@@ -134,10 +134,14 @@ namespace JS.Modules.JSFAQ
             if (ddCategory.SelectedValue == "new")
             {
                 btnSave.Text = "Create";
+                btnSaveAndClose.Text = "Create And Close";
+                lblGroupStatusHolder.CssClass = "group-stat-holder link-add";
             }
             else
             {
                 btnSave.Text = "Update";
+                btnSaveAndClose.Text = "Update And Close";
+                lblGroupStatusHolder.CssClass = "group-stat-holder link-save";
             }
         }
     }

@@ -29,24 +29,29 @@
             <div class="fieldset">
                 <div class="dnnFormItem">
                     <dnn:label ID="lblCategory" runat="server" />
-                    <asp:DropDownList ID="ddCategory" runat="server" CssClass="selectpicker form-control single-select" AutoPostBack ="true" OnSelectedIndexChanged="ddCategory_SelectedIndexChanged" >
-                        <asp:ListItem Value="new" Text="Create New" />
+                    <asp:DropDownList ID="ddCategory" runat="server" CssClass="selectpicker form-control single-select"
+                        AutoPostBack="true" OnSelectedIndexChanged="ddCategory_SelectedIndexChanged" >
+                        <asp:ListItem Value="new" Text="< Create New >" />
                     </asp:DropDownList>
+                </div>
+                <div class="dnnFormItem">
+                    <dnn:label ID="unusedLabel" runat="server" />
+                    <asp:LinkButton ID="btnDeleteCategory" runat="server" CssClass="btn btn-danger link-delete"
+                        ResourceKey="btnDeleteCategory" data-toggle="tooltip" ToolTip="Delete Category" />
                 </div>
             </div>
             <div class="fieldset">
                 <div class="dnnFormItem">
                     <dnn:label ID="lblCategoryName" runat="server" />
-                    <asp:TextBox ID="txtCategoryName" runat="server" CssClass="form-control" 
-                        Text="Category 1" Placeholder="Name" />
+                    <asp:TextBox ID="txtCategoryName" runat="server" CssClass="form-control"
+                        Placeholder="Name" />
                 </div>
             </div>
             <div class="fieldset">
                 <div class="dnnFormItem">
                     <dnn:label ID="lblCategoryDescription" runat="server" />
                     <asp:TextBox ID="txtCategoryDescription" runat="server" CssClass="form-control"
-                        TextMode="MultiLine" Rows="3" Columns="20" Text="Saved content here.." 
-                        Placeholder="Description" />
+                        TextMode="MultiLine" Rows="3" Columns="20" Placeholder="Description" />
                 </div>
             </div>
             <div class="fieldset">
@@ -55,15 +60,74 @@
                     <asp:CheckBox ID="cbShowCategory" runat="server" Checked="true" />
                 </div>
             </div>
+            <div class="fieldset">
+                <div class="dnnFormItem">
+                    <dnn:Label ID="lblShowCategoryDescription" runat="server" />
+                    <asp:CheckBox ID="cbShowCategoryDescription" runat="server" />
+                </div>
+            </div>
+            <div class="fieldset">
+                <div class="dnnFormItem">
+                    <dnn:Label ID="lblDefaultOpenType" runat="server" />
+                    <asp:CheckBox ID="cbDefaultOpenType" runat="server" CssClass="hidder" data-target=".pnlDefaultOpen" />
+                </div>
+                <div class="pnlDefaultOpen dnnFormItem">
+                    <dnn:Label ID="lblDefaultOpen" runat="server" />
+                    <asp:TextBox ID="txtDefaultOpen" runat="server" CssClass="form-control"
+                        Text="0" />
+                </div>
+                <div class="dnnFormItem">
+                    <dnn:Label ID="lblCollapsible" runat="server" />
+                    <asp:CheckBox ID="cbCollapsible" runat="server" />
+                </div>
+            </div>
 
-            <asp:LinkButton ID="btnScrollTop" runat="server" CssClass="scroll-action btn btn-primary link-up no-txt" 
-                ToolTip="Top"/>
+            <%--POPUP--%>
+            <asp:Panel ID="pnlPopUp" runat="server" Visible="true">
+                <div class="popup-wrapper">
+                    <asp:Label ID="lblPopUpIcon" runat="server" />
+                    <h3>
+                        <asp:Label ID="lblPopUpMsg" runat="server" CssClass="popup-msg" />
+                    </h3>
+                    <div class="btn-group">
+                        <%--FIRST DELETION--%>
+                        <asp:LinkButton ID="btnDeleteConfirm" runat="server" CssClass="btn btn-danger link-delete"
+                            ResourceKey="btnDeleteConfirm"
+                            data-toggle="tooltip" ToolTip="Delete Category" />
+
+
+
+                        <%--CONFRIM DELETION AND MOVE TO EMPTY CATEGORY--%>
+                        <asp:LinkButton ID="btnMoveToEmpty" runat="server" CssClass="btn btn-danger link-move"
+                            ResourceKey="btnMoveToEmpty" 
+                            data-toggle="tooltip" ToolTip="Move All Entries To Empty Category" />
+                        <asp:LinkButton ID="btnDeleteAllEntries" runat="server" CssClass="btn btn-danger link-delete"
+                            ResourceKey="btnDeleteAllEntries"
+                            data-toggle="tooltip" ToolTip="Delete All Entries" />
+
+                        <%--CONFRIM LAST DELETE--%>
+                        <asp:LinkButton ID="btnDeleteLastConfirm" runat="server" CssClass="btn btn-danger link-delete"
+                            ResourceKey="btnDeleteLastConfirm"
+                            data-toggle="tooltip" ToolTip="Delete All" />
+
+
+                    </div>
+                    <asp:LinkButton ID="btnClose" runat="server" CssClass="close-action btn btn-danger link-close no-txt"
+                        data-toggle="tooltip" ToolTip="Close" />
+                </div>
+            </asp:Panel>
+            <asp:LinkButton ID="btnScrollTop" runat="server" CssClass="scroll-action btn btn-primary link-up no-txt"
+                ToolTip="Top" />
         </fieldset>
     </div>
     <div class="dnnForm controls">
         <div class="dnnFormItem">
-            <asp:LinkButton ID="btnSave" runat="server" CssClass="btnSubmit btn btn-primary link-save"
-                OnClick="btnSave_Click" />
+            <div class="btn-group" role="group" aria-label="Control buttons">
+                <asp:Label ID="lblGroupStatusHolder" runat="server" />
+                <asp:LinkButton ID="btnSave" runat="server" CssClass="btnSubmit btn btn-primary"
+                    OnClick="btnSave_Click" />
+                <asp:LinkButton ID="btnSaveAndClose" runat="server" CssClass="btnSubmit btn btn-primary" />
+            </div>
             <asp:LinkButton ID="btnCancel" runat="server" CssClass="btn btn-default link-cancel"
                 ResourceKey="btnCancel" OnClick="btnCancel_Click" />
         </div>

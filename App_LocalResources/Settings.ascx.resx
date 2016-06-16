@@ -120,17 +120,11 @@
   <data name="ControlTitle_settings.Text" xml:space="preserve">
     <value>JSFAQ Settings</value>
   </data>
-  <data name="lblCategoryType.Help" xml:space="preserve">
-    <value>Choose category type.</value>
+  <data name="lblCategoryLayout.Help" xml:space="preserve">
+    <value>Choose category layout.</value>
   </data>
-  <data name="lblCategoryType.Text" xml:space="preserve">
-    <value>Category Type</value>
-  </data>
-  <data name="lblDefaultOpen.Help" xml:space="preserve">
-    <value>Which panel is currently open.</value>
-  </data>
-  <data name="lblDefaultOpen.Text" xml:space="preserve">
-    <value>Currently Active</value>
+  <data name="lblCategoryLayout.Text" xml:space="preserve">
+    <value>Category Layout</value>
   </data>
   <data name="lblEmptyCategory.Help" xml:space="preserve">
     <value>Display/Hide empty category.</value>
@@ -177,29 +171,11 @@
   <data name="Title.Text" xml:space="preserve">
     <value>JSFAQModule</value>
   </data>
-  <data name="lblAnimationType.Help" xml:space="preserve">
-    <value />
+  <data name="lblAnimateOption.Help" xml:space="preserve">
+    <value>Choose animate option.</value>
   </data>
-  <data name="lblAnimationType.Text" xml:space="preserve">
-    <value>Animate</value>
-  </data>
-  <data name="lblCollapsible.Help" xml:space="preserve">
-    <value>Whether all the sections can be closed at once. Allows collapsing the active section.</value>
-  </data>
-  <data name="lblCollapsible.Text" xml:space="preserve">
-    <value>Collapsible</value>
-  </data>
-  <data name="lblDefaultOpenType.Help" xml:space="preserve">
-    <value>Collapsing all sections.</value>
-  </data>
-  <data name="lblDefaultOpenType.Text" xml:space="preserve">
-    <value>Active</value>
-  </data>
-  <data name="lblDisabled.Help" xml:space="preserve">
-    <value />
-  </data>
-  <data name="lblDisabled.Text" xml:space="preserve">
-    <value>Disable</value>
+  <data name="lblAnimateOption.Text" xml:space="preserve">
+    <value>Animate Option</value>
   </data>
   <data name="lblEvent.Help" xml:space="preserve">
     <value>The event that accordion headers will react to in order to activate the associated panel.</value>
@@ -218,5 +194,17 @@
   </data>
   <data name="lblIconsType.Text" xml:space="preserve">
     <value>Icons</value>
+  </data>
+  <data name="lblCustomDuration.Help" xml:space="preserve">
+    <value>Custom duration in milliseconds.</value>
+  </data>
+  <data name="lblCustomDuration.Text" xml:space="preserve">
+    <value>Custom Duration</value>
+  </data>
+  <data name="lblCustomEasing.Help" xml:space="preserve">
+    <value>Name of easing to use.</value>
+  </data>
+  <data name="lblCustomEasing.Text" xml:space="preserve">
+    <value>Custom Easing</value>
   </data>
 </root>

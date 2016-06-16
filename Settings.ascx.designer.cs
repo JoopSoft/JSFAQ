@@ -94,22 +94,22 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.HyperLink lnkManage;
         
         /// <summary>
-        /// lblCategoryType control.
+        /// lblCategoryLayout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblCategoryType;
+        protected global::DotNetNuke.UI.UserControls.LabelControl lblCategoryLayout;
         
         /// <summary>
-        /// ddCategoryType control.
+        /// ddCategoryLayout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddCategoryType;
+        protected global::System.Web.UI.WebControls.DropDownList ddCategoryLayout;
         
         /// <summary>
         /// lblExpandCollapse control.
@@ -148,130 +148,58 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.CheckBox cbEmptyCategory;
         
         /// <summary>
-        /// lblDefaultOpenType control.
+        /// lblAnimateOption control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblDefaultOpenType;
+        protected global::DotNetNuke.UI.UserControls.LabelControl lblAnimateOption;
         
         /// <summary>
-        /// cbDefaultOpenType control.
+        /// rblAnimateOption control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbDefaultOpenType;
+        protected global::System.Web.UI.WebControls.RadioButtonList rblAnimateOption;
         
         /// <summary>
-        /// lblDefaultOpen control.
+        /// lblCustomDuration control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblDefaultOpen;
+        protected global::DotNetNuke.UI.UserControls.LabelControl lblCustomDuration;
         
         /// <summary>
-        /// txtDefaultOpen control.
+        /// txtCustomDuration control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDefaultOpen;
+        protected global::System.Web.UI.WebControls.TextBox txtCustomDuration;
         
         /// <summary>
-        /// lblCollapsible control.
+        /// lblCustomEasing control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblCollapsible;
+        protected global::DotNetNuke.UI.UserControls.LabelControl lblCustomEasing;
         
         /// <summary>
-        /// cbCollapsible control.
+        /// ddCustomEasing control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbCollapsible;
-        
-        /// <summary>
-        /// lblAnimationType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblAnimationType;
-        
-        /// <summary>
-        /// cbAnimationBoolType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbAnimationBoolType;
-        
-        /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl Label2;
-        
-        /// <summary>
-        /// txtAnimationNumberType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAnimationNumberType;
-        
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl Label1;
-        
-        /// <summary>
-        /// ddAnimationStringType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddAnimationStringType;
-        
-        /// <summary>
-        /// lblDisabled control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblDisabled;
-        
-        /// <summary>
-        /// cbDisabled control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbDisabled;
+        protected global::System.Web.UI.WebControls.DropDownList ddCustomEasing;
         
         /// <summary>
         /// lblEvent control.

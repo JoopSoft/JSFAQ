@@ -8,125 +8,132 @@
 <%--<dnn:DnnCssInclude ID="moduleCss" runat="server" FilePath="~/DesktopModules/JSFAQ/module.min.css" />--%>
 
 <div class="JSFaq">
+    <div class="view">
 
-    <%--FIRST CONTROLS--%>
-    <asp:Panel ID="pnlFirstButton" runat="server" CssClass="btn-group">
-        <asp:HyperLink ID="lnkFirstButton" runat="server" CssClass="btn btn-primary link-add"
-            ResourceKey="lnkFirstButton" />
-    </asp:Panel>
+        <%--FIRST CONTROLS--%>
+        <asp:Panel ID="pnlFirstButton" runat="server" CssClass="btn-group">
+            <asp:HyperLink ID="lnkFirstButton" runat="server" CssClass="btn btn-primary link-add"
+                ResourceKey="lnkFirstButton" />
+        </asp:Panel>
 
-    <%--EDIT MODE GROUP BUTTONS--%>
-    <asp:Panel ID="pnlAdmin" runat="server" Visible="true" CssClass="pnl-admin pull-right">
-        <div class="btn-group" role="group" aria-label="Control buttons">
-            <asp:Label ID="lblContentHolder" runat="server" CssClass="content-holder" />
-            <asp:HyperLink ID="lnkAdd" runat="server" CssClass="btn btn-primary link-add no-txt"
-                ResourceKey="lnkAdd" ToolTip="Add FAQ Entry" />
-            <asp:HyperLink ID="lnkManage" runat="server" CssClass="btn btn-primary link-manage no-txt"
-                ResourceKey="lnkManage" ToolTip="Manage Categories" />
-            <asp:HyperLink ID="lnkSettings" runat="server" CssClass="btn btn-primary link-settings no-txt"
-                ResourceKey="lnkManage" ToolTip="Settings" />
+        <%--EDIT MODE GROUP BUTTONS--%>
+        <asp:Panel ID="pnlAdmin" runat="server" Visible="true" CssClass="pnl-admin">
+            <div class="btn-group" role="group" aria-label="Control buttons">
+                <asp:TextBox ID="txtLicenseKey" runat="server" CssClass="form-control" />
+                <asp:LinkButton ID="lnkCheckLicenseKey" runat="server" CssClass="btn btn-primary link-lock"
+                    ResourceKey="lnkCheckLicenseKey" />
+                <asp:Label ID="lblContentHolder" runat="server" CssClass="content-holder" />
+                <asp:HyperLink ID="lnkAdd" runat="server" CssClass="btn btn-primary link-add no-txt"
+                    ResourceKey="lnkAdd" ToolTip="Add FAQ Entry" />
+                <asp:HyperLink ID="lnkManage" runat="server" CssClass="btn btn-primary link-manage no-txt"
+                    ResourceKey="lnkManage" ToolTip="Manage Categories" />
+                <asp:HyperLink ID="lnkHiddenFaq" runat="server" CssClass="btn btn-primary link-show no-txt"
+                    ResourceKey="lnkHiddenFaq" ToolTip="Display/Hide Hidden FAQs" />
+                <asp:HyperLink ID="lnkSettings" runat="server" CssClass="btn btn-primary link-settings no-txt"
+                    ResourceKey="lnkManage" ToolTip="Settings" />
 
-        </div>
-    </asp:Panel>
+            </div>
+        </asp:Panel>
 
-    <asp:Panel ID="pnlCategoryType" runat="server" CssClass="col-xs-12 col-sm-3">
+        <asp:Panel ID="pnlCategoryType" runat="server" CssClass="col-xs-12 col-sm-3">
 
-        <asp:BulletedList ID="blNavMenu" runat="server" CssClass="nav nav-tabs nav-stacked"
-             BulletStyle="Disc" BorderStyle="None" DisplayMode="HyperLink">
-            <asp:ListItem class="active" Value="#section-1" Text="Section One" />
-            <asp:ListItem Value="#section-2" Text="Section Two" />
-            <asp:ListItem Value="#section-3" Text="Section Three" />
-            <asp:ListItem Value="#section-4" Text="Section Four" />
-            <asp:ListItem Value="#section-5" Text="Section Five" />
-        </asp:BulletedList>
+            <asp:BulletedList ID="blNavMenu" runat="server" CssClass="nav nav-tabs nav-stacked"
+                BulletStyle="Disc" BorderStyle="None" DisplayMode="HyperLink">
+                <asp:ListItem class="active" Value="#section-1" Text="Section One" />
+                <asp:ListItem Value="#section-2" Text="Section Two" />
+                <asp:ListItem Value="#section-3" Text="Section Three" />
+                <asp:ListItem Value="#section-4" Text="Section Four" />
+                <asp:ListItem Value="#section-5" Text="Section Five" />
+            </asp:BulletedList>
 
-    </asp:Panel>
+        </asp:Panel>
 
-    <div class="wrapper col-xs-12 col-sm-9">
-        <div class="row" style="text-align: right; padding: 15px 0;">
-            <asp:DropDownList ID="ddCategoryItems" runat="server" CssClass="">
-                <asp:ListItem Value="category-1" Text="Category Item 1" />
-                <asp:ListItem Value="category-2" Text="Category Item 2" />
-                <asp:ListItem Value="category-3" Text="Category Item 3" />
-            </asp:DropDownList>
-        </div>
-        
-        <asp:Repeater ID="rptCategory" runat="server">
-            <ItemTemplate>
-                <h3>
-                    <asp:Label ID="CategoryName" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"CategoryName").ToString() %>' />
-                </h3>
-                <asp:Repeater ID="rptFaqEntries" runat="server" OnItemCommand="rptFaqEntries_ItemCommand">
-                    <HeaderTemplate>
-                        <div class="accordion">
-                    </HeaderTemplate>
-                    <ItemTemplate>
-                        <asp:Panel ID="pnlFaqItem" runat="server" CssClass="faq-item four-controls">
-                            <asp:Label ID="faqId" runat="server" Visible ="false" 
-                                Text='<%#DataBinder.Eval(Container.DataItem,"FaqId").ToString() %>' />
-                            <h3>
-                                <asp:Label ID="faqQuestion" runat="server" CssClass=""
-                                    Text='<%#DataBinder.Eval(Container.DataItem,"FaqQuestion").ToString() %>' />
-                            </h3>
-                            <div>
-                                <asp:Label ID="faqAnswer" runat="server" CssClass=""
-                                    Text='<%#DataBinder.Eval(Container.DataItem,"FaqAnswer").ToString() %>' />
-                            </div>
-                        </asp:Panel>
-                        <asp:Panel ID="pnlControlButtonsAdmin" runat="server" CssClass="pnl-controls">
-                            <asp:HyperLink ID="lnkSortingUp" runat="server" CssClass="btn btn-primary control-btn link-up no-txt"
-                                data-toggle="tooltip" ToolTip="Move Up" />
-                            <asp:HyperLink ID="lnkSortingDown" runat="server" CssClass="btn btn-primary control-btn link-down no-txt"
-                                data-toggle="tooltip" ToolTip="Move Down" />
-                            <asp:HyperLink ID="lnkEdit" runat="server" CssClass="btn btn-primary control-btn link-edit no-txt"
-                                data-toggle="tooltip" ToolTip="Edit" />
-                            <asp:LinkButton ID="btnDeleteFaq" runat="server" CssClass="btn btn-primary control-btn link-delete error no-txt"
-                                data-toggle="tooltip" ToolTip="Delete" CommandName="Delete" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"FaqId").ToString() %>' />
-                        </asp:Panel>
-                    </ItemTemplate>
-                    <FooterTemplate>
-                        </div>
-                        <a href="#" class="btn btn-primary custom-acc-ctrl">Expand All</a>
-                    </FooterTemplate>
-                </asp:Repeater>
-            </ItemTemplate>
-        </asp:Repeater>
+        <div class="wrapper col-xs-12 col-sm-9">
+            <div class="row" style="text-align: right; padding: 15px 0;">
+                <asp:DropDownList ID="ddCategoryItems" runat="server" CssClass="">
+                    <asp:ListItem Value="category-1" Text="Category Item 1" />
+                    <asp:ListItem Value="category-2" Text="Category Item 2" />
+                    <asp:ListItem Value="category-3" Text="Category Item 3" />
+                </asp:DropDownList>
+            </div>
 
-        <asp:Repeater ID="rptNotCategorized" runat="server" OnItemCommand="rptFaqEntries_ItemCommand">
-            <HeaderTemplate>
-                <div class="accordion">
-            </HeaderTemplate>
-            <ItemTemplate>
-                <asp:Panel ID="pnlFaqItem" runat="server" CssClass="faq-item four-controls">
-                    <asp:Label ID="faqId" runat="server" Visible="false"
-                        Text='<%#DataBinder.Eval(Container.DataItem,"FaqId").ToString() %>' />
+            <asp:Repeater ID="rptCategory" runat="server">
+                <ItemTemplate>
                     <h3>
-                        <asp:Label ID="FaqQuestion" runat="server" CssClass=""
-                            Text='<%#DataBinder.Eval(Container.DataItem,"FaqQuestion").ToString() %>' />
+                        <asp:Label ID="CategoryName" runat="server" Text='<%#DataBinder.Eval(Container.DataItem,"CategoryName").ToString() %>' />
                     </h3>
-                    <div>
-                        <asp:Label ID="FaqAnswer" runat="server" CssClass=""
-                            Text='<%#DataBinder.Eval(Container.DataItem,"FaqAnswer").ToString() %>' />
+                    <asp:Repeater ID="rptFaqEntries" runat="server" OnItemCommand="rptFaqEntries_ItemCommand">
+                        <HeaderTemplate>
+                            <div class="accordion">
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <asp:Panel ID="pnlFaqItem" runat="server" CssClass="faq-item four-controls">
+                                <asp:Label ID="faqId" runat="server" Visible="false"
+                                    Text='<%#DataBinder.Eval(Container.DataItem,"FaqId").ToString() %>' />
+                                <h3>
+                                    <asp:Label ID="faqQuestion" runat="server" CssClass=""
+                                        Text='<%#DataBinder.Eval(Container.DataItem,"FaqQuestion").ToString() %>' />
+                                </h3>
+                                <div>
+                                    <asp:Label ID="faqAnswer" runat="server" CssClass=""
+                                        Text='<%#DataBinder.Eval(Container.DataItem,"FaqAnswer").ToString() %>' />
+                                </div>
+                            </asp:Panel>
+                            <asp:Panel ID="pnlControlButtonsAdmin" runat="server" CssClass="pnl-controls">
+                                <asp:HyperLink ID="lnkSortingUp" runat="server" CssClass="btn btn-primary control-btn link-up no-txt"
+                                    data-toggle="tooltip" ToolTip="Move Up" />
+                                <asp:HyperLink ID="lnkSortingDown" runat="server" CssClass="btn btn-primary control-btn link-down no-txt"
+                                    data-toggle="tooltip" ToolTip="Move Down" />
+                                <asp:HyperLink ID="lnkEdit" runat="server" CssClass="btn btn-primary control-btn link-edit no-txt"
+                                    data-toggle="tooltip" ToolTip="Edit" />
+                                <asp:LinkButton ID="btnDeleteFaq" runat="server" CssClass="btn btn-primary control-btn link-delete error no-txt"
+                                    data-toggle="tooltip" ToolTip="Delete" CommandName="Delete" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"FaqId").ToString() %>' />
+                            </asp:Panel>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            </div>
+                        <a href="#" class="btn btn-primary custom-acc-ctrl">Expand All</a>
+                        </FooterTemplate>
+                    </asp:Repeater>
+                </ItemTemplate>
+            </asp:Repeater>
+
+            <asp:Repeater ID="rptNotCategorized" runat="server" OnItemCommand="rptFaqEntries_ItemCommand">
+                <HeaderTemplate>
+                    <div class="accordion">
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <asp:Panel ID="pnlFaqItem" runat="server" CssClass="faq-item four-controls">
+                        <asp:Label ID="faqId" runat="server" Visible="false"
+                            Text='<%#DataBinder.Eval(Container.DataItem,"FaqId").ToString() %>' />
+                        <h3>
+                            <asp:Label ID="FaqQuestion" runat="server" CssClass=""
+                                Text='<%#DataBinder.Eval(Container.DataItem,"FaqQuestion").ToString() %>' />
+                        </h3>
+                        <div>
+                            <asp:Label ID="FaqAnswer" runat="server" CssClass=""
+                                Text='<%#DataBinder.Eval(Container.DataItem,"FaqAnswer").ToString() %>' />
+                        </div>
+                    </asp:Panel>
+                    <asp:Panel ID="pnlControlButtonsAdmin" runat="server" CssClass="pnl-controls">
+                        <asp:HyperLink ID="lnkSortingUp" runat="server" CssClass="btn btn-primary control-btn link-up no-txt"
+                            data-toggle="tooltip" ToolTip="Move Up" />
+                        <asp:HyperLink ID="lnkSortingDown" runat="server" CssClass="btn btn-primary control-btn link-down no-txt"
+                            data-toggle="tooltip" ToolTip="Move Down" />
+                        <asp:HyperLink ID="lnkEdit" runat="server" CssClass="btn btn-primary control-btn link-edit no-txt"
+                            data-toggle="tooltip" ToolTip="Edit" />
+                        <asp:LinkButton ID="btnDeleteFaq" runat="server" CssClass="btn btn-primary control-btn link-delete error no-txt"
+                            data-toggle="tooltip" ToolTip="Delete" CommandName="Delete" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"FaqId").ToString() %>' />
+                    </asp:Panel>
+                </ItemTemplate>
+                <FooterTemplate>
                     </div>
-                </asp:Panel>
-                <asp:Panel ID="pnlControlButtonsAdmin" runat="server" CssClass="pnl-controls">
-                    <asp:HyperLink ID="lnkSortingUp" runat="server" CssClass="btn btn-primary control-btn link-up no-txt"
-                        data-toggle="tooltip" ToolTip="Move Up" />
-                    <asp:HyperLink ID="lnkSortingDown" runat="server" CssClass="btn btn-primary control-btn link-down no-txt"
-                        data-toggle="tooltip" ToolTip="Move Down" />
-                    <asp:HyperLink ID="lnkEdit" runat="server" CssClass="btn btn-primary control-btn link-edit no-txt"
-                        data-toggle="tooltip" ToolTip="Edit" />
-                    <asp:LinkButton ID="btnDeleteFaq" runat="server" CssClass="btn btn-primary control-btn link-delete error no-txt"
-                        data-toggle="tooltip" ToolTip="Delete" CommandName="Delete" CommandArgument='<%#DataBinder.Eval(Container.DataItem,"FaqId").ToString() %>' />
-                </asp:Panel>
-            </ItemTemplate>
-            <FooterTemplate>
-                </div>
                 <a href="#" class="btn btn-primary custom-acc-ctrl">Expand All</a>
-            </FooterTemplate>
-        </asp:Repeater>
-    </div>
-            <%--POPUP--%>
+                </FooterTemplate>
+            </asp:Repeater>
+        </div>
+
+        <%--POPUP--%>
         <asp:Panel ID="pnlPopUp" runat="server" Visible="false" CssClass="popup">
             <div class="popup-wrapper">
                 <asp:Label ID="lblPopUpIcon" runat="server" />
@@ -136,20 +143,21 @@
                 <asp:Label ID="lblDeleteFaqId" runat="server" Visible="false" />
                 <asp:LinkButton ID="btnDelete" runat="server" CssClass="btn btn-danger link-delete"
                     OnClick="btnDelete_Click" ResourceKey="lnkDelete"
-                    data-toggle="tooltip" ToolTip="Delete Image" />
+                    data-toggle="tooltip" ToolTip="Delete Entry" />
                 <asp:LinkButton ID="btnClose" runat="server" CssClass="close-action btn btn-danger link-close no-txt" OnClick="btnClose_Click"
                     data-toggle="tooltip" ToolTip="Close" />
             </div>
         </asp:Panel>
 
 
+    </div>
 </div>
 
 <script type="text/javascript">
     (function ($, Sys) {
         
         $('.JSFaq #<%= lblContentHolder.ClientID %>')
-            .html('<b class="link-check"> Activated</b> | JSFaq Module: ' + <%= ModuleId %>);
+            .html('<b class="link-unlock"> Activated</b> | JSFaq Module: ' + <%= ModuleId %>);
 
         var $lnkCollapse = '<i class="fa fa-compress"></i>',
             $lnkExpand = '<i class="fa fa-expand"></i>';
@@ -255,14 +263,14 @@
             .attr('data-target' ,'#<%= pnlCategoryType.ClientID %>');
         
 
-            $("#<%= blNavMenu.ClientID %>").affix({
-                offset: { 
-                    top: 195 
-                }
-            });
-            //$("#blNavMenu").on('affixed.bs.affix', function(){
-            //    alert("The left navigation menu has been affixed. Now it doesn't scroll with the page.");
-            //});
+        $("#<%= blNavMenu.ClientID %>").affix({
+            offset: { 
+                top: 195 
+            }
+        });
+        //$("#blNavMenu").on('affixed.bs.affix', function(){
+        //    alert("The left navigation menu has been affixed. Now it doesn't scroll with the page.");
+        //});
 
 
     })(jQuery, window.Sys);

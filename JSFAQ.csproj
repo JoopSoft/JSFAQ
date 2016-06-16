@@ -188,9 +188,6 @@
   <ItemGroup>
     <Content Include="App_LocalResources\ManageCategories.ascx.resx" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_LocalResources\ListCategories.ascx.resx" />
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

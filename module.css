@@ -182,7 +182,6 @@
           margin-top: 0;
           margin-bottom: 0; }
       .JSFaq .dnnForm .dnnFormItem .btn {
-        line-height: normal;
         border: none;
         padding: 10px 15px;
         -webkit-border-radius: 0;
@@ -211,6 +210,16 @@
           -webkit-box-shadow: none;
           -o-box-shadow: none;
           box-shadow: none; }
+      .JSFaq .dnnForm .dnnFormItem .group-stat-holder {
+        float: left;
+        border: none;
+        padding: 10px 15px;
+        background-color: rgba(59, 30, 119, 0.7);
+        color: #fff;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        border-radius: 0; }
       .JSFaq .dnnForm .dnnFormItem.controls {
         margin: 0;
         padding: 10px 0 0 0;
@@ -337,6 +346,21 @@
         .JSFaq .dnnForm .dnnFormItem.group input[type="search"].grouped,
         .JSFaq .dnnForm .dnnFormItem.group input[type="date"].grouped {
           border-right: none; }
+          .JSFaq .dnnForm .dnnFormItem.group input[type="text"].grouped.squared-box,
+          .JSFaq .dnnForm .dnnFormItem.group select.grouped.squared-box,
+          .JSFaq .dnnForm .dnnFormItem.group textarea.grouped.squared-box,
+          .JSFaq .dnnForm .dnnFormItem.group input[type="email"].grouped.squared-box,
+          .JSFaq .dnnForm .dnnFormItem.group input[type="search"].grouped.squared-box,
+          .JSFaq .dnnForm .dnnFormItem.group input[type="date"].grouped.squared-box {
+            width: calc(50% - 35px);
+            max-width: 415px; }
+            .JSFaq .dnnForm .dnnFormItem.group input[type="text"].grouped.squared-box:focus,
+            .JSFaq .dnnForm .dnnFormItem.group select.grouped.squared-box:focus,
+            .JSFaq .dnnForm .dnnFormItem.group textarea.grouped.squared-box:focus,
+            .JSFaq .dnnForm .dnnFormItem.group input[type="email"].grouped.squared-box:focus,
+            .JSFaq .dnnForm .dnnFormItem.group input[type="search"].grouped.squared-box:focus,
+            .JSFaq .dnnForm .dnnFormItem.group input[type="date"].grouped.squared-box:focus {
+              border: 1px solid #3b1e77; }
         .JSFaq .dnnForm .dnnFormItem.group input[type="text"].ungrouped,
         .JSFaq .dnnForm .dnnFormItem.group select.ungrouped,
         .JSFaq .dnnForm .dnnFormItem.group textarea.ungrouped,
@@ -367,6 +391,31 @@
       .JSFaq .dnnForm .dnnFormItem.no-spacing {
         padding: 0;
         margin: 0; }
+      .JSFaq .dnnForm .dnnFormItem .input-group {
+        display: block; }
+        .JSFaq .dnnForm .dnnFormItem .input-group .input-group-addon {
+          float: left;
+          width: 35px;
+          height: 35px;
+          line-height: 35px;
+          padding: 0;
+          background-color: #fff;
+          border: 1px solid rgba(59, 30, 119, 0.25);
+          /*border-left: $none;*/
+          text-decoration: none;
+          color: rgba(59, 30, 119, 0.7);
+          cursor: pointer;
+          -webkit-border-radius: 0;
+          -moz-border-radius: 0;
+          -ms-border-radius: 0;
+          border-radius: 0; }
+          .JSFaq .dnnForm .dnnFormItem .input-group .input-group-addon:hover {
+            color: rgba(59, 30, 119, 0.7); }
+          .JSFaq .dnnForm .dnnFormItem .input-group .input-group-addon i {
+            height: 33px;
+            width: 33px;
+            line-height: 33px;
+            display: block; }
       .JSFaq .dnnForm .dnnFormItem .txt-error-validate {
         font-style: italic;
         position: absolute;
@@ -762,6 +811,111 @@
     .JSFaq ul.nav-tabs.affix {
       top: 30px;
       /* Set the top position of pinned element */ }
+  .JSFaq .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 9998; }
+    .JSFaq .popup.confirm-box .popup-wrapper {
+      top: calc((100% - 315px)/2); }
+    .JSFaq .popup.auto-close-box .popup-wrapper {
+      top: calc((100% - 274px)/2); }
+    .JSFaq .popup.overlay .popup-wrapper {
+      top: 40px;
+      position: relative; }
+      .JSFaq .popup.overlay .popup-wrapper .popup-icon {
+        color: rgba(59, 30, 119, 0.7); }
+      .JSFaq .popup.overlay .popup-wrapper h1, .JSFaq .popup.overlay .popup-wrapper h2, .JSFaq .popup.overlay .popup-wrapper h3, .JSFaq .popup.overlay .popup-wrapper h4, .JSFaq .popup.overlay .popup-wrapper h5, .JSFaq .popup.overlay .popup-wrapper h6 {
+        color: rgba(59, 30, 119, 0.7); }
+      .JSFaq .popup.overlay .popup-wrapper input[type=text] {
+        height: 100px; }
+    .JSFaq .popup .popup-wrapper {
+      position: relative;
+      width: 60%;
+      left: 20%;
+      padding: 15px; }
+      .JSFaq .popup .popup-wrapper h1, .JSFaq .popup .popup-wrapper h2, .JSFaq .popup .popup-wrapper h3, .JSFaq .popup .popup-wrapper h4, .JSFaq .popup .popup-wrapper h5, .JSFaq .popup .popup-wrapper h6 {
+        border: none;
+        padding: 0;
+        margin: 0; }
+      .JSFaq .popup .popup-wrapper .popup-icon {
+        display: block; }
+        .JSFaq .popup .popup-wrapper .popup-icon .fa {
+          font-size: 15em;
+          text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15); }
+      .JSFaq .popup .popup-wrapper .popup-msg {
+        display: block;
+        margin: 10px 0 0 0;
+        word-wrap: break-word;
+        word-break: break-all; }
+      .JSFaq .popup .popup-wrapper .btn-group {
+        margin-top: 15px; }
+        .JSFaq .popup .popup-wrapper .btn-group .btn {
+          margin: 0; }
+      .JSFaq .popup .popup-wrapper .btn {
+        border: none;
+        margin: 15px 0 0 0;
+        padding: 10px 15px; }
+      .JSFaq .popup .popup-wrapper .progress-bar {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        -webkit-transition: width 3000ms ease-out;
+        -moz-transition: width 3000ms ease-out;
+        -o-transition: width 3000ms ease-out;
+        transition: width 3000ms ease-out;
+        -webkit-transition-delay: 0;
+        -moz-transition-delay: 0;
+        -o-transition-delay: 0;
+        transition-delay: 0; }
+      .JSFaq .popup .popup-wrapper .close-action {
+        position: absolute;
+        background-color: transparent;
+        color: rgba(59, 30, 119, 0.7);
+        border: none;
+        top: -70px;
+        right: -70px;
+        padding: 0;
+        margin: 0;
+        width: 70px;
+        height: 70px;
+        line-height: 70px; }
+        .JSFaq .popup .popup-wrapper .close-action:hover {
+          background-color: rgba(59, 30, 119, 0.7);
+          color: #fff; }
+    .JSFaq .popup.success .popup-wrapper .popup-icon {
+      color: #27ae60; }
+    .JSFaq .popup.success .popup-wrapper h1, .JSFaq .popup.success .popup-wrapper h2, .JSFaq .popup.success .popup-wrapper h3, .JSFaq .popup.success .popup-wrapper h4, .JSFaq .popup.success .popup-wrapper h5, .JSFaq .popup.success .popup-wrapper h6 {
+      color: #27ae60; }
+    .JSFaq .popup.success .popup-wrapper .btn.close-action:hover {
+      background-color: #27ae60; }
+    .JSFaq .popup.success .popup-wrapper .progress-bar {
+      background: #27ae60; }
+    .JSFaq .popup.success .popup-wrapper .close-action {
+      color: #27ae60; }
+      .JSFaq .popup.success .popup-wrapper .close-action:hover {
+        color: #fff;
+        background-color: #27ae60; }
+    .JSFaq .popup.warning .popup-wrapper .popup-icon {
+      color: #d9534f; }
+    .JSFaq .popup.warning .popup-wrapper h1, .JSFaq .popup.warning .popup-wrapper h2, .JSFaq .popup.warning .popup-wrapper h3, .JSFaq .popup.warning .popup-wrapper h4, .JSFaq .popup.warning .popup-wrapper h5, .JSFaq .popup.warning .popup-wrapper h6 {
+      color: #d9534f; }
+    .JSFaq .popup.warning .popup-wrapper .btn.close-action:hover {
+      background-color: #d9534f; }
+    .JSFaq .popup.warning .popup-wrapper .progress-bar {
+      background: #d9534f; }
+    .JSFaq .popup.warning .popup-wrapper .close-action {
+      color: #d9534f; }
+      .JSFaq .popup.warning .popup-wrapper .close-action:hover {
+        color: #fff;
+        background-color: #d9534f; }
   .JSFaq .pnl-admin .btn.btn-primary {
     background-color: rgba(0, 0, 0, 0.5); }
     .JSFaq .pnl-admin .btn.btn-primary:hover, .JSFaq .pnl-admin .btn.btn-primary:focus, .JSFaq .pnl-admin .btn.btn-primary:active, .JSFaq .pnl-admin .btn.btn-primary.active {
@@ -805,9 +959,9 @@
         -o-box-shadow: none;
         box-shadow: none; }
   .JSFaq .btn {
-    line-height: normal;
     border: none;
     padding: 10px 15px;
+    line-height: inherit;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -ms-border-radius: 0;
@@ -880,6 +1034,22 @@
   .JSFaq .no-spacing {
     margin: 0;
     padding: 0; }
+  .JSFaq .view .pnl-admin {
+    text-align: right;
+    float: right; }
+    .JSFaq .view .pnl-admin .form-control {
+      width: 25%;
+      height: 39px;
+      line-height: normal;
+      float: left;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      -o-box-shadow: none;
+      box-shadow: none;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      border-radius: 0; }
 
 ::-webkit-input-placeholder {
   color: rgba(59, 30, 119, 0.25);
