@@ -19,10 +19,14 @@
         <%--EDIT MODE GROUP BUTTONS--%>
         <asp:Panel ID="pnlAdmin" runat="server" Visible="true" CssClass="pnl-admin">
             <div class="btn-group" role="group" aria-label="Control buttons">
-                <asp:TextBox ID="txtLicenseKey" runat="server" CssClass="form-control" />
-                <asp:LinkButton ID="lnkCheckLicenseKey" runat="server" CssClass="btn btn-primary link-lock"
-                    ResourceKey="lnkCheckLicenseKey" />
-                <asp:Label ID="lblContentHolder" runat="server" CssClass="content-holder" />
+                <asp:Label ID="lblContentHolder" runat="server" />
+                <asp:Label ID="lblContentHolderActivate" runat="server" />
+
+                <asp:LinkButton ID="lnkCheckLicenseKey" runat="server"
+                    OnClick="lnkCheckLicenseKey_Click" />
+                <asp:LinkButton ID="lnkGetOwnerInfo" runat="server"
+                    OnClick="lnkMoreInfo_Click" />
+
                 <asp:HyperLink ID="lnkAdd" runat="server" CssClass="btn btn-primary link-add no-txt"
                     ResourceKey="lnkAdd" ToolTip="Add FAQ Entry" />
                 <asp:HyperLink ID="lnkManage" runat="server" CssClass="btn btn-primary link-manage no-txt"
@@ -140,6 +144,35 @@
                 <h3>
                     <asp:Label ID="lblPopUpMsg" runat="server" CssClass="popup-msg" />
                 </h3>
+                <asp:Panel ID="pnlInputGroups" runat="server" CssClass="input-group">
+                    <asp:Label ID="lblKey" runat="server" CssClass="input-group-addon"
+                        ClientIDMode="Static" />
+                    <asp:TextBox ID="txtKey" runat="server" CssClass="form-control" Enabled="true"
+                        aria-describedby="lblKey"
+                        Placeholder="Enter Installed Key" />
+                    <span class="input-group-btn">
+                        <asp:HyperLink ID="lnkSubmit" runat="server" CssClass="btn btn-primary link-key no-txt"
+                            data-toggle="tooltip" />
+                    </span>
+                </asp:Panel>
+                <asp:Panel ID="pnlAlerts" runat="server" CssClass="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" class="link-close no-txt">&times;</span>
+                    </button>
+                    <asp:Label ID="lblStatusMsg" runat="server"
+                        Text="Error messaging status text.." />
+                </asp:Panel>
+                <asp:Panel ID="pnlOwnerInfo" runat="server" ClientIDMode="Static">
+                    <div class="owner-wrapper">
+                        <asp:Label ID="lblInfoInstalledKey" runat="server" />
+                        <asp:Label ID="lblInfoConfirmKey" runat="server" />
+                        <asp:Label ID="lblInfoCompany" runat="server" />
+                        <asp:Label ID="lblInfoEmail" runat="server" />
+                        <asp:Label ID="lblInfoCellPhone" runat="server" />
+                        <asp:Label ID="lblInfoDomain" runat="server" />
+                    </div>
+                </asp:Panel>
+
                 <asp:Label ID="lblDeleteFaqId" runat="server" Visible="false" />
                 <asp:LinkButton ID="btnDelete" runat="server" CssClass="btn btn-danger link-delete"
                     OnClick="btnDelete_Click" ResourceKey="lnkDelete"
@@ -155,9 +188,6 @@
 
 <script type="text/javascript">
     (function ($, Sys) {
-        
-        $('.JSFaq #<%= lblContentHolder.ClientID %>')
-            .html('<b class="link-unlock"> Activated</b> | JSFaq Module: ' + <%= ModuleId %>);
 
         var $lnkCollapse = '<i class="fa fa-compress"></i>',
             $lnkExpand = '<i class="fa fa-expand"></i>';
@@ -166,7 +196,7 @@
             header: 'ui-icon-plus',
             activeHeader: 'ui-icon-minus'
         };
-                
+
         $('.JSFaq .accordion')
           .accordion({
               active: false, // Int {0}, Bool {false:collapse all}
@@ -199,14 +229,14 @@
         var contentAreas = $('.accordion .ui-accordion-content ').hide();
         var expandLink = $('.custom-acc-ctrl');
 <%--        var expandLink = $('#<%= lnkExpandCollapse.ClientID %>');--%>
-        headers.click(function() {
+        headers.click(function () {
             var panel = $(this).next();
             var isOpen = panel.is(':visible');
- 
+
             // open or close as necessary
-            panel[isOpen? 'slideUp': 'slideDown']()
+            panel[isOpen ? 'slideUp' : 'slideDown']()
                 // trigger the correct custom event
-                .trigger(isOpen? 'hide': 'show');
+                .trigger(isOpen ? 'hide' : 'show');
 
             // stop the link from causing a pagescroll
             return false;
@@ -215,31 +245,31 @@
         // hook up the expand/collapse all
         expandLink
             .html($lnkExpand + ' Expand all')
-            .click(function(){
+            .click(function () {
                 var isAllOpen = $(this).data('isAllOpen');
-    
-                contentAreas[isAllOpen? 'hide': 'show']()
-                    .trigger(isAllOpen? 'hide': 'show');
+
+                contentAreas[isAllOpen ? 'hide' : 'show']()
+                    .trigger(isAllOpen ? 'hide' : 'show');
             });
         // when panels open or close, check to see if they're all open
         contentAreas.on({
             // whenever we open a panel, check to see if they're all open
             // if all open, swap the button to collapser
-            show: function(){
-                var isAllOpen = !contentAreas.is(':hidden');   
-                if(isAllOpen){
+            show: function () {
+                var isAllOpen = !contentAreas.is(':hidden');
+                if (isAllOpen) {
                     expandLink.text('Collapse All')
                         .data('isAllOpen', true);
                 }
             },
             // whenever we close a panel, check to see if they're all open
             // if not all open, swap the button to expander
-            hide: function(){
+            hide: function () {
                 var isAllOpen = !contentAreas.is(':hidden');
-                if(!isAllOpen){
+                if (!isAllOpen) {
                     expandLink.text('Expand all')
                     .data('isAllOpen', false);
-                } 
+                }
             }
         });
 
@@ -259,13 +289,13 @@
 
 
         $('body')
-            .attr('data-spy', 'scroll' )
-            .attr('data-target' ,'#<%= pnlCategoryType.ClientID %>');
-        
+            .attr('data-spy', 'scroll')
+            .attr('data-target', '#<%= pnlCategoryType.ClientID %>');
+
 
         $("#<%= blNavMenu.ClientID %>").affix({
-            offset: { 
-                top: 195 
+            offset: {
+                top: 195
             }
         });
         //$("#blNavMenu").on('affixed.bs.affix', function(){

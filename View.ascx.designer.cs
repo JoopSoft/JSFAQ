@@ -58,13 +58,22 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.Panel pnlAdmin;
         
         /// <summary>
-        /// txtLicenseKey control.
+        /// lblContentHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLicenseKey;
+        protected global::System.Web.UI.WebControls.Label lblContentHolder;
+        
+        /// <summary>
+        /// lblContentHolderActivate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblContentHolderActivate;
         
         /// <summary>
         /// lnkCheckLicenseKey control.
@@ -76,13 +85,13 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.LinkButton lnkCheckLicenseKey;
         
         /// <summary>
-        /// lblContentHolder control.
+        /// lnkGetOwnerInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContentHolder;
+        protected global::System.Web.UI.WebControls.LinkButton lnkGetOwnerInfo;
         
         /// <summary>
         /// lnkAdd control.
@@ -191,6 +200,123 @@ namespace JS.Modules.JSFAQ {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPopUpMsg;
+        
+        /// <summary>
+        /// pnlInputGroups control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlInputGroups;
+        
+        /// <summary>
+        /// lblKey control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblKey;
+        
+        /// <summary>
+        /// txtKey control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtKey;
+        
+        /// <summary>
+        /// lnkSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkSubmit;
+        
+        /// <summary>
+        /// pnlAlerts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlAlerts;
+        
+        /// <summary>
+        /// lblStatusMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStatusMsg;
+        
+        /// <summary>
+        /// pnlOwnerInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlOwnerInfo;
+        
+        /// <summary>
+        /// lblInfoInstalledKey control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInfoInstalledKey;
+        
+        /// <summary>
+        /// lblInfoConfirmKey control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInfoConfirmKey;
+        
+        /// <summary>
+        /// lblInfoCompany control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInfoCompany;
+        
+        /// <summary>
+        /// lblInfoEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInfoEmail;
+        
+        /// <summary>
+        /// lblInfoCellPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInfoCellPhone;
+        
+        /// <summary>
+        /// lblInfoDomain control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInfoDomain;
         
         /// <summary>
         /// lblDeleteFaqId control.

@@ -48,6 +48,12 @@
             $lnkMove = '<i class="fa fa-arrows"></i>',
             $lnkLock = '<i class="fa fa-lock"></i>',
             $lnkUnlock = '<i class="fa fa-unlock"></i>',
+            $lnkCopy = '<i class="fa fa-clipboard"></i>',
+            $lnkKey = '<i class="fa fa-key"></i>',
+            $lnkCompany = '<i class="fa fa-building-o"></i>',
+            $lnkMail = '<i class="fa fa-envelope-o"></i>',
+            $lnkPhone = '<i class="fa fa-phone"></i>',
+            $lnkGlobe = '<i class="fa fa-globe"></i>',
             $lnkSelUp = '<i class="fa fa-arrow-circle-up"></i>',
             $lnkSelDown = '<i class="fa fa-arrow-circle-down"></i>',
             $lnkSelRight = '<i class="fa fa-arrow-circle-right"></i>',
@@ -90,6 +96,12 @@
             $('.JSFaq .link-move').prepend($lnkMove + ' ');
             $('.JSFaq .link-lock').prepend($lnkLock + ' ');
             $('.JSFaq .link-unlock').prepend($lnkUnlock + ' ');
+            $('.JSFaq .link-copy').prepend($lnkCopy + ' ');
+            $('.JSFaq .link-key').prepend($lnkKey + ' ');
+            $('.JSFaq .link-company').prepend($lnkCompany + ' ');
+            $('.JSFaq .link-mail').prepend($lnkMail + ' ');
+            $('.JSFaq .link-phone').prepend($lnkPhone + ' ');
+            $('.JSFaq .link-globe').prepend($lnkGlobe + ' ');
             $('.JSFaq .link-success').prepend($lnkSuccess + ' ');
             $('.JSFaq .link-list').prepend($lnkList + ' ');
             $('.JSFaq .link-exch').prepend($lnkExch + ' ');
@@ -129,6 +141,12 @@
             $('.JSFaq .link-move.no-txt').html($lnkMove);
             $('.JSFaq .link-lock.no-txt').html($lnkLock);
             $('.JSFaq .link-unlock.no-txt').html($lnkUnlock);
+            $('.JSFaq .link-copy.no-txt').html($lnkCopy);
+            $('.JSFaq .link-key.no-txt').html($lnkKey);
+            $('.JSFaq .link-company.no-txt').html($lnkCompany);
+            $('.JSFaq .link-mail.no-txt').html($lnkMail);
+            $('.JSFaq .link-phone.no-txt').html($lnkPhone);
+            $('.JSFaq .link-globe.no-txt').html($lnkGlobe);
             $('.JSFaq .link-success.no-txt').html($lnkSuccess);
             $('.JSFaq .link-list.no-txt').html($lnkList);
             $('.JSFaq .link-exch.no-txt').html($lnkExch);

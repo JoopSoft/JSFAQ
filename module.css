@@ -811,6 +811,57 @@
     .JSFaq ul.nav-tabs.affix {
       top: 30px;
       /* Set the top position of pinned element */ }
+  .JSFaq .input-group .input-group-addon {
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    border: none;
+    background-color: rgba(59, 30, 119, 0.7);
+    color: #fff;
+    cursor: default;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0; }
+    .JSFaq .input-group .input-group-addon i {
+      height: 33px;
+      width: 33px;
+      line-height: 33px;
+      display: block; }
+    .JSFaq .input-group .input-group-addon strong {
+      color: #fff; }
+  .JSFaq .input-group input[type=text] {
+    border: 1px solid rgba(59, 30, 119, 0.7);
+    border-left: none;
+    padding: 20px 10px;
+    height: inherit;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    border-radius: 0;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none; }
+    .JSFaq .input-group input[type=text][disabled=disabled], .JSFaq .input-group input[type=text].aspNetDisabled {
+      border: none;
+      background: rgba(59, 30, 119, 0.7);
+      color: #fff;
+      cursor: default; }
+  .JSFaq .pnl-owner-info {
+    text-align: left;
+    background: rgba(59, 30, 119, 0.8); }
+    .JSFaq .pnl-owner-info .owner-wrapper {
+      padding: 10px 15px; }
+      .JSFaq .pnl-owner-info .owner-wrapper span,
+      .JSFaq .pnl-owner-info .owner-wrapper strong,
+      .JSFaq .pnl-owner-info .owner-wrapper a,
+      .JSFaq .pnl-owner-info .owner-wrapper a:link,
+      .JSFaq .pnl-owner-info .owner-wrapper .btn {
+        color: #fff; }
+      .JSFaq .pnl-owner-info .owner-wrapper span {
+        display: block;
+        line-height: 30px; }
   .JSFaq .popup {
     position: fixed;
     top: 0;
@@ -826,14 +877,39 @@
     .JSFaq .popup.auto-close-box .popup-wrapper {
       top: calc((100% - 274px)/2); }
     .JSFaq .popup.overlay .popup-wrapper {
-      top: 40px;
+      top: 100px;
       position: relative; }
       .JSFaq .popup.overlay .popup-wrapper .popup-icon {
         color: rgba(59, 30, 119, 0.7); }
       .JSFaq .popup.overlay .popup-wrapper h1, .JSFaq .popup.overlay .popup-wrapper h2, .JSFaq .popup.overlay .popup-wrapper h3, .JSFaq .popup.overlay .popup-wrapper h4, .JSFaq .popup.overlay .popup-wrapper h5, .JSFaq .popup.overlay .popup-wrapper h6 {
         color: rgba(59, 30, 119, 0.7); }
+      .JSFaq .popup.overlay .popup-wrapper h3 {
+        font-size: 1rem; }
+      .JSFaq .popup.overlay .popup-wrapper h4 {
+        font-size: 0.85rem; }
       .JSFaq .popup.overlay .popup-wrapper input[type=text] {
-        height: 100px; }
+        height: 60px;
+        line-height: 60px;
+        padding: 0 10px;
+        text-align: center;
+        font-size: 1.5em;
+        border: none;
+        background: rgba(59, 30, 119, 0.7);
+        color: #fff; }
+        .JSFaq .popup.overlay .popup-wrapper input[type=text]:focus {
+          background: rgba(59, 30, 119, 0.8); }
+        .JSFaq .popup.overlay .popup-wrapper input[type=text]::-webkit-input-placeholder {
+          color: rgba(255, 255, 255, 0.35) !important;
+          font-style: italic; }
+        .JSFaq .popup.overlay .popup-wrapper input[type=text]:-moz-placeholder {
+          color: rgba(255, 255, 255, 0.35) !important;
+          font-style: italic; }
+        .JSFaq .popup.overlay .popup-wrapper input[type=text]::-moz-placeholder {
+          color: rgba(255, 255, 255, 0.35) !important;
+          font-style: italic; }
+        .JSFaq .popup.overlay .popup-wrapper input[type=text]:-ms-input-placeholder {
+          color: rgba(255, 255, 255, 0.35) !important;
+          font-style: italic; }
     .JSFaq .popup .popup-wrapper {
       position: relative;
       width: 60%;
@@ -850,9 +926,22 @@
           text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15); }
       .JSFaq .popup .popup-wrapper .popup-msg {
         display: block;
-        margin: 10px 0 0 0;
+        margin: 10px 0 10px 0;
         word-wrap: break-word;
         word-break: break-all; }
+      .JSFaq .popup .popup-wrapper .input-group-btn .btn {
+        height: 60px;
+        line-height: 70px;
+        margin: 0;
+        padding: 0 15px; }
+      .JSFaq .popup .popup-wrapper .input-group-btn .fa {
+        font-size: 2em; }
+      .JSFaq .popup .popup-wrapper .alert {
+        margin: 15px 0 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        border-radius: 0; }
       .JSFaq .popup .popup-wrapper .btn-group {
         margin-top: 15px; }
         .JSFaq .popup .popup-wrapper .btn-group .btn {
@@ -894,10 +983,24 @@
       color: #27ae60; }
     .JSFaq .popup.success .popup-wrapper h1, .JSFaq .popup.success .popup-wrapper h2, .JSFaq .popup.success .popup-wrapper h3, .JSFaq .popup.success .popup-wrapper h4, .JSFaq .popup.success .popup-wrapper h5, .JSFaq .popup.success .popup-wrapper h6 {
       color: #27ae60; }
-    .JSFaq .popup.success .popup-wrapper .btn.close-action:hover {
-      background-color: #27ae60; }
+    .JSFaq .popup.success .popup-wrapper .btn {
+      background: #27ae60; }
+      .JSFaq .popup.success .popup-wrapper .btn.close-action {
+        background: none; }
+        .JSFaq .popup.success .popup-wrapper .btn.close-action:hover {
+          background-color: #27ae60; }
+      .JSFaq .popup.success .popup-wrapper .btn:hover {
+        background-color: #5cb85c; }
     .JSFaq .popup.success .popup-wrapper .progress-bar {
       background: #27ae60; }
+    .JSFaq .popup.success .popup-wrapper .pnl-owner-info {
+      background: #27ae60; }
+    .JSFaq .popup.success .popup-wrapper .input-group-addon {
+      background: #27ae60; }
+    .JSFaq .popup.success .popup-wrapper input[type=text] {
+      background: #d9534f; }
+      .JSFaq .popup.success .popup-wrapper input[type=text]:focus {
+        background: #5cb85c; }
     .JSFaq .popup.success .popup-wrapper .close-action {
       color: #27ae60; }
       .JSFaq .popup.success .popup-wrapper .close-action:hover {
@@ -907,10 +1010,24 @@
       color: #d9534f; }
     .JSFaq .popup.warning .popup-wrapper h1, .JSFaq .popup.warning .popup-wrapper h2, .JSFaq .popup.warning .popup-wrapper h3, .JSFaq .popup.warning .popup-wrapper h4, .JSFaq .popup.warning .popup-wrapper h5, .JSFaq .popup.warning .popup-wrapper h6 {
       color: #d9534f; }
-    .JSFaq .popup.warning .popup-wrapper .btn.close-action:hover {
-      background-color: #d9534f; }
+    .JSFaq .popup.warning .popup-wrapper .btn {
+      background: #d9534f; }
+      .JSFaq .popup.warning .popup-wrapper .btn.close-action {
+        background: none; }
+        .JSFaq .popup.warning .popup-wrapper .btn.close-action:hover {
+          background-color: #d9534f; }
+      .JSFaq .popup.warning .popup-wrapper .btn:hover {
+        background-color: #c9302c; }
+    .JSFaq .popup.warning .popup-wrapper .pnl-owner-info {
+      background: #d9534f; }
     .JSFaq .popup.warning .popup-wrapper .progress-bar {
       background: #d9534f; }
+    .JSFaq .popup.warning .popup-wrapper .input-group-addon {
+      background: #d9534f; }
+    .JSFaq .popup.warning .popup-wrapper input[type=text] {
+      background: #d9534f; }
+      .JSFaq .popup.warning .popup-wrapper input[type=text]:focus {
+        background: #c9302c; }
     .JSFaq .popup.warning .popup-wrapper .close-action {
       color: #d9534f; }
       .JSFaq .popup.warning .popup-wrapper .close-action:hover {
@@ -925,6 +1042,10 @@
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px 15px; }
+    .JSFaq .pnl-admin .content-holder.success {
+      background-color: #5cb85c; }
+    .JSFaq .pnl-admin .content-holder.warning {
+      background-color: #d9534f; }
   .JSFaq .scroll-action {
     position: fixed;
     bottom: 0;
@@ -1050,6 +1171,8 @@
       -moz-border-radius: 0;
       -ms-border-radius: 0;
       border-radius: 0; }
+    .JSFaq .view .pnl-admin strong {
+      color: #fff; }
 
 ::-webkit-input-placeholder {
   color: rgba(59, 30, 119, 0.25);

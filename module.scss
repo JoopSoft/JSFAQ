@@ -952,6 +952,71 @@
         }
     }
 
+    .input-group {
+        .input-group-addon {
+            height: 60px;
+            line-height: 60px;
+            padding: 0 20px;
+            border: $none;
+            background-color: $dark-alpha-lg;
+            color: $white;
+            cursor: default;
+
+            @include border-radius(0);
+
+            i {
+                height: 33px;
+                width: 33px;
+                line-height: 33px;
+                display: block;
+            }
+
+            strong {
+                color: $white;
+            }
+        }
+
+        input[type=text] {
+            border: 1px solid $dark-alpha-lg;
+            border-left: $none;
+            padding: 20px 10px;
+            height: inherit;
+
+            @include border-radius(0);
+            @include box-shadow($none);
+
+            &[disabled=disabled],
+            &.aspNetDisabled {
+                border: $none;
+                background: $dark-alpha-lg;
+                color: $white;
+                cursor: default;
+            }
+        }
+    }
+
+    .pnl-owner-info {
+        text-align: left;
+        background: $dark-alpha-xlg;
+
+        .owner-wrapper {
+            padding: 10px 15px;
+
+            span,
+            strong,
+            a,
+            a:link,
+            .btn {
+                color: $white;
+            }
+
+            span {
+                display: block;
+                line-height: 30px;
+            }
+        }
+    }
+
     .popup {
         position: fixed;
         top: 0;
@@ -977,7 +1042,7 @@
 
         &.overlay {
             .popup-wrapper {
-                top: 40px;
+                top: 100px;
                 position: relative;
 
                 .popup-icon {
@@ -988,8 +1053,47 @@
                     color: $dark-alpha-lg;
                 }
 
+                h3 {
+                    font-size: 1rem;
+                }
+
+                h4 {
+                    font-size: 0.85rem;
+                }
+
                 input[type=text] {
-                    height: 100px;
+                    height: 60px;
+                    line-height: 60px;
+                    padding: 0 10px;
+                    text-align: center;
+                    font-size: 1.5em;
+                    border: $none;
+                    background: $dark-alpha-lg;
+                    color: $white;
+
+                    &:focus {
+                        background: $dark-alpha-xlg;
+                    }
+
+                    &::-webkit-input-placeholder {
+                        color: $light-alpha !important;
+                        font-style: italic;
+                    }
+
+                    &:-moz-placeholder {
+                        color: $light-alpha !important;
+                        font-style: italic;
+                    }
+
+                    &::-moz-placeholder {
+                        color: $light-alpha !important;
+                        font-style: italic;
+                    }
+
+                    &:-ms-input-placeholder {
+                        color: $light-alpha !important;
+                        font-style: italic;
+                    }
                 }
             }
         }
@@ -1017,9 +1121,27 @@
 
             .popup-msg {
                 display: block;
-                margin: 10px 0 0 0;
+                margin: 10px 0 10px 0;
                 word-wrap: break-word;
                 word-break: break-all;
+            }
+
+            .input-group-btn {
+                .btn {
+                    height: 60px;
+                    line-height: 70px;
+                    margin: 0;
+                    padding: 0 15px;
+                }
+
+                .fa {
+                    font-size: 2em;
+                }
+            }
+
+            .alert {
+                margin: 15px 0 0;
+                @include border-radius(0);
             }
 
             .btn-group {
@@ -1079,15 +1201,39 @@
                 }
 
                 .btn {
+                    background: $success;
+
                     &.close-action {
+                        background: $none;
+
                         &:hover {
                             background-color: $success;
                         }
+                    }
+
+                    &:hover {
+                        background-color: $success-alert;
                     }
                 }
 
                 .progress-bar {
                     background: $success;
+                }
+
+                .pnl-owner-info {
+                    background: $success;
+                }
+
+                .input-group-addon {
+                    background: $success;
+                }
+
+                input[type=text] {
+                    background: $warning;
+
+                    &:focus {
+                        background: $success-alert;
+                    }
                 }
 
                 .close-action {
@@ -1113,15 +1259,39 @@
                 }
 
                 .btn {
+                    background: $warning;
+
                     &.close-action {
+                        background: $none;
+
                         &:hover {
                             background-color: $warning;
                         }
                     }
+
+                    &:hover {
+                        background-color: $warning-hover;
+                    }
+                }
+
+                .pnl-owner-info {
+                    background: $warning;
                 }
 
                 .progress-bar {
                     background: $warning;
+                }
+
+                .input-group-addon {
+                    background: $warning;
+                }
+
+                input[type=text] {
+                    background: $warning;
+
+                    &:focus {
+                        background: $warning-hover;
+                    }
                 }
 
                 .close-action {
@@ -1155,6 +1325,14 @@
             color: $white;
             background-color: $tooltip-md;
             padding: 10px 15px;
+
+            &.success {
+                background-color: $success-alert;
+            }
+
+            &.warning {
+                background-color: $warning;
+            }
         }
     }
 
@@ -1322,6 +1500,10 @@
 
                 @include box-shadow($none);
                 @include border-radius(0);
+            }
+
+            strong {
+                color: $white;
             }
         }
     }
