@@ -76,13 +76,13 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.Label lblSubTitle;
         
         /// <summary>
-        /// lnkManageCategories control.
+        /// lnkManage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkManageCategories;
+        protected global::System.Web.UI.WebControls.HyperLink lnkManage;
         
         /// <summary>
         /// lnkSettings control.

@@ -79,7 +79,6 @@ namespace JS.Modules.JSFAQ
                 string PageName = TabController.CurrentPage.TabPath.Remove(0, 1);
                 lnkSettings.NavigateUrl = "javascript:dnnModal.show('http://" + Request.Url.Host + PageName + "/ctl/Module/ModuleId/" + ModuleId + "?ReturnURL=" + PageName + "&amp;popUp=true#msSpecificSettings',/*showReturn*/false,550,950,true,'')";
                 bool faqPresent = false;
-                bool categoryPresent = false;
                 bool emptyCategory = true;
                 var cc = new CategoryController();
                 var fc = new FAQController();
@@ -106,10 +105,6 @@ namespace JS.Modules.JSFAQ
                     {
                         categorySource.Add(c);
                     }
-                    if (c.CategoryId > 0)
-                    {
-                        categoryPresent = true;
-                    }
                 }
                 if (IsEditable)
                 {
@@ -128,7 +123,7 @@ namespace JS.Modules.JSFAQ
                     List<FAQ> faqSource = new List<FAQ>();
                     foreach (FAQ f in af)
                     {
-                        if (f.FaqCategory == categoryName.Text && f.ShowFaq)
+                        if (f.FaqCategory == categoryName.Text && (f.ShowFaq || btnHiddenFaq.ToolTip == "Hide Hidden FAQs"))
                         {
                             faqSource.Add(f);
                         }
@@ -158,7 +153,7 @@ namespace JS.Modules.JSFAQ
                 rptNotCategorized.Visible = false;
                 foreach (var f in af)
                 {
-                    if (f.FaqCategory == "NotCategorized" && f.ShowFaq)
+                    if (f.FaqCategory == "NotCategorized" && (f.ShowFaq || btnHiddenFaq.ToolTip == "Hide Hidden FAQs"))
                     {
                         notCategorizedSource.Add(f);
                         rptNotCategorized.Visible = true;
@@ -209,6 +204,19 @@ namespace JS.Modules.JSFAQ
                     };
                 return actions;
             }
+        }
+
+        protected void btnHiddenFaq_Click(object sender, EventArgs e)
+        {
+            if (btnHiddenFaq.ToolTip == "Show Hidden FAQs")
+            {
+                btnHiddenFaq.ToolTip = "Hide Hidden FAQs";
+            }
+            else
+            {
+                btnHiddenFaq.ToolTip = "Show Hidden FAQs";
+            }
+            LoadPage();
         }
     }
 }

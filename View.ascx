@@ -27,8 +27,8 @@
                     ResourceKey="lnkAdd" ToolTip="Add FAQ Entry" />
                 <asp:HyperLink ID="lnkManage" runat="server" CssClass="btn btn-primary link-manage no-txt"
                     ResourceKey="lnkManage" ToolTip="Manage Categories" />
-                <asp:HyperLink ID="lnkHiddenFaq" runat="server" CssClass="btn btn-primary link-show no-txt"
-                    ResourceKey="lnkHiddenFaq" ToolTip="Display/Hide Hidden FAQs" />
+                <asp:LinkButton ID="btnHiddenFaq" runat="server" CssClass="btn btn-primary link-show no-txt"
+                    ResourceKey="btnHiddenFaq" ToolTip="Show Hidden FAQs" OnClick="btnHiddenFaq_Click" />
                 <asp:HyperLink ID="lnkSettings" runat="server" CssClass="btn btn-primary link-settings no-txt"
                     ResourceKey="lnkManage" ToolTip="Settings" />
 

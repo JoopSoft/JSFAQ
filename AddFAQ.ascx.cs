@@ -27,7 +27,7 @@ namespace JS.Modules.JSFAQ
             {
                 if (!IsPostBack)
                 {
-                    lnkManageCategories.NavigateUrl = EditUrl("ManageCategories");
+                    lnkManage.NavigateUrl = EditUrl("ManageCategories");
                     string PageName = TabController.CurrentPage.TabPath.Remove(0, 1);
                     lnkSettings.NavigateUrl = "javascript:dnnModal.show('http://" + Request.Url.Host + PageName + "/ctl/Module/ModuleId/" + ModuleId + "?ReturnURL=" + PageName + "&amp;popUp=true#msSpecificSettings',/*showReturn*/false,550,950,true,'')";
                     bool categoryPresent = false;
@@ -41,15 +41,6 @@ namespace JS.Modules.JSFAQ
                             ddCategory.Items.Add(c.CategoryName);
                         }
                     }
-                    if (categoryPresent)
-                    {
-                        headerMenu.CssClass = "dnnFormMessage two-controls dnnFormTitle no-spacing";
-                    }
-                    else
-                    {
-                        headerMenu.CssClass = "dnnFormMessage one-control dnnFormTitle no-spacing";
-                    }
-
                     var fc = new FAQController();
                     if (FaqId > 0)
                     {
@@ -147,6 +138,7 @@ namespace JS.Modules.JSFAQ
         {
             var cc = new CategoryController();
             var fc = new FAQController();
+            string status;
             if (FaqId > 0)
             {
                 switch (rblCategoryOption.SelectedValue)
@@ -192,60 +184,82 @@ namespace JS.Modules.JSFAQ
                     default:
                         break;
                 }
+                lblSubTitle.Text = "FAQ Entry Updated!";
+                status = "success";
             }
             else
             {
-                switch (rblCategoryOption.SelectedValue)
+                bool faqExists = false;
+                foreach (var faq in fc.GetFAQs(ModuleId))
                 {
-                    case "new":
-                        var c = new Category()
-                        {
-                            CategoryName = txtCategoryName.Text.Trim(),
-                            CategoryDescription = txtCategoryDescription.Text.Trim(),
-                            ShowCategory = true,
-                            ModuleId = ModuleId
-                        };
-                        cc.CreateCategory(c);
-                        var f = new FAQ()
-                        {
-                            FaqCategory = txtCategoryName.Text.Trim(),
-                            FaqQuestion = txtQuestion.Text.Trim(),
-                            FaqAnswer = txtAnswer.Text.Trim(),
-                            ShowFaq = !cbHideFAQ.Checked,
-                            Categorized = true,
-                            ModuleId = ModuleId
-                        };
-                        fc.CreateFAQ(f);
-                        break;
-                    case "list":
-                        var lf = new FAQ()
-                        {
-                            FaqCategory = ddCategory.SelectedValue,
-                            FaqQuestion = txtQuestion.Text.Trim(),
-                            FaqAnswer = txtAnswer.Text.Trim(),
-                            ShowFaq = !cbHideFAQ.Checked,
-                            Categorized = true,
-                            ModuleId = ModuleId
-                        };
-                        fc.CreateFAQ(lf);
-                        break;
-                    case "empty":
-                        var ef = new FAQ()
-                        {
-                            FaqCategory = "NotCategorized",
-                            FaqQuestion = txtQuestion.Text.Trim(),
-                            FaqAnswer = txtAnswer.Text.Trim(),
-                            ShowFaq = !cbHideFAQ.Checked,
-                            Categorized = false,
-                            ModuleId = ModuleId
-                        };
-                        fc.CreateFAQ(ef);
-                        break;
-                    default:
-                        break;
+                    if (faq.FaqQuestion == txtQuestion.Text.Trim())
+                    {
+                        faqExists = true;
+                    }
+                }
+                if (!faqExists)
+                {
+                    switch (rblCategoryOption.SelectedValue)
+                    {
+                        case "new":
+                            var c = new Category()
+                            {
+                                CategoryName = txtCategoryName.Text.Trim(),
+                                CategoryDescription = txtCategoryDescription.Text.Trim(),
+                                ShowCategory = true,
+                                ModuleId = ModuleId
+                            };
+                            cc.CreateCategory(c);
+                            var f = new FAQ()
+                            {
+                                FaqCategory = txtCategoryName.Text.Trim(),
+                                FaqQuestion = txtQuestion.Text.Trim(),
+                                FaqAnswer = txtAnswer.Text.Trim(),
+                                ShowFaq = !cbHideFAQ.Checked,
+                                Categorized = true,
+                                ModuleId = ModuleId
+                            };
+                            fc.CreateFAQ(f);
+                            break;
+                        case "list":
+                            var lf = new FAQ()
+                            {
+                                FaqCategory = ddCategory.SelectedValue,
+                                FaqQuestion = txtQuestion.Text.Trim(),
+                                FaqAnswer = txtAnswer.Text.Trim(),
+                                ShowFaq = !cbHideFAQ.Checked,
+                                Categorized = true,
+                                ModuleId = ModuleId
+                            };
+                            fc.CreateFAQ(lf);
+                            break;
+                        case "empty":
+                            var ef = new FAQ()
+                            {
+                                FaqCategory = "NotCategorized",
+                                FaqQuestion = txtQuestion.Text.Trim(),
+                                FaqAnswer = txtAnswer.Text.Trim(),
+                                ShowFaq = !cbHideFAQ.Checked,
+                                Categorized = false,
+                                ModuleId = ModuleId
+                            };
+                            fc.CreateFAQ(ef);
+                            break;
+                        default:
+                            break;
+                    }
+                    lblSubTitle.Text = "FAQ Entry Added!";
+                    status = "success";
+                }
+                else
+                {
+                    lblSubTitle.Text = "FAQ with that Question already Exists!!";
+                    status = "error";
                 }
             }
-
+            headerMenu.CssClass = "dnnFormMessage two-controls dnnFormTitle no-spacing " + status;
+            lnkManage.CssClass = "btn btn-primary link-manage no-txt " + status;
+            lnkSettings.CssClass = "btn btn-primary link-settings no-txt " + status;
         }
     }
 }

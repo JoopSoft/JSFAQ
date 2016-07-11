@@ -19,7 +19,7 @@
                 <asp:Panel ID="headerMenu" runat="server" CssClass="dnnFormMessage two-controls dnnFormTitle no-spacing">
                     <asp:Label ID="lblSubTitle" runat="server" Text="Add/Edit FAQ Entry" />
                 </asp:Panel>
-                <asp:HyperLink ID="lnkManageCategories" runat="server" CssClass="btn btn-primary link-manage no-txt"
+                <asp:HyperLink ID="lnkManage" runat="server" CssClass="btn btn-primary link-manage no-txt"
                     data-toggle="tooltip" ToolTip="Manage Categories" />
                 <asp:HyperLink ID="lnkSettings" runat="server" CssClass="btn btn-primary link-settings no-txt"
                     data-toggle="tooltip" ToolTip="Settings" />

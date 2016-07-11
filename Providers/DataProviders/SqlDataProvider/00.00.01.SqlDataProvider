@@ -18,7 +18,10 @@ CREATE TABLE {databaseOwner}{objectQualifier}JSFAQ_Categories
 	[CategoryName] NVARCHAR(MAX) NOT NULL,
 	[CategoryDescription] NVARCHAR(MAX) NOT NULL,
 	[ShowCategory] BIT NOT NULL,
-	[ModuleId] INT NOT NULL,
+	[ShowCategoryDescription] BIT NOT NULL,
+	[Active] NVARCHAR(MAX) NOT NULL,
+	[Collapsible] BIT NOT NULL,
+	[ModuleId] INT NOT NULL
 )
 GO
 
@@ -38,7 +41,7 @@ CREATE TABLE {databaseOwner}{objectQualifier}JSFAQ_FAQs
 	[FaqAnswer] NVARCHAR(MAX) NOT NULL,
 	[ShowFaq] BIT NOT NULL,
 	[Categorized] BIT NOT NULL,
-	[ModuleId] INT NOT NULL,
+	[ModuleId] INT NOT NULL
 )
 GO
 

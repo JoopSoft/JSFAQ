@@ -15,6 +15,7 @@ using DotNetNuke.Entities.Users;
 using JS.Modules.JSFAQ.Components;
 using DotNetNuke.Services.Exceptions;
 using DotNetNuke.Entities.Tabs;
+using System.Web.UI.WebControls;
 
 namespace JS.Modules.JSFAQ
 {
@@ -30,39 +31,21 @@ namespace JS.Modules.JSFAQ
                     string PageName = TabController.CurrentPage.TabPath.Remove(0, 1);
                     lnkSettings.NavigateUrl = "javascript:dnnModal.show('http://" + Request.Url.Host + PageName + "/ctl/Module/ModuleId/" + ModuleId + "?ReturnURL=" + PageName + "&amp;popUp=true#msSpecificSettings',/*showReturn*/false,550,950,true,'')";
                     btnSave_Name();
-                    bool categoryPresent = false; 
                     var cc = new CategoryController();
-                    var ac = cc.GetCategories(ModuleId);
-                    foreach (var c in ac)
-                    {
-                        if (c.CategoryId > 0)
-                        {
-                            categoryPresent = true;
-                            ddCategory.Items.Add(c.CategoryName);
-                        }
-                    }
-                    if (categoryPresent)
-                    {
-                        headerMenu.CssClass = "dnnFormMessage two-controls dnnFormTitle no-spacing";
-                    }
-                    else
-                    {
-                        headerMenu.CssClass = "dnnFormMessage one-control dnnFormTitle no-spacing";
-                    }
+                    CategoryDropdownFill(cc);
                     if (CategoryId > 0)
                     {
                         var c = cc.GetCategory(CategoryId, ModuleId);
                         if (c != null)
                         {
-                            ddCategory.SelectedValue = c.CategoryName;
-                            txtCategoryName.Text = c.CategoryName;
-                            txtCategoryDescription.Text = c.CategoryDescription;
-                            cbShowCategory.Checked = c.ShowCategory;
+                            LoadPage(c);
                         }
+                        btnDeleteCategory.Visible = true;
                     }
                     else
                     {
                         ddCategory.SelectedValue = "new";
+                        btnDeleteCategory.Visible = false;
                     }
                 }
             }
@@ -74,37 +57,13 @@ namespace JS.Modules.JSFAQ
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            var cc = new CategoryController();
-            var c = new Category();
-            if (ddCategory.SelectedValue != "new")
-            {
-                int tempId = CategoryId;
-                var ac = cc.GetCategories(ModuleId);
-                foreach (var cat in ac)
-                {
-                    if (cat.CategoryName == ddCategory.SelectedValue)
-                    {
-                        tempId = cat.CategoryId;
-                    }
-                }
-                c = cc.GetCategory(tempId, ModuleId);
-                c.CategoryName = txtCategoryName.Text.Trim();
-                c.CategoryDescription = txtCategoryDescription.Text.Trim();
-                c.ShowCategory = cbShowCategory.Checked;
-                c.ModuleId = ModuleId;
-                cc.UpdateCategory(c);
-            }
-            else
-            {
-                c = new Category()
-                {
-                    CategoryName = txtCategoryName.Text.Trim(),
-                    CategoryDescription = txtCategoryDescription.Text.Trim(),
-                    ShowCategory = cbShowCategory.Checked,
-                    ModuleId = ModuleId
-                };
-                cc.CreateCategory(c);
-            }
+            Save();
+        }
+
+        protected void btnSaveAndClose_Click(object sender, EventArgs e)
+        {
+            Save();
+            Response.Redirect(DotNetNuke.Common.Globals.NavigateURL());
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -121,12 +80,25 @@ namespace JS.Modules.JSFAQ
             {
                 if (c.CategoryName == ddCategory.SelectedValue)
                 {
-                    txtCategoryName.Text = c.CategoryName;
-                    txtCategoryDescription.Text = c.CategoryDescription;
-                    cbShowCategory.Checked = c.ShowCategory;
+                    LoadPage(c);
+                    btnDeleteCategory.Visible = true;
                     break;
                 }
             }
+            if (ddCategory.SelectedValue == "new")
+            {
+                txtCategoryName.Text = String.Empty;
+                txtCategoryDescription.Text = String.Empty;
+                cbShowCategory.Checked = true;
+                cbShowCategoryDescription.Checked = true;
+                cbActive.Checked = false;
+                cbCollapsible.Checked = false;
+                btnDeleteCategory.Visible = false;
+            }
+            headerMenu.CssClass = "dnnFormMessage two-controls dnnFormTitle no-spacing";
+            lblSubTitle.Text = "Manage Existing Categories";
+            lnkAdd.CssClass = "btn btn-primary link-add no-txt";
+            lnkSettings.CssClass = "btn btn-primary link-settings no-txt";
         }
 
         protected void btnSave_Name()
@@ -143,6 +115,222 @@ namespace JS.Modules.JSFAQ
                 btnSaveAndClose.Text = "Update And Close";
                 lblGroupStatusHolder.CssClass = "group-stat-holder link-save";
             }
+        }
+
+        protected void Save()
+        {
+            var cc = new CategoryController();
+            var c = new Category();
+            string active = "false";
+            string status;
+            if (cbActive.Checked)
+            {
+                active = txtCurretlyActive.Text.Trim();
+            }
+            ListItem category = new ListItem(txtCategoryName.Text);
+            if (ddCategory.SelectedValue != "new")
+            {
+                int tempId = CategoryId;
+                var ac = cc.GetCategories(ModuleId);
+                foreach (var cat in ac)
+                {
+                    if (cat.CategoryName == ddCategory.SelectedValue)
+                    {
+                        tempId = cat.CategoryId;
+                    }
+                }
+                c = cc.GetCategory(tempId, ModuleId);
+                c.CategoryName = txtCategoryName.Text.Trim();
+                c.CategoryDescription = txtCategoryDescription.Text.Trim();
+                c.ShowCategory = cbShowCategory.Checked;
+                c.ShowCategoryDescription = cbShowCategoryDescription.Checked;
+                c.Active = active;
+                c.Collapsible = cbCollapsible.Checked;
+                c.ModuleId = ModuleId;
+                cc.UpdateCategory(c);
+                lblSubTitle.Text = "Category Updated!";
+                status = "success";
+                
+            }
+            else if(!ddCategory.Items.Contains(category))
+            {
+                c = new Category()
+                {
+                    CategoryName = txtCategoryName.Text.Trim(),
+                    CategoryDescription = txtCategoryDescription.Text.Trim(),
+                    ShowCategory = cbShowCategory.Checked,
+                    ShowCategoryDescription = cbShowCategoryDescription.Checked,
+                    Active = active,
+                    Collapsible = cbCollapsible.Checked,
+                    ModuleId = ModuleId
+                };
+                cc.CreateCategory(c);
+                CategoryDropdownFill(cc);
+                lblSubTitle.Text = "Category Added!";
+                status = "success";
+            }
+            else
+            {
+                lblSubTitle.Text = "Category with this Name already Exists!";
+                status = "error";
+            }
+            HeaderMenuStatus(status);
+        }
+
+        void CategoryDropdownFill(CategoryController cc)
+        {
+            ddCategory.Items.Clear();
+            ListItem categoryName = new ListItem("< Create New >", "new");
+            ddCategory.Items.Add(categoryName);
+            var ac = cc.GetCategories(ModuleId);
+            foreach (var c in ac)
+            {
+                categoryName = new ListItem(c.CategoryName);
+                if (c.CategoryId > 0 && !ddCategory.Items.Contains(categoryName))
+                {
+                    ddCategory.Items.Add(categoryName);
+                }
+            }
+        }
+
+        void LoadPage(Category c)
+        {
+            ddCategory.SelectedValue = c.CategoryName;
+            txtCategoryName.Text = c.CategoryName;
+            txtCategoryDescription.Text = c.CategoryDescription;
+            cbShowCategory.Checked = c.ShowCategory;
+            cbShowCategoryDescription.Checked = c.ShowCategoryDescription;
+            cbActive.Checked = c.Active != "false";
+            if (c.Active != "false")
+            {
+                txtCurretlyActive.Text = c.Active;
+            }
+        }
+
+        void LoadNew()
+        {
+            ddCategory.SelectedValue = "new";
+            txtCategoryDescription.Text = txtCategoryName.Text = string.Empty;
+            cbShowCategory.Checked = cbShowCategoryDescription.Checked = true;
+            cbActive.Checked = cbCollapsible.Checked = false;
+            btnDeleteCategory.Visible = false;
+        }
+
+        void HeaderMenuStatus(string status)
+        {
+            headerMenu.CssClass = "dnnFormMessage two-controls dnnFormTitle no-spacing " + status;
+            lnkAdd.CssClass = "btn btn-primary link-add no-txt " + status;
+            lnkSettings.CssClass = "btn btn-primary link-settings no-txt " + status;
+        }
+
+        protected void btnDeleteCategory_Click(object sender, EventArgs e)
+        {
+            pnlPopUp.Visible = true;
+            btnDeleteConfirm.Visible = true;
+            btnDeleteAllEntries.Visible = false;
+            btnMoveToEmpty.Visible = false;
+            btnDeleteLastConfirm.Visible = false;
+            lblPopUpMsg.Text = "Delete Category?";
+        }
+
+        protected void btnDeleteConfirm_Click(object sender, EventArgs e)
+        {
+            var cc = new CategoryController();
+            var fc = new FAQController();
+            bool emptyCategory = true;
+            foreach (var c in cc.GetCategories(ModuleId))
+            {
+                if (c.CategoryName == ddCategory.SelectedValue)
+                {
+                    categoryId.Text = c.CategoryId.ToString();
+                }
+            }
+            foreach (var f in fc.GetFAQs(ModuleId))
+            {
+                if (f.FaqCategory == ddCategory.SelectedValue)
+                {
+                    emptyCategory = false;
+                }
+            }
+            if (emptyCategory)
+            {
+                cc.DeleteCategory(Convert.ToInt32(categoryId.Text.Trim()), ModuleId);
+                CategoryDropdownFill(cc);
+                LoadNew();
+                pnlPopUp.Visible = false;
+                lblSubTitle.Text = "Category Deleted!";
+                HeaderMenuStatus("success");
+            }
+            else
+            {
+                lblPopUpMsg.Text = "Category Contains FAQ Entries! <br>What to Do With Them?";
+                btnMoveToEmpty.Visible = btnDeleteAllEntries.Visible = true;
+                btnDeleteConfirm.Visible = false;
+            }
+        }
+
+        protected void btnClose_Click(object sender, EventArgs e)
+        {
+            pnlPopUp.Visible = false;
+        }
+
+        protected void btnMoveToEmpty_Click(object sender, EventArgs e)
+        {
+            var cc = new CategoryController();
+            var fc = new FAQController();
+            foreach (var c in cc.GetCategories(ModuleId))
+            {
+                if (c.CategoryName == ddCategory.SelectedValue)
+                {
+                    categoryId.Text = c.CategoryId.ToString();
+                }
+            }
+            cc.DeleteCategory(Convert.ToInt32(categoryId.Text.Trim()), ModuleId);
+            foreach (var f in fc.GetFAQs(ModuleId))
+            {
+                if (f.FaqCategory == ddCategory.SelectedValue)
+                {
+                    f.Categorized = false;
+                    f.FaqCategory = "NotCategorized";
+                    fc.UpdateFAQ(f);
+                }
+            }
+            lblSubTitle.Text = "Category Deleted! FAQ Entries Moved to Not Categorized!";
+            pnlPopUp.Visible = false;
+            CategoryDropdownFill(cc);
+            LoadNew();
+        }
+
+        protected void btnDeleteAllEntries_Click(object sender, EventArgs e)
+        {
+            btnDeleteAllEntries.Visible = btnMoveToEmpty.Visible = false;
+            btnDeleteLastConfirm.Visible = true;
+            lblPopUpMsg.Text = "Delete All FAQ Entries in the Category?";
+        }
+
+        protected void btnDeleteLastConfirm_Click(object sender, EventArgs e)
+        {
+            var cc = new CategoryController();
+            var fc = new FAQController();
+            foreach (var c in cc.GetCategories(ModuleId))
+            {
+                if (c.CategoryName == ddCategory.SelectedValue)
+                {
+                    categoryId.Text = c.CategoryId.ToString();
+                }
+            }
+            cc.DeleteCategory(Convert.ToInt32(categoryId.Text.Trim()), ModuleId);
+            foreach (var f in fc.GetFAQs(ModuleId))
+            {
+                if (f.FaqCategory == ddCategory.SelectedValue)
+                {
+                    fc.DeleteFAQ(f);
+                }
+            }
+            lblSubTitle.Text = "Category Deleted! FAQ Entries Deleted!";
+            pnlPopUp.Visible = false;
+            CategoryDropdownFill(cc);
+            LoadNew();
         }
     }
 }

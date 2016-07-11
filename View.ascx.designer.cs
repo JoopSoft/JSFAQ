@@ -103,13 +103,13 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.HyperLink lnkManage;
         
         /// <summary>
-        /// lnkHiddenFaq control.
+        /// btnHiddenFaq control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink lnkHiddenFaq;
+        protected global::System.Web.UI.WebControls.LinkButton btnHiddenFaq;
         
         /// <summary>
         /// lnkSettings control.

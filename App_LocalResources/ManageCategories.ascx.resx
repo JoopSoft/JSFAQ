@@ -168,16 +168,16 @@
   <data name="lblCollapsible.Text" xml:space="preserve">
     <value>Collapsible</value>
   </data>
-  <data name="lblDefaultOpen.Help" xml:space="preserve">
+  <data name="lblCurrentlyActive.Help" xml:space="preserve">
     <value>Which panel is currently open.</value>
   </data>
-  <data name="lblDefaultOpen.Text" xml:space="preserve">
+  <data name="lblCurrentlyActive.Text" xml:space="preserve">
     <value>Currently Active</value>
   </data>
-  <data name="lblDefaultOpenType.Help" xml:space="preserve">
+  <data name="lblActive.Help" xml:space="preserve">
     <value>Collapsing all sections.</value>
   </data>
-  <data name="lblDefaultOpenType.Text" xml:space="preserve">
+  <data name="lblActive.Text" xml:space="preserve">
     <value>Active</value>
   </data>
   <data name="lblShowCategoryDescription.Help" xml:space="preserve">

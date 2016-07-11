@@ -31,6 +31,9 @@ namespace JS.Modules.JSFAQ.Components
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }
         public bool ShowCategory { get; set; }
+        public bool ShowCategoryDescription { get; set; }
+        public string Active { get; set; }
+        public bool Collapsible { get; set; }
         public int ModuleId { get; set; }
     }
 }

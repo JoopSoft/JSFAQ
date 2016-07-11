@@ -202,40 +202,40 @@ namespace JS.Modules.JSFAQ {
         protected global::System.Web.UI.WebControls.CheckBox cbShowCategoryDescription;
         
         /// <summary>
-        /// lblDefaultOpenType control.
+        /// lblActive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblDefaultOpenType;
+        protected global::DotNetNuke.UI.UserControls.LabelControl lblActive;
         
         /// <summary>
-        /// cbDefaultOpenType control.
+        /// cbActive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox cbDefaultOpenType;
+        protected global::System.Web.UI.WebControls.CheckBox cbActive;
         
         /// <summary>
-        /// lblDefaultOpen control.
+        /// lblCurretlyActive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DotNetNuke.UI.UserControls.LabelControl lblDefaultOpen;
+        protected global::DotNetNuke.UI.UserControls.LabelControl lblCurretlyActive;
         
         /// <summary>
-        /// txtDefaultOpen control.
+        /// txtCurretlyActive control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDefaultOpen;
+        protected global::System.Web.UI.WebControls.TextBox txtCurretlyActive;
         
         /// <summary>
         /// lblCollapsible control.
@@ -272,6 +272,15 @@ namespace JS.Modules.JSFAQ {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPopUpIcon;
+        
+        /// <summary>
+        /// categoryId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label categoryId;
         
         /// <summary>
         /// lblPopUpMsg control.
